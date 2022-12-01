@@ -1316,7 +1316,7 @@ export default {
     isBlur: { type: String, default: "" },
     darkMode: {
       type: Boolean,
-      default: false,
+      default: false      
     },
   },
   data() {

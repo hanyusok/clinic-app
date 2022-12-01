@@ -27,3 +27,7 @@ npm run dev
 ```sh
 npm run build
 ```
+
+# sass error fix command
+
+npm add -D sass
