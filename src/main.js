@@ -13,6 +13,14 @@ import SoftUIDashboard from "./soft-ui-dashboard";
 
 const app = createApp(App)
 
+//firebaseUI
+var firebase = require('firebase');
+var firebaseui = require('firebaseui');
+// Initialize the FirebaseUI Widget using Firebase.
+var ui = new firebaseui.auth.AuthUI(firebase.auth());
+
+
+
 app.use(createPinia())
 app.use(router)
 app.use(VueTilt)
