@@ -31,7 +31,3 @@ npm run build
 # sass error fix command
 
 npm add -D sass
-
-# firebaseUI setup
-
-https://firebase.google.com/docs/auth/web/firebaseui

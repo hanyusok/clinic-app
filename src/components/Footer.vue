@@ -1,5 +1,5 @@
 <template>
-  <!-- -------- START FOOTER 3 w/ COMPANY DESCRIPTION WITH LINKS & SOCIAL ICONS & COPYRIGHT ------- -->
+    <!-- -------- START FOOTER 3 w/ COMPANY DESCRIPTION WITH LINKS & SOCIAL ICONS & COPYRIGHT ------- -->
   <footer class="py-5 footer">
     <div class="container">
       <div class="row">
@@ -48,19 +48,39 @@
           </a>
         </div>
         <div class="mx-auto mt-2 mb-4 text-center col-lg-8">
-          <a href="javascript:;" target="_blank" class="text-secondary me-xl-4 me-4">
+          <a
+            href="javascript:;"
+            target="_blank"
+            class="text-secondary me-xl-4 me-4"
+          >
             <span class="text-lg fab fa-dribbble"></span>
           </a>
-          <a href="javascript:;" target="_blank" class="text-secondary me-xl-4 me-4">
+          <a
+            href="javascript:;"
+            target="_blank"
+            class="text-secondary me-xl-4 me-4"
+          >
             <span class="text-lg fab fa-twitter"></span>
           </a>
-          <a href="javascript:;" target="_blank" class="text-secondary me-xl-4 me-4">
+          <a
+            href="javascript:;"
+            target="_blank"
+            class="text-secondary me-xl-4 me-4"
+          >
             <span class="text-lg fab fa-instagram"></span>
           </a>
-          <a href="javascript:;" target="_blank" class="text-secondary me-xl-4 me-4">
+          <a
+            href="javascript:;"
+            target="_blank"
+            class="text-secondary me-xl-4 me-4"
+          >
             <span class="text-lg fab fa-pinterest"></span>
           </a>
-          <a href="javascript:;" target="_blank" class="text-secondary me-xl-4 me-4">
+          <a
+            href="javascript:;"
+            target="_blank"
+            class="text-secondary me-xl-4 me-4"
+          >
             <span class="text-lg fab fa-github"></span>
           </a>
         </div>
@@ -78,6 +98,6 @@
 
 <script>
 export default {
-  name: 'AppFooter'
-}
+  name: "AppFooter",
+};
 </script>
