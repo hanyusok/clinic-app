@@ -1,9 +1,3 @@
-<script setup>
-ui.start('#firebaseui-auth-container', {
-    signInOptions: [
-      firebase.auth.EmailAuthProvider.PROVIDER_ID
-    ],
-    // Other config options...
-  });</script>
+<script setup></script>
 
 <template><div>This is Home</div></template>
