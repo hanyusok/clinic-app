@@ -1,11 +1,21 @@
 <template>
+  <div class="container top-0 position-sticky z-index-sticky">
+    <div class="row">
+      <div class="col-12">
+        <navbar
+          is-blur="blur blur-rounded my-3 py-2 start-0 end-0 mx-4 shadow"
+          btn-background="bg-gradient-success"
+          :dark-mode="true"
+        />
+      </div>
+    </div>
+  </div>
   <div class="container-fluid">
     <div
       class="mt-4 page-header min-height-300 border-radius-xl"
       :style="{
-        backgroundImage:
-          `url(${bgImg})`,
-        backgroundPositionY: '50%',
+        backgroundImage: `url(${bgImg})`,
+        backgroundPositionY: '50%'
       }"
     >
       <span class="mask bg-gradient-success opacity-6"></span>
@@ -191,7 +201,8 @@
                   label-class="mb-0 text-body ms-3 text-truncate w-80"
                   input-class="ms-auto"
                   checked
-                >Email me when someone follows me</vsud-switch>
+                  >Email me when someone follows me</vsud-switch
+                >
               </li>
               <li class="px-0 border-0 list-group-item">
                 <vsud-switch
@@ -199,7 +210,8 @@
                   class="ps-0"
                   label-class="mb-0 text-body ms-3 text-truncate w-80"
                   input-class="ms-auto"
-                >Email me when someone answers on my post</vsud-switch>
+                  >Email me when someone answers on my post</vsud-switch
+                >
               </li>
 
               <li class="px-0 border-0 list-group-item">
@@ -209,10 +221,13 @@
                   label-class="mb-0 text-body ms-3 text-truncate w-80"
                   input-class="ms-auto"
                   checked
-                >Email me when someone mentions me</vsud-switch>
+                  >Email me when someone mentions me</vsud-switch
+                >
               </li>
             </ul>
-            <h6 class="mt-4 text-xs text-uppercase text-body font-weight-bolder">Application</h6>
+            <h6 class="mt-4 text-xs text-uppercase text-body font-weight-bolder">
+              Application
+            </h6>
             <ul class="list-group">
               <li class="px-0 border-0 list-group-item">
                 <vsud-switch
@@ -220,7 +235,8 @@
                   class="ps-0"
                   label-class="mb-0 text-body ms-3 text-truncate w-80"
                   input-class="ms-auto"
-                >New launches and projects</vsud-switch>
+                  >New launches and projects</vsud-switch
+                >
               </li>
               <li class="px-0 border-0 list-group-item">
                 <vsud-switch
@@ -229,7 +245,8 @@
                   label-class="mb-0 text-body ms-3 text-truncate w-80"
                   input-class="ms-auto"
                   checked
-                >Monthly product updates</vsud-switch>
+                  >Monthly product updates</vsud-switch
+                >
               </li>
               <li class="px-0 pb-0 border-0 list-group-item">
                 <vsud-switch
@@ -237,7 +254,8 @@
                   class="ps-0"
                   label-class="mb-0 text-body ms-3 text-truncate w-80"
                   input-class="ms-auto"
-                >Subscribe to newsletter</vsud-switch>
+                  >Subscribe to newsletter</vsud-switch
+                >
               </li>
             </ul>
           </div>
@@ -265,7 +283,9 @@
                   <h6 class="mb-0 text-sm">Sophie B.</h6>
                   <p class="mb-0 text-xs">Hi! I need more information..</p>
                 </div>
-                <a class="mb-0 btn btn-link pe-3 ps-0 ms-auto" href="javascript:;">Reply</a>
+                <a class="mb-0 btn btn-link pe-3 ps-0 ms-auto" href="javascript:;"
+                  >Reply</a
+                >
               </li>
               <li class="px-0 mb-2 border-0 list-group-item d-flex align-items-center">
                 <vsud-avatar
@@ -279,7 +299,9 @@
                   <h6 class="mb-0 text-sm">Anne Marie</h6>
                   <p class="mb-0 text-xs">Awesome work, can you..</p>
                 </div>
-                <a class="mb-0 btn btn-link pe-3 ps-0 ms-auto" href="javascript:;">Reply</a>
+                <a class="mb-0 btn btn-link pe-3 ps-0 ms-auto" href="javascript:;"
+                  >Reply</a
+                >
               </li>
               <li class="px-0 mb-2 border-0 list-group-item d-flex align-items-center">
                 <vsud-avatar
@@ -293,7 +315,9 @@
                   <h6 class="mb-0 text-sm">Ivanna</h6>
                   <p class="mb-0 text-xs">About files I can..</p>
                 </div>
-                <a class="mb-0 btn btn-link pe-3 ps-0 ms-auto" href="javascript:;">Reply</a>
+                <a class="mb-0 btn btn-link pe-3 ps-0 ms-auto" href="javascript:;"
+                  >Reply</a
+                >
               </li>
               <li class="px-0 mb-2 border-0 list-group-item d-flex align-items-center">
                 <vsud-avatar
@@ -307,7 +331,9 @@
                   <h6 class="mb-0 text-sm">Peterson</h6>
                   <p class="mb-0 text-xs">Have a great afternoon..</p>
                 </div>
-                <a class="mb-0 btn btn-link pe-3 ps-0 ms-auto" href="javascript:;">Reply</a>
+                <a class="mb-0 btn btn-link pe-3 ps-0 ms-auto" href="javascript:;"
+                  >Reply</a
+                >
               </li>
               <li class="px-0 border-0 list-group-item d-flex align-items-center">
                 <vsud-avatar
@@ -321,7 +347,9 @@
                   <h6 class="mb-0 text-sm">Nick Daniel</h6>
                   <p class="mb-0 text-xs">Hi! I need more information..</p>
                 </div>
-                <a class="mb-0 btn btn-link pe-3 ps-0 ms-auto" href="javascript:;">Reply</a>
+                <a class="mb-0 btn btn-link pe-3 ps-0 ms-auto" href="javascript:;"
+                  >Reply</a
+                >
               </li>
             </ul>
           </div>
@@ -390,7 +418,9 @@
               </div>
               <div class="mb-4 col-xl-3 col-md-6 mb-xl-0">
                 <div class="border card h-100 card-plain">
-                  <div class="text-center card-body d-flex flex-column justify-content-center">
+                  <div
+                    class="text-center card-body d-flex flex-column justify-content-center"
+                  >
                     <a href="javascript:;">
                       <i class="mb-3 fa fa-plus text-secondary"></i>
                       <h5 class="text-secondary">New project</h5>
@@ -407,40 +437,41 @@
 </template>
 
 <script>
+import Navbar from './Navbar.vue'
+import bgImg from '@/assets/img/curved-images/curved14.jpg'
+import VsudSwitch from '@/components/VsudSwitch.vue'
+import ProfileCard from '@/components/ProfileCard.vue'
+import VsudAvatar from '@/components/VsudAvatar.vue'
+import sophie from '@/assets/img/kal-visuals-square.jpg'
+import marie from '@/assets/img/marie.jpg'
+import ivana from '@/assets/img/ivana-square.jpg'
+import peterson from '@/assets/img/team-4.jpg'
+import nick from '@/assets/img/team-3.jpg'
+import img1 from '../assets/img/home-decor-1.jpg'
+import img2 from '../assets/img/home-decor-2.jpg'
+import img3 from '../assets/img/home-decor-3.jpg'
+import team1 from '../assets/img/team-1.jpg'
+import team2 from '../assets/img/team-2.jpg'
+import team3 from '../assets/img/team-3.jpg'
+import team4 from '../assets/img/team-4.jpg'
 
-import bgImg from "@/assets/img/curved-images/curved14.jpg"
-import VsudSwitch from "@/components/VsudSwitch.vue";
-import ProfileCard from "@/components/ProfileCard.vue";
-import VsudAvatar from "@/components/VsudAvatar.vue";
-import sophie from "@/assets/img/kal-visuals-square.jpg";
-import marie from "@/assets/img/marie.jpg";
-import ivana from "@/assets/img/ivana-square.jpg";
-import peterson from "@/assets/img/team-4.jpg";
-import nick from "@/assets/img/team-3.jpg";
-import img1 from "../assets/img/home-decor-1.jpg";
-import img2 from "../assets/img/home-decor-2.jpg";
-import img3 from "../assets/img/home-decor-3.jpg";
-import team1 from "../assets/img/team-1.jpg";
-import team2 from "../assets/img/team-2.jpg";
-import team3 from "../assets/img/team-3.jpg";
-import team4 from "../assets/img/team-4.jpg";
+import ProjectsCard from '@/components/ProjectOverviewCard.vue'
 
-import ProjectsCard from "@/components/ProjectOverviewCard.vue";
-
-import setNavPills from "@/assets/js/nav-pills.js";
-import setTooltip from "@/assets/js/tooltip.js";
+import setNavPills from '@/assets/js/nav-pills.js'
+import setTooltip from '@/assets/js/tooltip.js'
 
 import { useDesignStore } from '../stores/design'
 
 export default {
-  name: "ProfileOverview",
+  name: 'ProfileOverview',
   components: {
+    Navbar,
     VsudSwitch,
     ProfileCard,
     VsudAvatar,
-    ProjectsCard,
+    ProjectsCard
   },
-  setup(){
+  setup() {
     const designStore = useDesignStore()
     return { designStore }
   },
@@ -459,16 +490,16 @@ export default {
       team3,
       team4,
       img2,
-      img3,
-    };
+      img3
+    }
   },
   mounted() {
     this.designStore.isAbsolute = true
-    setNavPills();
-    setTooltip();
+    setNavPills()
+    setTooltip()
   },
   beforeUnmount() {
-    this.designStore.isAbsolute = false;
-  },
-};
+    this.designStore.isAbsolute = false
+  }
+}
 </script>

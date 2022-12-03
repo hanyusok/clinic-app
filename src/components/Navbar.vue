@@ -9,7 +9,8 @@
         class="navbar-brand font-weight-bolder ms-lg-0 ms-3"
         :class="darkMode ? 'text-black' : 'text-white'"
         href="/"
-      >콜닥 PRO</a>
+        >콜닥 PRO</a
+      >
       <button
         class="shadow-none navbar-toggler ms-2"
         type="button"
@@ -36,7 +37,7 @@
               data-bs-toggle="dropdown"
               aria-expanded="false"
             >
-              Pages
+              Services
               <img
                 :src="downArrWhite"
                 alt="down-arrow"
@@ -67,11 +68,10 @@
                           >
                             <icon name="spaceship" />
                           </div>
-                        </div>Dashboards
+                        </div>
+                        Call Dashboards
                       </div>
-                      <!-- <router-link :to="{ name: 'Default' }" class="dropdown-item border-radius-md">
-                        <span class="ps-3">Default</span>
-                      </router-link>
+
                       <router-link
                         :to="{ name: 'Signin' }"
                         class="dropdown-item border-radius-md"
@@ -84,13 +84,18 @@
                       >
                         <span class="ps-3">Profile Overview</span>
                       </router-link>
-                      <router-link 
-                        :to="{ name: 'NewUser'}" class="dropdown-item border-radius-md">
+                      <router-link
+                        :to="{ name: 'NewUser' }"
+                        class="dropdown-item border-radius-md"
+                      >
                         <span class="ps-3">New User</span>
                       </router-link>
-                      <router-link :to="{ name: 'CRM' }" class="dropdown-item border-radius-md">
+                      <router-link
+                        :to="{ name: 'CRM' }"
+                        class="dropdown-item border-radius-md"
+                      >
                         <span class="ps-3">CRM</span>
-                      </router-link> -->
+                      </router-link>
                       <div
                         class="px-0 mt-3 dropdown-header text-dark font-weight-bolder d-flex align-items-center"
                       >
@@ -100,7 +105,8 @@
                           >
                             <icon name="office" />
                           </div>
-                        </div>Users
+                        </div>
+                        Users
                       </div>
                       <!-- <router-link :to="{ name: 'Reports' }" class="dropdown-item border-radius-md">
                         <span class="ps-3">Reports</span>
@@ -123,7 +129,8 @@
                           >
                             <icon name="dashboard" />
                           </div>
-                        </div>Profile
+                        </div>
+                        Profile
                       </div>
                       <!-- <router-link
                         :to="{ name: 'Overview' }"
@@ -149,7 +156,8 @@
                           >
                             <icon name="box3d" />
                           </div>
-                        </div>Projects
+                        </div>
+                        Projects
                       </div>
                       <!-- <router-link :to="{ name: 'General' }" class="dropdown-item border-radius-md">
                         <span class="ps-3">General</span>
@@ -178,7 +186,8 @@
                           >
                             <icon name="box3d" />
                           </div>
-                        </div>Account
+                        </div>
+                        Account
                       </div>
                       <!-- <router-link
                         :to="{ name: 'Settings' }"
@@ -198,7 +207,7 @@
                       >
                         <span class="ps-3">Security</span>
                       </router-link> -->
-                      <div
+                      <!--  <div
                         class="px-0 mt-3 dropdown-header text-dark font-weight-bolder d-flex align-items-center"
                       >
                         <div class="d-inline-block">
@@ -207,9 +216,10 @@
                           >
                             <icon name="document" />
                           </div>
-                        </div>Extra
+                        </div>
+                        Extra
                       </div>
-                      <!-- <router-link
+                      <router-link
                         :to="{ name: 'Pricing Page' }"
                         class="dropdown-item border-radius-md"
                       >
@@ -222,7 +232,6 @@
                         <span class="ps-3">Widgets</span>
                       </router-link> -->
                     </div>
-
                   </div>
                 </div>
               </div>
@@ -237,7 +246,8 @@
                     >
                       <icon name="document" />
                     </div>
-                  </div>Dashboards
+                  </div>
+                  Call Dashboards
                 </div>
                 <!-- <router-link
                   :to="{ name: 'Default' }"
@@ -265,7 +275,8 @@
                     >
                       <icon name="office" />
                     </div>
-                  </div>Users
+                  </div>
+                  Users
                 </div>
                 <!-- <router-link
                   :to="{ name: 'Reports' }"
@@ -281,7 +292,8 @@
                     >
                       <icon name="customer-support" />
                     </div>
-                  </div>Profile
+                  </div>
+                  Profile
                 </div>
                 <!-- <router-link
                   :to="{ name: 'Overview' }"
@@ -298,7 +310,8 @@
                     >
                       <icon name="customer-support" />
                     </div>
-                  </div>Projects
+                  </div>
+                  Projects
                 </div>
                 <!-- <router-link
                   :to="{ name: 'General' }"
@@ -312,7 +325,7 @@
                   :to="{ name: 'ProductsList' }"
                   class="dropdown-item border-radius-md"
                 >New Project</router-link> -->
-                <div
+                <!--   <div
                   class="px-0 mt-3 dropdown-header text-dark font-weight-bolder d-flex align-items-center"
                 >
                   <div class="d-inline-block">
@@ -321,9 +334,10 @@
                     >
                       <icon name="box3d" />
                     </div>
-                  </div>Account
+                  </div>
+                  Account
                 </div>
-                <!-- <router-link
+                <router-link
                   :to="{ name: 'Settings' }"
                   class="dropdown-item border-radius-md"
                 >Settings</router-link>
@@ -348,17 +362,24 @@
                     >
                       <icon name="spaceship" />
                     </div>
-                  </div>Extra
+                  </div>
+                  Extra
                 </div>
-                <!-- <router-link
-                  :to="{ name: 'Pricing Page' }"
-                  class="dropdown-item border-radius-md"
-                >Pricing Page</router-link>
-                <router-link :to="{ name: 'RTL' }" class="dropdown-item border-radius-md">RTL Page</router-link>
                 <router-link
                   :to="{ name: 'Pricing' }"
                   class="dropdown-item border-radius-md"
-                >Widgets</router-link> -->
+                  >Pricing Page</router-link
+                >
+                <router-link
+                  :to="{ name: 'Pricing' }"
+                  class="dropdown-item border-radius-md"
+                  >RTL Page</router-link
+                >
+                <router-link
+                  :to="{ name: 'Pricing' }"
+                  class="dropdown-item border-radius-md"
+                  >Widgets</router-link
+                >
               </div>
             </div>
           </li>
@@ -394,15 +415,16 @@
                   <div
                     class="py-6 h-100 w-100 d-flex border-radius-lg position-relative dropdown-image"
                     :style="{
-                      backgroundImage:
-                        `url(${bgImg})`,
+                      backgroundImage: `url(${bgImg})`
                     }"
                   >
                     <div class="mask bg-gradient-success border-radius-lg"></div>
                     <div
                       class="d-flex justify-content-center align-items-center text-center text-white font-weight-bold w-100 z-index-1 flex-column"
                     >
-                      <div class="icon icon-shape rounded-circle bg-white shadow text-center">
+                      <div
+                        class="icon icon-shape rounded-circle bg-white shadow text-center"
+                      >
                         <i
                           class="ni ni-diamond text-success text-gradient text-lg"
                           aria-hidden="true"
@@ -425,12 +447,19 @@
                         class="mb-1 dropdown-item border-radius-md ps-3 d-flex align-items-center justify-content-between"
                       >
                         <span>Sign In</span>
-                        <img src="@/assets/img/down-arrow.svg" alt="down-arrow" class="arrow" />
+                        <img
+                          src="@/assets/img/down-arrow.svg"
+                          alt="down-arrow"
+                          class="arrow"
+                        />
                       </a>
-                      <div class="px-2 py-3 mt-0 dropdown-menu" aria-labelledby="dropdownSignIn">
-                        <!-- <router-link
+                      <div
+                        class="px-2 py-3 mt-0 dropdown-menu"
+                        aria-labelledby="dropdownSignIn"
+                      >
+                        <router-link
                           class="mb-1 dropdown-item ps-3 border-radius-md"
-                          :to="{ name: 'Signin Basic' }"
+                          :to="{ name: 'Pricing' }"
                         >
                           <span>Basic</span>
                         </router-link>
@@ -445,7 +474,7 @@
                           :to="{ name: 'Signup' }"
                         >
                           <span>Illustration</span>
-                        </router-link> -->
+                        </router-link>
                       </div>
                     </li>
                     <li
@@ -456,10 +485,17 @@
                         class="mb-1 dropdown-item border-radius-md ps-3 d-flex align-items-center justify-content-between"
                       >
                         <span>Sign Up</span>
-                        <img src="@/assets/img/down-arrow.svg" alt="down-arrow" class="arrow" />
+                        <img
+                          src="@/assets/img/down-arrow.svg"
+                          alt="down-arrow"
+                          class="arrow"
+                        />
                       </a>
-                      <div class="px-2 py-3 mt-0 dropdown-menu" aria-labelledby="dropdownSignUp">
-                        <!-- <router-link
+                      <div
+                        class="px-2 py-3 mt-0 dropdown-menu"
+                        aria-labelledby="dropdownSignUp"
+                      >
+                        <router-link
                           class="mb-1 dropdown-item ps-3 border-radius-md"
                           :to="{ name: 'Signup' }"
                         >
@@ -476,7 +512,7 @@
                           :to="{ name: 'Signup' }"
                         >
                           <span>Illustration</span>
-                        </router-link> -->
+                        </router-link>
                       </div>
                     </li>
                     <li
@@ -487,15 +523,19 @@
                         class="mb-1 dropdown-item border-radius-md ps-3 d-flex align-items-center justify-content-between"
                       >
                         <span>Reset Password</span>
-                        <img src="@/assets/img/down-arrow.svg" alt="down-arrow" class="arrow" />
+                        <img
+                          src="@/assets/img/down-arrow.svg"
+                          alt="down-arrow"
+                          class="arrow"
+                        />
                       </a>
                       <div
                         class="px-2 py-3 mt-0 dropdown-menu"
                         aria-labelledby="dropdownPasswordReset"
                       >
-                        <!-- <router-link
+                        <router-link
                           class="mb-1 dropdown-item ps-3 border-radius-md"
-                          :to="{ name: 'Reset Basic' }"
+                          :to="{ name: 'Pricing' }"
                         >
                           <span>Basic</span>
                         </router-link>
@@ -510,7 +550,7 @@
                           :to="{ name: 'Signin' }"
                         >
                           <span>Illustration</span>
-                        </router-link> -->
+                        </router-link>
                       </div>
                     </li>
                     <li
@@ -521,12 +561,19 @@
                         class="mb-1 dropdown-item border-radius-md ps-3 d-flex align-items-center justify-content-between"
                       >
                         <span>Lock</span>
-                        <img src="@/assets/img/down-arrow.svg" alt="down-arrow" class="arrow" />
+                        <img
+                          src="@/assets/img/down-arrow.svg"
+                          alt="down-arrow"
+                          class="arrow"
+                        />
                       </a>
-                      <div class="px-2 py-3 mt-0 dropdown-menu" aria-labelledby="dropdownLock">
-                        <!-- <router-link
+                      <div
+                        class="px-2 py-3 mt-0 dropdown-menu"
+                        aria-labelledby="dropdownLock"
+                      >
+                        <router-link
                           class="mb-1 dropdown-item ps-3 border-radius-md"
-                          :to="{ name: 'Lock Basic' }"
+                          :to="{ name: 'NewUser' }"
                         >
                           <span>Basic</span>
                         </router-link>
@@ -541,7 +588,7 @@
                           :to="{ name: 'Signin' }"
                         >
                           <span>Illustration</span>
-                        </router-link> -->
+                        </router-link>
                       </div>
                     </li>
                     <li
@@ -552,27 +599,34 @@
                         class="mb-1 dropdown-item border-radius-md ps-3 d-flex align-items-center justify-content-between"
                       >
                         <span>2-Step Verification</span>
-                        <img src="@/assets/img/down-arrow.svg" alt="down-arrow" class="arrow" />
+                        <img
+                          src="@/assets/img/down-arrow.svg"
+                          alt="down-arrow"
+                          class="arrow"
+                        />
                       </a>
-                      <div class="px-2 py-3 mt-0 dropdown-menu" aria-labelledby="dropdown2fa">
-                        <!-- <router-link
+                      <div
+                        class="px-2 py-3 mt-0 dropdown-menu"
+                        aria-labelledby="dropdown2fa"
+                      >
+                        <router-link
                           class="mb-1 dropdown-item ps-3 border-radius-md"
-                          :to="{ name: 'Verification Basic' }"
+                          :to="{ name: 'Pricing' }"
                         >
                           <span>Basic</span>
                         </router-link>
                         <router-link
                           class="mb-1 dropdown-item ps-3 border-radius-md"
-                          :to="{ name: 'Verification Cover' }"
+                          :to="{ name: 'Pricing' }"
                         >
                           <span>Cover</span>
                         </router-link>
                         <router-link
                           class="mb-1 dropdown-item ps-3 border-radius-md"
-                          :to="{ name: 'Verification Illustration' }"
+                          :to="{ name: 'Pricing' }"
                         >
                           <span>Illustration</span>
-                        </router-link> -->
+                        </router-link>
                       </div>
                     </li>
                     <li
@@ -583,21 +637,28 @@
                         class="mb-1 dropdown-item border-radius-md ps-3 d-flex align-items-center justify-content-between"
                       >
                         <span>Error</span>
-                        <img src="@/assets/img/down-arrow.svg" alt="down-arrow" class="arrow" />
+                        <img
+                          src="@/assets/img/down-arrow.svg"
+                          alt="down-arrow"
+                          class="arrow"
+                        />
                       </a>
-                      <div class="px-2 py-3 mt-0 dropdown-menu" aria-labelledby="dropdownError">
-                        <!-- <router-link
+                      <div
+                        class="px-2 py-3 mt-0 dropdown-menu"
+                        aria-labelledby="dropdownError"
+                      >
+                        <router-link
                           class="mb-1 dropdown-item ps-3 border-radius-md"
-                          :to="{ name: 'Error Error404' }"
+                          :to="{ name: 'Error' }"
                         >
                           <span>404</span>
                         </router-link>
                         <router-link
                           class="mb-1 dropdown-item ps-3 border-radius-md"
-                          :to="{ name: 'Error Error500' }"
+                          :to="{ name: 'Error' }"
                         >
                           <span>500</span>
-                        </router-link> -->
+                        </router-link>
                       </div>
                     </li>
                   </ul>
@@ -607,82 +668,109 @@
                 <div class="col-12 d-flex justify-content-center flex-column">
                   <h6
                     class="px-0 dropdown-header text-dark font-weight-bolder d-flex align-items-center"
-                  >Sign In</h6>
-                  <!-- <router-link
-                    :to="{ name: 'Signin Basic' }"
-                    class="dropdown-item border-radius-md"
-                  >Basic</router-link>
+                  >
+                    Sign In
+                  </h6>
                   <router-link
                     :to="{ name: 'Signin' }"
                     class="dropdown-item border-radius-md"
-                  >Cover</router-link>
+                    >Basic</router-link
+                  >
+                  <router-link
+                    :to="{ name: 'Signin' }"
+                    class="dropdown-item border-radius-md"
+                    >Cover</router-link
+                  >
                   <router-link
                     :to="{ name: 'Signup' }"
                     class="dropdown-item border-radius-md"
-                  >Illustration</router-link>
+                    >Illustration</router-link
+                  >
                   <h6
                     class="px-0 mt-3 dropdown-header text-dark font-weight-bolder d-flex align-items-center"
-                  >Sign Up</h6>
+                  >
+                    Sign Up
+                  </h6>
                   <router-link
-                    :to="{ name: 'Signup Basic' }"
+                    :to="{ name: 'Signup' }"
                     class="dropdown-item border-radius-md"
-                  >Basic</router-link>
+                    >Basic</router-link
+                  >
                   <router-link
-                    :to="{ name: 'Signup Cover' }"
+                    :to="{ name: 'Signup' }"
                     class="dropdown-item border-radius-md"
-                  >Cover</router-link>
+                    >Cover</router-link
+                  >
                   <router-link
-                    :to="{ name: 'Signup Illustration' }"
+                    :to="{ name: 'Signup' }"
                     class="dropdown-item border-radius-md"
-                  >Illustration</router-link> -->
+                    >Illustration</router-link
+                  >
                   <h6
                     class="px-0 mt-3 dropdown-header text-dark font-weight-bolder d-flex align-items-center"
-                  >Reset Password</h6>
-                  <!-- <router-link
-                    :to="{ name: 'Reset Basic' }"
-                    class="dropdown-item border-radius-md"
-                  >Basic</router-link>
+                  >
+                    Reset Password
+                  </h6>
                   <router-link
-                    :to="{ name: 'Reset Cover' }"
+                    :to="{ name: 'Pricing' }"
                     class="dropdown-item border-radius-md"
-                  >Cover</router-link>
+                    >Basic</router-link
+                  >
                   <router-link
-                    :to="{ name: 'Reset Illustration' }"
+                    :to="{ name: 'Pricing' }"
                     class="dropdown-item border-radius-md"
-                  >Illustation</router-link> -->
+                    >Cover</router-link
+                  >
+                  <router-link
+                    :to="{ name: 'Pricing' }"
+                    class="dropdown-item border-radius-md"
+                    >Illustation</router-link
+                  >
                   <h6
                     class="px-0 mt-3 dropdown-header text-dark font-weight-bolder d-flex align-items-center"
-                  >Lock</h6>
-                  <!-- <router-link
-                    :to="{ name: 'Lock Basic' }"
-                    class="dropdown-item border-radius-md"
-                  >Basic</router-link>
+                  >
+                    Lock
+                  </h6>
                   <router-link
-                    :to="{ name: 'Lock Cover' }"
+                    :to="{ name: 'Pricing' }"
                     class="dropdown-item border-radius-md"
-                  >Cover</router-link>
+                    >Basic</router-link
+                  >
                   <router-link
-                    :to="{ name: 'Lock Illustration' }"
+                    :to="{ name: 'Pricing' }"
                     class="dropdown-item border-radius-md"
-                  >Illustration</router-link> -->
+                    >Cover</router-link
+                  >
+                  <router-link
+                    :to="{ name: 'Pricing' }"
+                    class="dropdown-item border-radius-md"
+                    >Illustration</router-link
+                  >
                   <h6
                     class="px-0 mt-3 dropdown-header text-dark font-weight-bolder d-flex align-items-center"
-                  >2-Step Verification</h6>
-                  <!-- <router-link
-                    :to="{ name: 'Verification Basic' }"
-                    class="dropdown-item border-radius-md"
-                  >Basic</router-link>
+                  >
+                    2-Step Verification
+                  </h6>
                   <router-link
-                    :to="{ name: 'Verification Cover' }"
+                    :to="{ name: 'Pricing' }"
                     class="dropdown-item border-radius-md"
-                  >Cover</router-link>
+                    >Basic</router-link
+                  >
                   <router-link
-                    :to="{ name: 'Verification Illustration' }"
+                    :to="{ name: 'NewUser' }"
                     class="dropdown-item border-radius-md"
-                  >Illustration</router-link> -->
+                    >Cover</router-link
+                  >
+                  <router-link
+                    :to="{ name: 'NewUser' }"
+                    class="dropdown-item border-radius-md"
+                    >Illustration</router-link
+                  >
                   <h6
                     class="px-0 mt-3 dropdown-header text-dark font-weight-bolder d-flex align-items-center"
-                  >Error</h6>
+                  >
+                    Error
+                  </h6>
 
                   <!-- <router-link
                     :to="{ name: 'Error Error404' }"
@@ -696,6 +784,7 @@
               </div>
             </div>
           </li>
+
           <li class="mx-2 nav-item dropdown dropdown-hover">
             <a
               id="dropdownMenuBlocks"
@@ -905,7 +994,12 @@
                               xmlns:xlink="http://www.w3.org/1999/xlink"
                             >
                               <title>document</title>
-                              <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                              <g
+                                stroke="none"
+                                stroke-width="1"
+                                fill="none"
+                                fill-rule="evenodd"
+                              >
                                 <g
                                   transform="translate(-1870.000000, -591.000000)"
                                   fill="#FFFFFF"
@@ -926,7 +1020,8 @@
                               </g>
                             </svg>
                           </div>
-                        </div>Orders
+                        </div>
+                        Orders
                       </div>
                       <!-- <router-link
                         :to="{ name: 'Order List' }"
@@ -949,7 +1044,8 @@
                           >
                             <icon name="box3d" />
                           </div>
-                        </div>General
+                        </div>
+                        General
                       </div>
                       <!-- <router-link
                         :to="{ name: 'Overview' }"
@@ -975,7 +1071,8 @@
                           >
                             <icon name="dashboard" />
                           </div>
-                        </div>Products
+                        </div>
+                        Products
                       </div>
                       <!-- <router-link
                         :to="{ name: 'New Product' }"
@@ -1016,7 +1113,8 @@
                     >
                       <icon name="shop" />
                     </div>
-                  </div>Orders
+                  </div>
+                  Orders
                 </div>
                 <!-- <router-link
                   :to="{ name: 'Order List' }"
@@ -1035,7 +1133,8 @@
                     >
                       <icon name="box3d" />
                     </div>
-                  </div>General
+                  </div>
+                  General
                 </div>
                 <!-- <router-link
                   :to="{ name: 'Overview' }"
@@ -1054,7 +1153,8 @@
                     >
                       <icon name="shop" />
                     </div>
-                  </div>Products
+                  </div>
+                  Products
                 </div>
                 <!-- <router-link
                   :to="{ name: 'New Product' }"
@@ -1116,10 +1216,11 @@
                         <div>
                           <h6
                             class="p-0 dropdown-header text-dark font-weight-bolder d-flex align-items-center"
-                          >Getting Started</h6>
+                          >
+                            Getting Started
+                          </h6>
                           <span class="text-sm">
-                            All about overview, quick start, license and
-                            contents
+                            All about overview, quick start, license and contents
                           </span>
                         </div>
                       </div>
@@ -1137,8 +1238,12 @@
                         <div>
                           <h6
                             class="p-0 dropdown-header text-dark font-weight-bolder d-flex align-items-center"
-                          >Foundation</h6>
-                          <span class="text-sm">See our colors, icons and typography</span>
+                          >
+                            Foundation
+                          </h6>
+                          <span class="text-sm"
+                            >See our colors, icons and typography</span
+                          >
                         </div>
                       </div>
                     </a>
@@ -1155,8 +1260,12 @@
                         <div>
                           <h6
                             class="p-0 dropdown-header text-dark font-weight-bolder d-flex align-items-center"
-                          >Components</h6>
-                          <span class="text-sm">Explore our collection of fully designed components</span>
+                          >
+                            Components
+                          </h6>
+                          <span class="text-sm"
+                            >Explore our collection of fully designed components</span
+                          >
                         </div>
                       </div>
                     </a>
@@ -1173,8 +1282,12 @@
                         <div>
                           <h6
                             class="p-0 dropdown-header text-dark font-weight-bolder d-flex align-items-center"
-                          >Plugins</h6>
-                          <span class="text-sm">Check how you can integrate our plugins</span>
+                          >
+                            Plugins
+                          </h6>
+                          <span class="text-sm"
+                            >Check how you can integrate our plugins</span
+                          >
                         </div>
                       </div>
                     </a>
@@ -1191,10 +1304,11 @@
                         <div>
                           <h6
                             class="p-0 dropdown-header text-dark font-weight-bolder d-flex align-items-center"
-                          >Utility Classes</h6>
+                          >
+                            Utility Classes
+                          </h6>
                           <span class="text-sm">
-                            For those who want flexibility, use our utility
-                            classes
+                            For those who want flexibility, use our utility classes
                           </span>
                         </div>
                       </div>
@@ -1215,8 +1329,12 @@
                       <div>
                         <h6
                           class="p-0 dropdown-header text-dark font-weight-bolder d-flex align-items-center"
-                        >Getting Started</h6>
-                        <span class="text-sm">All about overview, quick start, license and contents</span>
+                        >
+                          Getting Started
+                        </h6>
+                        <span class="text-sm"
+                          >All about overview, quick start, license and contents</span
+                        >
                       </div>
                     </div>
                   </a>
@@ -1231,7 +1349,9 @@
                       <div>
                         <h6
                           class="p-0 dropdown-header text-dark font-weight-bolder d-flex align-items-center"
-                        >Foundation</h6>
+                        >
+                          Foundation
+                        </h6>
                         <span class="text-sm">See our colors, icons and typography</span>
                       </div>
                     </div>
@@ -1247,8 +1367,12 @@
                       <div>
                         <h6
                           class="p-0 dropdown-header text-dark font-weight-bolder d-flex align-items-center"
-                        >Components</h6>
-                        <span class="text-sm">Explore our collection of fully designed components</span>
+                        >
+                          Components
+                        </h6>
+                        <span class="text-sm"
+                          >Explore our collection of fully designed components</span
+                        >
                       </div>
                     </div>
                   </a>
@@ -1263,8 +1387,12 @@
                       <div>
                         <h6
                           class="p-0 dropdown-header text-dark font-weight-bolder d-flex align-items-center"
-                        >Plugins</h6>
-                        <span class="text-sm">Check how you can integrate our plugins</span>
+                        >
+                          Plugins
+                        </h6>
+                        <span class="text-sm"
+                          >Check how you can integrate our plugins</span
+                        >
                       </div>
                     </div>
                   </a>
@@ -1279,8 +1407,12 @@
                       <div>
                         <h6
                           class="p-0 dropdown-header text-dark font-weight-bolder d-flex align-items-center"
-                        >Utility Classes</h6>
-                        <span class="text-sm">All about overview, quick start, license and contents</span>
+                        >
+                          Utility Classes
+                        </h6>
+                        <span class="text-sm"
+                          >All about overview, quick start, license and contents</span
+                        >
                       </div>
                     </div>
                   </a>
@@ -1288,7 +1420,6 @@
               </div>
             </div>
           </li>
-
         </ul>
         <ul class="navbar-nav d-lg-block d-none">
           <li class="nav-item">
@@ -1296,7 +1427,8 @@
               href="https://www.creative-tim.com/product/vite-soft-ui-dashboard-pro"
               class="mb-0 btn btn-sm btn-round me-1"
               :class="btnBackground ? btnBackground : 'bg-white'"
-            >Buy Now</a>
+              >Buy Now</a
+            >
           </li>
         </ul>
       </div>
@@ -1307,34 +1439,34 @@
 
 <script>
 import bgImg from '@/assets/img/curved-images/curved8.jpg'
-import downArrWhite from "@/assets/img/down-arrow-white.svg";
-import downArrBlack from "@/assets/img/down-arrow-dark.svg";
-import Icon from "@/components/Icon.vue";
+import downArrWhite from '@/assets/img/down-arrow-white.svg'
+import downArrBlack from '@/assets/img/down-arrow-dark.svg'
+import Icon from '@/components/Icon.vue'
 
 export default {
-  name: "Navbar",
+  name: 'Navbar',
   components: { Icon },
   props: {
-    btnBackground: { type: String, default: "" },
-    isBlur: { type: String, default: "" },
+    btnBackground: { type: String, default: '' },
+    isBlur: { type: String, default: '' },
     darkMode: {
       type: Boolean,
-      default: false      
-    },
+      default: false
+    }
   },
   data() {
     return {
       bgImg,
       downArrWhite,
-      downArrBlack,
-    };
+      downArrBlack
+    }
   },
   computed: {
     darkModes() {
       return {
-        "text-dark": this.darkMode,
-      };
-    },
-  },
-};
+        'text-dark': this.darkMode
+      }
+    }
+  }
+}
 </script>

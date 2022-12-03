@@ -1,4 +1,15 @@
 <template>
+  <div class="container top-0 position-sticky z-index-sticky">
+    <div class="row">
+      <div class="col-12">
+        <navbar
+          is-blur="blur blur-rounded my-3 py-2 start-0 end-0 mx-4 shadow"
+          btn-background="bg-gradient-success"
+          :dark-mode="true"
+        />
+      </div>
+    </div>
+  </div>
   <div class="container-fluid py-4">
     <div class="row">
       <div class="col-12">
@@ -67,40 +78,42 @@
 </template>
 
 <script>
-import UserInfo from "../components/UserInfo.vue";
-import Address from "../components/Address.vue";
-import Socials from "../components/Socials.vue";
-import Profile from "../components/Profile.vue";
+import UserInfo from '../components/UserInfo.vue'
+import Address from '../components/Address.vue'
+import Socials from '../components/Socials.vue'
+import Profile from '../components/Profile.vue'
+import Navbar from '../components/Navbar.vue'
 
 export default {
-  name: "NewUser",
+  name: 'NewUser',
   components: {
+    Navbar,
     UserInfo,
     Address,
     Socials,
-    Profile,
+    Profile
   },
   data() {
     return {
       showMenu: false,
-      activeClass: "js-active position-relative",
+      activeClass: 'js-active position-relative',
       activeStep: 0,
-      formSteps: 3,
-    };
+      formSteps: 3
+    }
   },
   methods: {
     nextStep() {
       if (this.activeStep < this.formSteps) {
-        this.activeStep += 1;
+        this.activeStep += 1
       } else {
-        this.activeStep -= 1;
+        this.activeStep -= 1
       }
     },
     prevStep() {
       if (this.activeStep > 0) {
-        this.activeStep -= 1;
+        this.activeStep -= 1
       }
-    },
-  },
-};
+    }
+  }
+}
 </script>

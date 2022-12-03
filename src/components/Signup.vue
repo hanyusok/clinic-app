@@ -18,23 +18,45 @@
             <div class="mx-auto col-xl-4 col-lg-5 col-md-6 d-flex flex-column">
               <div class="mt-5 card card-plain">
                 <div class="card-header pb-0 text-left">
-                  <h3 class="font-weight-bolder text-success text-gradient">Join us today</h3>
+                  <h3 class="font-weight-bolder text-success text-gradient">
+                    Join us today
+                  </h3>
                   <p class="mb-0">Enter your email and password to register</p>
                 </div>
                 <div class="card-body pb-3">
                   <form role="form">
                     <label>Name</label>
-                    <input type="text" placeholder="Name" aria-label="Name" class="form-control" />
+                    <input
+                      type="text"
+                      placeholder="Name"
+                      aria-label="Name"
+                      class="form-control"
+                    />
                     <label>Email</label>
-                    <input type="email" placeholder="Email" aria-label="Email" class="form-control" />
+                    <input
+                      type="email"
+                      placeholder="Email"
+                      aria-label="Email"
+                      class="form-control"
+                    />
                     <label>Password</label>
-                    <input type="password" placeholder="Password" aria-label="Password" class="form-control" />
-                    <vsud-checkbox id="flexCheckDefault" class="font-weight-light" checked>
+                    <input
+                      type="password"
+                      placeholder="Password"
+                      aria-label="Password"
+                      class="form-control"
+                    />
+                    <vsud-checkbox
+                      id="flexCheckDefault"
+                      class="font-weight-light"
+                      checked
+                    >
                       I agree the
                       <a
                         href="../../../pages/privacy.html"
                         class="text-dark font-weight-bolder"
-                      >Terms and Conditions</a>
+                        >Terms and Conditions</a
+                      >
                     </vsud-checkbox>
                     <div class="text-center">
                       <vsud-button
@@ -42,7 +64,8 @@
                         variant="gradient"
                         full-width
                         class="mt-4 mb-0"
-                      >Sign up</vsud-button>
+                        >Sign up</vsud-button
+                      >
                     </div>
                   </form>
                 </div>
@@ -52,7 +75,8 @@
                     <a
                       href="../../../pages/sign-in/sign-in-cover.html"
                       class="text-success text-gradient font-weight-bold"
-                    >Sign in</a>
+                      >Sign in</a
+                    >
                   </p>
                 </div>
               </div>
@@ -62,8 +86,7 @@
                 <div
                   class="bg-cover oblique-image position-absolute fixed-top ms-auto h-100 z-index-0 ms-n6"
                   :style="{
-                    backgroundImage:
-                      `url(${bgImg})`,
+                    backgroundImage: `url(${bgImg})`
                   }"
                 ></div>
               </div>
@@ -77,20 +100,20 @@
 </template>
 
 <script>
-import bgImg from '@/assets/img/curved-images/curved11.jpg';
-import Navbar from "@/components/Navbar.vue";
-import AppFooter from "@/components/Footer.vue";
-import VsudCheckbox from "@/components/VsudCheckbox.vue";
-import VsudButton from "@/components/VsudButton.vue";
-const body = document.getElementsByTagName("body")[0];
+import bgImg from '@/assets/img/curved-images/curved11.jpg'
+import Navbar from '@/components/Navbar.vue'
+import AppFooter from '@/components/Footer.vue'
+import VsudCheckbox from '@/components/VsudCheckbox.vue'
+import VsudButton from '@/components/VsudButton.vue'
+const body = document.getElementsByTagName('body')[0]
 
 export default {
-  name: "Signup",
-  components: {   
-    Navbar, 
-    AppFooter,    
+  name: 'Signup',
+  components: {
+    Navbar,
+    AppFooter,
     VsudCheckbox,
-    VsudButton,
+    VsudButton
   },
   data() {
     return { bgImg }
