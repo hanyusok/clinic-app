@@ -35,17 +35,17 @@ npm add -D sass
 ### Navigation Tree
 ```sh
  Services
-|  |- list & new my Call-Doc
-|  |- list clinics info
-|  |- list local pharmacy info
-|  |- info faq
+  |- list & new my Call-Doc
+  |- list clinics info
+  |- list local pharmacy info
+  |- info faq
 ```
 
 ```sh
 |---- Account(patient)
-|  |- Signin
-|  |- Signup(Register)
-|  |- Logout
+  |- Signin
+  |- Signup(Register)
+  |- Logout
 
 ```
 
