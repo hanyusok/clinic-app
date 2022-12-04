@@ -33,19 +33,25 @@ npm run build
 npm add -D sass
 
 ### Navigation Tree
-
----- Services
+```sh
+ Services
 |  |- list & new my Call-Doc
 |  |- list clinics info
 |  |- list local pharmacy info
 |  |- info faq
-|
+```
+
+```sh
 |---- Account(patient)
 |  |- Signin
 |  |- Signup(Register)
 |  |- Logout
-|
-|---- Admin(master)
+
+```
+
+```sh
+Admin(master)
    |- list call-doc datatable (crud)
    |- list patients datatable
    |- list clinics datatable
+   ```
