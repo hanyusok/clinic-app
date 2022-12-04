@@ -236,6 +236,9 @@
                 </div>
               </div>
               <!-- responsive -->
+              <!-- responsive -->
+              <!-- responsive -->
+              <!-- responsive -->
               <div class="d-lg-none">
                 <div
                   class="px-0 dropdown-header text-dark font-weight-bolder d-flex align-items-center"
@@ -249,23 +252,24 @@
                   </div>
                   Call Dashboards
                 </div>
-                <!-- <router-link
-                  :to="{ name: 'Default' }"
-                  class="dropdown-item border-radius-md"
-                >Default</router-link>
                 <router-link
                   :to="{ name: 'Signin' }"
                   class="dropdown-item border-radius-md"
-                >Automotive</router-link>
+                >Signin</router-link>
+                <router-link
+                  :to="{ name: 'Signin' }"
+                  class="dropdown-item border-radius-md"
+                >Signin</router-link>
                 <router-link
                   :to="{ name: 'ProfileOverview' }"
                   class="dropdown-item border-radius-md"
-                >Smart Home</router-link>
+                >Overview</router-link>
                 <router-link
                   :to="{ name: 'NewUser' }"
                   class="dropdown-item border-radius-md"
-                >Virtual Reality</router-link>
-                <router-link :to="{ name: 'CRM' }" class="dropdown-item border-radius-md">CRM</router-link> -->
+                >New user</router-link>
+                <router-link :to="{ name: 'CRM' }" class="dropdown-item border-radius-md">
+                  CRM</router-link>
                 <div
                   class="px-0 mt-3 dropdown-header text-dark font-weight-bolder d-flex align-items-center"
                 >
@@ -1155,22 +1159,22 @@
                   </div>
                   Products
                 </div>
-                <!-- <router-link
-                  :to="{ name: 'New Product' }"
-                  class="dropdown-item border-radius-md"
-                >New Product</router-link>
                 <router-link
-                  :to="{ name: 'Edit Product' }"
+                  :to="{ name: 'NewUser' }"
                   class="dropdown-item border-radius-md"
-                >Edit Product</router-link>
+                >New User</router-link>
                 <router-link
-                  :to="{ name: 'Product Page' }"
+                  :to="{ name: 'Pricing' }"
                   class="dropdown-item border-radius-md"
-                >Product Page</router-link>
+                >Pricing</router-link>
                 <router-link
-                  :to="{ name: 'Products List' }"
+                  :to="{ name: 'ProductsList' }"
                   class="dropdown-item border-radius-md"
-                >Products List</router-link> -->
+                >Product List</router-link>
+                <router-link
+                  :to="{ name: 'ProductsList' }"
+                  class="dropdown-item border-radius-md"
+                >Products List</router-link>
               </div>
             </div>
           </li>
