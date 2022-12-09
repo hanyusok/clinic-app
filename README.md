@@ -55,3 +55,7 @@ Admin(master)
    |- list patients datatable
    |- list clinics datatable
    ```
+
+#  firestore auth 
+
+https://youtu.be/qWy9ylc3f9U
