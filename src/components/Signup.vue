@@ -1,15 +1,5 @@
 <template>
-  <div class="container top-0 position-sticky z-index-sticky">
-    <div class="row">
-      <div class="col-12">
-        <navbar
-          is-blur="blur blur-rounded my-3 py-2 start-0 end-0 mx-4 shadow"
-          btn-background="bg-gradient-success"
-          :dark-mode="true"
-        />
-      </div>
-    </div>
-  </div>
+
   <main class="mt-0 main-content main-content-bg">
     <section>
       <div class="page-header min-vh-75">
@@ -24,13 +14,14 @@
                   <p class="mb-0">Enter your email and password to register</p>
                 </div>
                 <div class="card-body pb-3">
-                  <form role="form">
+                  <form role="form" @submit.prevent="register">
                     <label>Name</label>
                     <input
                       type="text"
                       placeholder="Name"
                       aria-label="Name"
                       class="form-control"
+                      v-model="name"
                     />
                     <label>Email</label>
                     <input
@@ -38,6 +29,7 @@
                       placeholder="Email"
                       aria-label="Email"
                       class="form-control"
+                      v-model="email"
                     />
                     <label>Password</label>
                     <input
@@ -45,6 +37,7 @@
                       placeholder="Password"
                       aria-label="Password"
                       class="form-control"
+                      v-model="password"
                     />
                     <vsud-checkbox
                       id="flexCheckDefault"
@@ -63,8 +56,18 @@
                         color="success"
                         variant="gradient"
                         full-width
-                        class="mt-4 mb-0"
+                        class="mt-4 mb-0"                        
                         >Sign up</vsud-button
+                      >                  
+                    </div>
+                    <div class="text-center">
+                      <vsud-button
+                        color="info"
+                        variant="gradient"
+                        full-width
+                        class="mt-4 mb-0"
+                        @click="signInWithGoogle"
+                        >Sign in with Google</vsud-button
                       >
                     </div>
                   </form>
@@ -101,22 +104,45 @@
 
 <script>
 import bgImg from '@/assets/img/curved-images/curved11.jpg'
-import Navbar from '@/components/Navbar.vue'
 import AppFooter from '@/components/Footer.vue'
 import VsudCheckbox from '@/components/VsudCheckbox.vue'
 import VsudButton from '@/components/VsudButton.vue'
-const body = document.getElementsByTagName('body')[0]
+
+import { updateProfile, createUserWithEmailAndPassword } from 'firebase/auth'
+import router from '@/router/index'
+import auth from '@/firebase/init'
+
 
 export default {
   name: 'Signup',
   components: {
-    Navbar,
     AppFooter,
     VsudCheckbox,
     VsudButton
   },
   data() {
-    return { bgImg }
+    return { 
+      bgImg,
+      email:  '',
+      name:  '',
+      password:  ''
+   }
+  },
+  methods:{
+    register(){       
+      createUserWithEmailAndPassword(auth, this.email, this.password).then((userCredential) => {
+        const user = userCredential.user
+        updateProfile(auth.currentUser, {
+          displayName: this.name
+        })        
+        console.log('successfully registered.')
+        console.log(user)
+        router.push('/overview')
+      }).catch((error) =>{
+        console.log(error.code)
+        alert(error.message)
+      })},
+    signInWithGoogle(){}
   }
 }
 </script>
