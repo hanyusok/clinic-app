@@ -12,11 +12,11 @@
                   <p class="mb-0">Enter your email and password to sign in</p>
                 </div>
                 <div class="card-body">
-                  <form role="form" class="text-start">
+                  <form role="form" class="text-start" @submit.prevent="authStore.signIn">
                     <label>Email</label>
-                    <input type="email" placeholder="Email" name="email" class="form-control" />
+                    <input type="email" placeholder="Email" name="email" class="form-control" v-model="authStore.email"/>
                     <label>Password</label>
-                    <input type="password" placeholder="Password" name="password" class="form-control" />
+                    <input type="password" placeholder="Password" name="password" class="form-control" v-model="authStore.password" />
                     <vsud-switch id="rememberMe" checked>Remember me</vsud-switch>
                     <div class="text-center">
                       <vsud-button
@@ -24,6 +24,7 @@
                         variant="gradient"
                         color="info"
                         full-width
+                        type="submit"
                       >Sign in</vsud-button>
                     </div>
                   </form>
@@ -60,19 +61,21 @@
 
 <script>
 import bgImg from '@/assets/img/curved-images/curved9.jpg';
-import Navbar from "@/components/Navbar.vue";
 import AppFooter from "@/components/Footer.vue";
 import VsudSwitch from "@/components/VsudSwitch.vue";
 import VsudButton from "@/components/VsudButton.vue";
-const body = document.getElementsByTagName("body")[0];
+import { useAuthStore} from '@/stores/auth'
 
 export default {
   name: "Signin",
   components: {
-    Navbar,    
     AppFooter,    
     VsudSwitch,
     VsudButton,
+  },
+  setup(){
+    const authStore = useAuthStore()
+    return { authStore }
   },
   data() {
     return { bgImg }

@@ -1,6 +1,23 @@
 <script setup>
-import { RouterLink, RouterView, useRoute, useRouter } from 'vue-router'
+import { RouterView } from 'vue-router'
 import Navbar from '@/components/Navbar.vue'
+import { getAuth, onAuthStateChanged } from "firebase/auth";
+import { useAuthStore } from '@/stores/auth'
+
+const authStore = useAuthStore()
+const auth = getAuth();
+
+onAuthStateChanged(auth, (user) => {
+  if (user) {
+    const uid = user.uid;
+    authStore.isLoggedIn = true;
+    console.log('logged in state!!!')
+  } else {
+    authStore.isLoggedIn = false;
+    console.log('logged out state!!!')
+  }
+});
+
 
 </script>
 
@@ -14,5 +31,3 @@ import Navbar from '@/components/Navbar.vue'
   </div>
   <router-view />  
 </template>
-
-<style></style>

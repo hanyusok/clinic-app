@@ -14,14 +14,14 @@
                   <p class="mb-0">Enter your email and password to register</p>
                 </div>
                 <div class="card-body pb-3">
-                  <form role="form" @submit.prevent="register">
+                  <form role="form" @submit.prevent="authStore.register">
                     <label>Name</label>
                     <input
                       type="text"
                       placeholder="Name"
                       aria-label="Name"
                       class="form-control"
-                      v-model="name"
+                      v-model="authStore.displayName"
                     />
                     <label>Email</label>
                     <input
@@ -29,7 +29,7 @@
                       placeholder="Email"
                       aria-label="Email"
                       class="form-control"
-                      v-model="email"
+                      v-model="authStore.email"
                     />
                     <label>Password</label>
                     <input
@@ -37,7 +37,7 @@
                       placeholder="Password"
                       aria-label="Password"
                       class="form-control"
-                      v-model="password"
+                      v-model="authStore.password"
                     />
                     <vsud-checkbox
                       id="flexCheckDefault"
@@ -56,11 +56,12 @@
                         color="success"
                         variant="gradient"
                         full-width
-                        class="mt-4 mb-0"                        
+                        class="mt-4 mb-0"
+                        type="submit"                        
                         >Sign up</vsud-button
                       >                  
                     </div>
-                    <div class="text-center">
+                    <!-- <div class="text-center">
                       <vsud-button
                         color="info"
                         variant="gradient"
@@ -69,7 +70,7 @@
                         @click="signInWithGoogle"
                         >Sign in with Google</vsud-button
                       >
-                    </div>
+                    </div> -->
                   </form>
                 </div>
                 <div class="card-footer text-center pt-0 px-sm-4 px-1">
@@ -107,10 +108,11 @@ import bgImg from '@/assets/img/curved-images/curved11.jpg'
 import AppFooter from '@/components/Footer.vue'
 import VsudCheckbox from '@/components/VsudCheckbox.vue'
 import VsudButton from '@/components/VsudButton.vue'
+import { useAuthStore } from '@/stores/auth'
 
-import { updateProfile, createUserWithEmailAndPassword } from 'firebase/auth'
-import router from '@/router/index'
-import auth from '@/firebase/init'
+// import { updateProfile, createUserWithEmailAndPassword } from 'firebase/auth'
+// import router from '@/router/index'
+// import auth from '@/firebase/init'
 
 
 export default {
@@ -120,29 +122,33 @@ export default {
     VsudCheckbox,
     VsudButton
   },
+  setup(){
+    const authStore = useAuthStore()
+    return { authStore }
+  },
   data() {
     return { 
       bgImg,
-      email:  '',
-      name:  '',
-      password:  ''
+      // email:  '',
+      // name:  '',
+      // password:  ''
    }
-  },
-  methods:{
-    register(){       
-      createUserWithEmailAndPassword(auth, this.email, this.password).then((userCredential) => {
-        const user = userCredential.user
-        updateProfile(auth.currentUser, {
-          displayName: this.name
-        })        
-        console.log('successfully registered.')
-        console.log(user)
-        router.push('/overview')
-      }).catch((error) =>{
-        console.log(error.code)
-        alert(error.message)
-      })},
-    signInWithGoogle(){}
+  // },
+  // methods:{
+  //   register(){       
+  //     createUserWithEmailAndPassword(auth, this.email, this.password).then((userCredential) => {
+  //       const user = userCredential.user
+  //       updateProfile(auth.currentUser, {
+  //         displayName: this.name
+  //       })        
+  //       console.log('successfully registered.')
+  //       console.log(user)
+  //       router.push('/overview')
+  //     }).catch((error) =>{
+  //       console.log(error.code)
+  //       alert(error.message)
+  //     })},
+  //   signInWithGoogle(){}
   }
 }
 </script>
