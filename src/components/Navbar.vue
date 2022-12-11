@@ -79,10 +79,10 @@
                         <span class="ps-3">Sign in</span>
                       </router-link>
                       <router-link
-                        :to="{ name: 'ProfileOverview' }"
+                        :to="{ name: 'Overview' }"
                         class="dropdown-item border-radius-md"
                       >
-                        <span class="ps-3">Profile Overview</span>
+                        <span class="ps-3">Overview</span>
                       </router-link>
                       <router-link
                         :to="{ name: 'NewUser' }"
@@ -133,7 +133,7 @@
                         Profile
                       </div>
                       <router-link
-                        :to="{ name: 'ProfileOverview' }"
+                        :to="{ name: 'Overview' }"
                         class="dropdown-item border-radius-md"
                       >
                         <span class="ps-3">Overview</span>
@@ -261,7 +261,7 @@
                   class="dropdown-item border-radius-md"
                 >Signin</router-link>
                 <router-link
-                  :to="{ name: 'ProfileOverview' }"
+                  :to="{ name: 'Overview' }"
                   class="dropdown-item border-radius-md"
                 >Overview</router-link>
                 <router-link

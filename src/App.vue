@@ -11,10 +11,10 @@ onAuthStateChanged(auth, (user) => {
   if (user) {
     const uid = user.uid;
     authStore.isLoggedIn = true;
-    console.log('logged in state!!!')
+    console.log('status : logged-in!')
   } else {
     authStore.isLoggedIn = false;
-    console.log('logged out state!!!')
+    console.log('status : logged-out!')
   }
 });
 

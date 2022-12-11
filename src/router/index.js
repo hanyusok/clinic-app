@@ -38,7 +38,7 @@ const router = createRouter({
     }, 
     {
       path: '/overview',
-      name: 'ProfileOverview',
+      name: 'Overview',
       component: Overview,
       meta: { requiresAuth: true }
     },

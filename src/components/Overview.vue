@@ -1,5 +1,5 @@
 <template>
-  <div class="container top-0 position-sticky z-index-sticky">
+  <!-- <div class="container top-0 position-sticky z-index-sticky">
     <div class="row">
       <div class="col-12">
         <navbar
@@ -9,7 +9,7 @@
         />
       </div>
     </div>
-  </div>
+  </div> -->
   <div class="container-fluid">
     <div
       class="mt-4 page-header min-height-300 border-radius-xl"
@@ -33,7 +33,7 @@
         </div>
         <div class="col-auto my-auto">
           <div class="h-100">
-            <h5 class="mb-1">Alec Thompson</h5>
+            <h5 class="mb-1">Alec Thompson {{ this.authStore.displayName}}</h5>
             <p class="mb-0 text-sm font-weight-bold">CEO / Co-Founder</p>
           </div>
         </div>
@@ -437,7 +437,7 @@
 </template>
 
 <script>
-import Navbar from './Navbar.vue'
+// import Navbar from './Navbar.vue'
 import bgImg from '@/assets/img/curved-images/curved14.jpg'
 import VsudSwitch from '@/components/VsudSwitch.vue'
 import ProfileCard from '@/components/ProfileCard.vue'
@@ -460,12 +460,13 @@ import ProjectsCard from '@/components/ProjectOverviewCard.vue'
 import setNavPills from '@/assets/js/nav-pills.js'
 import setTooltip from '@/assets/js/tooltip.js'
 
-import { useDesignStore } from '../stores/design'
+import { useDesignStore } from '@/stores/design'
+import { useAuthStore } from '@/stores/auth' 
 
 export default {
-  name: 'ProfileOverview',
+  name: 'Overview',
   components: {
-    Navbar,
+    // Navbar,
     VsudSwitch,
     ProfileCard,
     VsudAvatar,
@@ -473,7 +474,9 @@ export default {
   },
   setup() {
     const designStore = useDesignStore()
-    return { designStore }
+    const authStore = useAuthStore()
+
+    return { designStore, authStore }
   },
   data() {
     return {
