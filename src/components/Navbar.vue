@@ -58,125 +58,7 @@
               <div class="row d-none d-lg-block">
                 <div class="px-4 py-2 col-12">
                   <div class="row">
-                    <div class="col-4 position-relative">
-                      <div
-                        class="px-0 dropdown-header text-dark font-weight-bolder d-flex align-items-center"
-                      >
-                        <div class="d-inline-block">
-                          <div
-                            class="text-center icon icon-shape icon-xs border-radius-md bg-gradient-success me-2 d-flex align-items-center justify-content-center"
-                          >
-                            <icon name="spaceship" />
-                          </div>
-                        </div>
-                        Call Dashboards
-                      </div>
-
-                      <router-link
-                        :to="{ name: 'Signin' }"
-                        class="dropdown-item border-radius-md"
-                      >
-                        <span class="ps-3">Sign in</span>
-                      </router-link>
-                      <router-link
-                        :to="{ name: 'Overview' }"
-                        class="dropdown-item border-radius-md"
-                      >
-                        <span class="ps-3">Overview</span>
-                      </router-link>
-                      <router-link
-                        :to="{ name: 'NewUser' }"
-                        class="dropdown-item border-radius-md"
-                      >
-                        <span class="ps-3">New User</span>
-                      </router-link>
-                      <router-link
-                        :to="{ name: 'CRM' }"
-                        class="dropdown-item border-radius-md"
-                      >
-                        <span class="ps-3">CRM</span>
-                      </router-link>
-                      <div
-                        class="px-0 mt-3 dropdown-header text-dark font-weight-bolder d-flex align-items-center"
-                      >
-                        <div class="d-inline-block">
-                          <div
-                            class="text-center icon icon-shape icon-xs border-radius-md bg-gradient-success me-2 d-flex align-items-center justify-content-center ps-0"
-                          >
-                            <icon name="office" />
-                          </div>
-                        </div>
-                        Users
-                      </div>
-                      <router-link :to="{ name: 'Security' }" class="dropdown-item border-radius-md">
-                        <span class="ps-3">Reports</span>
-                      </router-link>
-                      <router-link
-                        :to="{ name: 'Security' }"
-                        class="dropdown-item border-radius-md"
-                      >
-                        <span class="ps-3">Security</span>
-                      </router-link>
-                      <hr class="vertical dark" />
-                    </div>
-                    <div class="col-4 position-relative">
-                      <div
-                        class="px-0 dropdown-header text-dark font-weight-bolder d-flex align-items-center"
-                      >
-                        <div class="d-inline-block">
-                          <div
-                            class="text-center icon icon-shape icon-xs border-radius-md bg-gradient-success me-2 d-flex align-items-center justify-content-center"
-                          >
-                            <icon name="dashboard" />
-                          </div>
-                        </div>
-                        Profile
-                      </div>
-                      <router-link
-                        :to="{ name: 'Overview' }"
-                        class="dropdown-item border-radius-md"
-                      >
-                        <span class="ps-3">Overview</span>
-                      </router-link>
-                      <router-link :to="{ name: 'ProductsList' }" class="dropdown-item border-radius-md">
-                        <span class="ps-3">Products list</span>
-                      </router-link>
-                      <router-link
-                        :to="{ name: 'OrderList' }"
-                        class="dropdown-item border-radius-md"
-                      >
-                        <span class="ps-3">Order list</span>
-                      </router-link>
-                      <div
-                        class="px-0 mt-3 dropdown-header text-dark font-weight-bolder d-flex align-items-center"
-                      >
-                        <div class="d-inline-block">
-                          <div
-                            class="text-center icon icon-shape icon-xs border-radius-md bg-gradient-success me-2 d-flex align-items-center justify-content-center ps-0"
-                          >
-                            <icon name="box3d" />
-                          </div>
-                        </div>
-                        Projects
-                      </div>
-                      <router-link :to="{ name: 'CRM' }" class="dropdown-item border-radius-md">
-                        <span class="ps-3">CRM</span>
-                      </router-link>
-                      <router-link
-                        :to="{ name: 'OrderList' }"
-                        class="dropdown-item border-radius-md"
-                      >
-                        <span class="ps-3">Order List</span>
-                      </router-link>
-                      <router-link
-                        :to="{ name: 'Referral' }"
-                        class="dropdown-item border-radius-md"
-                      >
-                        <span class="ps-3">Referral</span>
-                      </router-link>
-                      <hr class="vertical dark" />
-                    </div>
-                    <div class="col-4">
+                    <div class="">
                       <div
                         class="px-0 mt-3 dropdown-header text-dark font-weight-bolder d-flex align-items-center"
                       >
@@ -195,10 +77,16 @@
                       >
                         <span class="ps-3">Error</span>
                       </router-link>
-                      <router-link :to="{ name: 'NewUser' }" class="dropdown-item border-radius-md">
+                      <router-link
+                        :to="{ name: 'NewUser' }"
+                        class="dropdown-item border-radius-md"
+                      >
                         <span class="ps-3">NewUser</span>
                       </router-link>
-                      <router-link :to="{ name: 'Security' }" class="dropdown-item border-radius-md">
+                      <router-link
+                        :to="{ name: 'Security' }"
+                        class="dropdown-item border-radius-md"
+                      >
                         <span class="ps-3">Security</span>
                       </router-link>
                       <router-link
@@ -206,30 +94,6 @@
                         class="dropdown-item border-radius-md"
                       >
                         <span class="ps-3">CRM</span>
-                      </router-link>
-                      <div
-                        class="px-0 mt-3 dropdown-header text-dark font-weight-bolder d-flex align-items-center"
-                      >
-                        <div class="d-inline-block">
-                          <div
-                            class="text-center icon icon-shape icon-xs border-radius-md bg-gradient-success me-2 d-flex align-items-center justify-content-center ps-0"
-                          >
-                            <icon name="document" />
-                          </div>
-                        </div>
-                        Extra
-                      </div>
-                      <router-link
-                        :to="{ name: 'Pricing' }"
-                        class="dropdown-item border-radius-md"
-                      >
-                        <span class="ps-3">Pricing</span>
-                      </router-link>
-                      <router-link :to="{ name: 'Pricing' }" class="dropdown-item border-radius-md">
-                        <span class="ps-3">Pricing</span>
-                      </router-link>
-                      <router-link :to="{ name: 'Pricing' }" class="dropdown-item border-radius-md">
-                        <span class="ps-3">Pricing</span>
                       </router-link>
                     </div>
                   </div>
@@ -240,36 +104,6 @@
               <!-- responsive -->
               <!-- responsive -->
               <div class="d-lg-none">
-                <div
-                  class="px-0 dropdown-header text-dark font-weight-bolder d-flex align-items-center"
-                >
-                  <div class="d-inline-block">
-                    <div
-                      class="text-center icon icon-shape icon-xs border-radius-md bg-gradient-success me-2 d-flex align-items-center justify-content-center"
-                    >
-                      <icon name="document" />
-                    </div>
-                  </div>
-                  Call Dashboards
-                </div>
-                <router-link
-                  :to="{ name: 'Signin' }"
-                  class="dropdown-item border-radius-md"
-                >Signin</router-link>
-                <router-link
-                  :to="{ name: 'Signin' }"
-                  class="dropdown-item border-radius-md"
-                >Signin</router-link>
-                <router-link
-                  :to="{ name: 'Overview' }"
-                  class="dropdown-item border-radius-md"
-                >Overview</router-link>
-                <router-link
-                  :to="{ name: 'NewUser' }"
-                  class="dropdown-item border-radius-md"
-                >New user</router-link>
-                <router-link :to="{ name: 'CRM' }" class="dropdown-item border-radius-md">
-                  CRM</router-link>
                 <div
                   class="px-0 mt-3 dropdown-header text-dark font-weight-bolder d-flex align-items-center"
                 >
@@ -320,15 +154,18 @@
                 <router-link
                   :to="{ name: 'Pricing' }"
                   class="dropdown-item border-radius-md"
-                >Pricing</router-link>
+                  >Pricing</router-link
+                >
                 <router-link
                   :to="{ name: 'Pricing' }"
                   class="dropdown-item border-radius-md"
-                >Timeline</router-link>
+                  >Timeline</router-link
+                >
                 <router-link
                   :to="{ name: 'ProductsList' }"
                   class="dropdown-item border-radius-md"
-                >New Project</router-link>
+                  >New Project</router-link
+                >
                 <div
                   class="px-0 mt-3 dropdown-header text-dark font-weight-bolder d-flex align-items-center"
                 >
@@ -344,19 +181,21 @@
                 <router-link
                   :to="{ name: 'Error' }"
                   class="dropdown-item border-radius-md"
-                >Error</router-link>
+                  >Error</router-link
+                >
                 <router-link
                   :to="{ name: 'Error' }"
                   class="dropdown-item border-radius-md"
-                >Billing</router-link>
-                <router-link
-                  :to="{ name: 'CRM' }"
-                  class="dropdown-item border-radius-md"
-                >Invoice</router-link>
+                  >Billing</router-link
+                >
+                <router-link :to="{ name: 'CRM' }" class="dropdown-item border-radius-md"
+                  >Invoice</router-link
+                >
                 <router-link
                   :to="{ name: 'Security' }"
                   class="dropdown-item border-radius-md"
-                >Security</router-link>
+                  >Security</router-link
+                >
                 <div
                   class="px-0 mt-3 dropdown-header text-dark font-weight-bolder d-flex align-items-center"
                 >
@@ -415,32 +254,7 @@
               aria-labelledby="dropdownMenuAccount"
             >
               <div class="row d-none d-lg-flex">
-                <div class="col-6">
-                  <div
-                    class="py-6 h-100 w-100 d-flex border-radius-lg position-relative dropdown-image"
-                    :style="{
-                      backgroundImage: `url(${bgImg})`
-                    }"
-                  >
-                    <div class="mask bg-gradient-success border-radius-lg"></div>
-                    <div
-                      class="d-flex justify-content-center align-items-center text-center text-white font-weight-bold w-100 z-index-1 flex-column"
-                    >
-                      <div
-                        class="icon icon-shape rounded-circle bg-white shadow text-center"
-                      >
-                        <i
-                          class="ni ni-diamond text-success text-gradient text-lg"
-                          aria-hidden="true"
-                        ></i>
-                      </div>
-                      <span class="text-lg mt-2">
-                        Explore our
-                        <br />utilities pages
-                      </span>
-                    </div>
-                  </div>
-                </div>
+                <!-- <div class="col-6"></div> -->
                 <div class="col-6 ps-0 d-flex justify-content-center flex-column">
                   <ul class="list-group">
                     <li
@@ -457,29 +271,6 @@
                           class="arrow"
                         />
                       </a>
-                      <div
-                        class="px-2 py-3 mt-0 dropdown-menu"
-                        aria-labelledby="dropdownSignIn"
-                      >
-                        <router-link
-                          class="mb-1 dropdown-item ps-3 border-radius-md"
-                          :to="{ name: 'Pricing' }"
-                        >
-                          <span>Basic</span>
-                        </router-link>
-                        <router-link
-                          class="mb-1 dropdown-item ps-3 border-radius-md"
-                          :to="{ name: 'Signin' }"
-                        >
-                          <span>Signin</span>
-                        </router-link>
-                        <router-link
-                          class="mb-1 dropdown-item ps-3 border-radius-md"
-                          :to="{ name: 'Signup' }"
-                        >
-                          <span>Illustration</span>
-                        </router-link>
-                      </div>
                     </li>
                     <li
                       class="p-0 border-0 nav-item dropdown dropdown-hover dropdown-subitem list-group-item"
@@ -778,11 +569,13 @@
                   <router-link
                     :to="{ name: 'Error' }"
                     class="dropdown-item border-radius-md"
-                  >Error</router-link>
+                    >Error</router-link
+                  >
                   <router-link
                     :to="{ name: 'Error' }"
                     class="dropdown-item border-radius-md"
-                  >Error</router-link>
+                    >Error</router-link
+                  >
                 </div>
               </div>
             </div>
@@ -828,7 +621,9 @@
                         <div class="h-10 mt-1 icon me-3 d-flex">
                           <i class="ni ni-single-copy-04 text-gradient text-success"></i>
                         </div>
-                        <div class="w-100 d-flex align-items-center justify-content-between">
+                        <div
+                          class="w-100 d-flex align-items-center justify-content-between"
+                        >
                           <div>
                             <p class="p-0 dropdown-header text-dark">Kanban</p>
                           </div>
@@ -898,59 +693,66 @@
               <!-- responsive -->
               <div class="row d-lg-none">
                 <div class="col-md-12">
-                  <!-- <router-link class="py-2 ps-3 border-radius-md" :to="{ name: 'Kanban' }">
+                  <router-link class="py-2 ps-3 border-radius-md" :to="{ name: 'CRM' }">
                     <div class="d-flex">
                       <div class="h-10 mt-1 icon me-3 d-flex">
                         <i class="ni ni-single-copy-04 text-gradient text-success"></i>
                       </div>
-                      <div class="w-100 d-flex align-items-center justify-content-between">
+                      <div
+                        class="w-100 d-flex align-items-center justify-content-between"
+                      >
                         <div>
-                          <p class="p-0 dropdown-header text-dark">Kanban</p>
+                          <p class="p-0 dropdown-header text-dark">CRM</p>
                         </div>
                       </div>
                     </div>
-                  </router-link> 
-                  <router-link class="py-2 ps-3 border-radius-md" :to="{ name: 'Wizard' }">
+                  </router-link>
+                  <router-link class="py-2 ps-3 border-radius-md" :to="{ name: 'CRM' }">
                     <div class="d-flex">
                       <div class="h-10 mt-1 icon me-3 d-flex">
                         <i class="ni ni-laptop text-gradient text-success"></i>
                       </div>
-                      <div class="w-100 d-flex align-items-center justify-content-between">
+                      <div
+                        class="w-100 d-flex align-items-center justify-content-between"
+                      >
                         <div>
                           <p class="p-0 dropdown-header text-dark">Wizard</p>
                         </div>
                       </div>
                     </div>
                   </router-link>
-                  <router-link class="py-2 ps-3 border-radius-md" :to="{ name: 'Data Tables' }">
+                  <router-link class="py-2 ps-3 border-radius-md" :to="{ name: 'CRM' }">
                     <div class="d-flex">
                       <div class="h-10 mt-1 icon me-3 d-flex">
                         <i class="ni ni-badge text-gradient text-success"></i>
                       </div>
-                      <div class="w-100 d-flex align-items-center justify-content-between">
+                      <div
+                        class="w-100 d-flex align-items-center justify-content-between"
+                      >
                         <div>
-                          <p class="p-0 dropdown-header text-dark">DataTables</p>
+                          <p class="p-0 dropdown-header text-dark">CRM</p>
                         </div>
                       </div>
                     </div>
                   </router-link>
-                  <router-link class="py-2 ps-3 border-radius-md" :to="{ name: 'Calendar' }">
+                  <router-link class="py-2 ps-3 border-radius-md" :to="{ name: 'CRM' }">
                     <div class="d-flex">
                       <div class="h-10 mt-1 icon me-3 d-flex">
                         <i class="ni ni-notification-70 text-gradient text-success"></i>
                       </div>
-                      <div class="w-100 d-flex align-items-center justify-content-between">
+                      <div
+                        class="w-100 d-flex align-items-center justify-content-between"
+                      >
                         <div>
-                          <p class="p-0 dropdown-header text-dark">Calendar</p>
+                          <p class="p-0 dropdown-header text-dark">CRM</p>
                         </div>
                       </div>
                     </div>
-                  </router-link> -->
+                  </router-link>
                 </div>
               </div>
             </div>
           </li>
-         
         </ul>
         <ul class="navbar-nav d-lg-block d-none">
           <li class="nav-item">
