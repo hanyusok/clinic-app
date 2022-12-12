@@ -253,329 +253,113 @@
               class="p-3 mt-0 dropdown-menu dropdown-menu-animation dropdown-lg border-radius-xl mt-lg-3"
               aria-labelledby="dropdownMenuAccount"
             >
-              <div class="row d-none d-lg-flex">
-                <!-- <div class="col-6"></div> -->
-                <div class="col-6 ps-0 d-flex justify-content-center flex-column">
-                  <ul class="list-group">
+              <div class="d-none d-lg-flex">                
+                <ul class="list-group">
                     <li
                       class="p-0 border-0 nav-item dropdown dropdown-hover dropdown-subitem list-group-item"
+                    > <router-link
+                      class="py-2 dropdown-item ps-3 border-radius-md"
+                      :to="{ name: 'Signin' }"
                     >
-                      <a
-                        id="dropdownSignIn"
-                        class="mb-1 dropdown-item border-radius-md ps-3 d-flex align-items-center justify-content-between"
-                      >
-                        <span>Sign In</span>
-                        <img
-                          src="@/assets/img/down-arrow.svg"
-                          alt="down-arrow"
-                          class="arrow"
-                        />
-                      </a>
-                    </li>
-                    <li
-                      class="p-0 border-0 nav-item dropdown dropdown-hover dropdown-subitem list-group-item"
-                    >
-                      <a
-                        id="dropdownSignUp"
-                        class="mb-1 dropdown-item border-radius-md ps-3 d-flex align-items-center justify-content-between"
-                      >
-                        <span>Sign Up</span>
-                        <img
-                          src="@/assets/img/down-arrow.svg"
-                          alt="down-arrow"
-                          class="arrow"
-                        />
-                      </a>
-                      <div
-                        class="px-2 py-3 mt-0 dropdown-menu"
-                        aria-labelledby="dropdownSignUp"
-                      >
-                        <router-link
-                          class="mb-1 dropdown-item ps-3 border-radius-md"
-                          :to="{ name: 'Signup' }"
-                        >
-                          <span>Signup</span>
-                        </router-link>
-                        <router-link
-                          class="mb-1 dropdown-item ps-3 border-radius-md"
-                          :to="{ name: 'Signup' }"
-                        >
-                          <span>Signup</span>
-                        </router-link>
-                        <router-link
-                          class="mb-1 dropdown-item ps-3 border-radius-md"
-                          :to="{ name: 'Signup' }"
-                        >
-                          <span>Illustration</span>
-                        </router-link>
+                      <div class="d-flex">
+                        <div class="h-10 mt-1 icon me-3 d-flex">
+                          <i class="ni ni-laptop text-gradient text-success"></i>
+                        </div>
+                        <div class="w-100 d-flex align-items-center justify-content-between">
+                          <div>
+                            <p class="p-0 dropdown-header text-dark">Sign In</p>
+                          </div>
+                        </div>
                       </div>
+                    </router-link>
+               
                     </li>
                     <li
                       class="p-0 border-0 nav-item dropdown dropdown-hover dropdown-subitem list-group-item"
+                    > <router-link
+                      class="py-2 dropdown-item ps-3 border-radius-md"
+                      :to="{ name: 'Signup' }"
                     >
-                      <a
-                        id="dropdownPasswordReset"
-                        class="mb-1 dropdown-item border-radius-md ps-3 d-flex align-items-center justify-content-between"
-                      >
-                        <span>Reset Password</span>
-                        <img
-                          src="@/assets/img/down-arrow.svg"
-                          alt="down-arrow"
-                          class="arrow"
-                        />
-                      </a>
-                      <div
-                        class="px-2 py-3 mt-0 dropdown-menu"
-                        aria-labelledby="dropdownPasswordReset"
-                      >
-                        <router-link
-                          class="mb-1 dropdown-item ps-3 border-radius-md"
-                          :to="{ name: 'Pricing' }"
-                        >
-                          <span>Basic</span>
-                        </router-link>
-                        <router-link
-                          class="mb-1 dropdown-item ps-3 border-radius-md"
-                          :to="{ name: 'Signup' }"
-                        >
-                          <span>Signup</span>
-                        </router-link>
-                        <router-link
-                          class="mb-1 dropdown-item ps-3 border-radius-md"
-                          :to="{ name: 'Signin' }"
-                        >
-                          <span>Illustration</span>
-                        </router-link>
+                      <div class="d-flex">
+                        <div class="h-10 mt-1 icon me-3 d-flex">
+                          <i class="ni ni-laptop text-gradient text-success"></i>
+                        </div>
+                        <div class="w-100 d-flex align-items-center justify-content-between">
+                          <div>
+                            <p class="p-0 dropdown-header text-dark">Sign Up</p>
+                          </div>
+                        </div>
                       </div>
+                    </router-link>
+               
                     </li>
                     <li
                       class="p-0 border-0 nav-item dropdown dropdown-hover dropdown-subitem list-group-item"
+                    > <router-link
+                      class="py-2 dropdown-item ps-3 border-radius-md"
+                      :to="{ name: 'Signin' }"
                     >
-                      <a
-                        id="dropdownLock"
-                        class="mb-1 dropdown-item border-radius-md ps-3 d-flex align-items-center justify-content-between"
-                      >
-                        <span>Lock</span>
-                        <img
-                          src="@/assets/img/down-arrow.svg"
-                          alt="down-arrow"
-                          class="arrow"
-                        />
-                      </a>
-                      <div
-                        class="px-2 py-3 mt-0 dropdown-menu"
-                        aria-labelledby="dropdownLock"
-                      >
-                        <router-link
-                          class="mb-1 dropdown-item ps-3 border-radius-md"
-                          :to="{ name: 'NewUser' }"
-                        >
-                          <span>Basic</span>
-                        </router-link>
-                        <router-link
-                          class="mb-1 dropdown-item ps-3 border-radius-md"
-                          :to="{ name: 'Signup' }"
-                        >
-                          <span>Signup</span>
-                        </router-link>
-                        <router-link
-                          class="mb-1 dropdown-item ps-3 border-radius-md"
-                          :to="{ name: 'Signin' }"
-                        >
-                          <span>Signin</span>
-                        </router-link>
+                      <div class="d-flex">
+                        <div class="h-10 mt-1 icon me-3 d-flex">
+                          <i class="ni ni-laptop text-gradient text-success"></i>
+                        </div>
+                        <div class="w-100 d-flex align-items-center justify-content-between">
+                          <div>
+                            <p class="p-0 dropdown-header text-dark">Log Out</p>
+                          </div>
+                        </div>
                       </div>
-                    </li>
-                    <li
-                      class="p-0 border-0 nav-item dropdown dropdown-hover dropdown-subitem list-group-item"
-                    >
-                      <a
-                        id="dropdown2fa"
-                        class="mb-1 dropdown-item border-radius-md ps-3 d-flex align-items-center justify-content-between"
-                      >
-                        <span>2-Step Verification</span>
-                        <img
-                          src="@/assets/img/down-arrow.svg"
-                          alt="down-arrow"
-                          class="arrow"
-                        />
-                      </a>
-                      <div
-                        class="px-2 py-3 mt-0 dropdown-menu"
-                        aria-labelledby="dropdown2fa"
-                      >
-                        <router-link
-                          class="mb-1 dropdown-item ps-3 border-radius-md"
-                          :to="{ name: 'Pricing' }"
-                        >
-                          <span>Basic</span>
-                        </router-link>
-                        <router-link
-                          class="mb-1 dropdown-item ps-3 border-radius-md"
-                          :to="{ name: 'Pricing' }"
-                        >
-                          <span>Cover</span>
-                        </router-link>
-                        <router-link
-                          class="mb-1 dropdown-item ps-3 border-radius-md"
-                          :to="{ name: 'Pricing' }"
-                        >
-                          <span>Illustration</span>
-                        </router-link>
-                      </div>
-                    </li>
-                    <li
-                      class="p-0 border-0 nav-item dropdown dropdown-hover dropdown-subitem list-group-item"
-                    >
-                      <a
-                        id="dropdownError"
-                        class="mb-1 dropdown-item border-radius-md ps-3 d-flex align-items-center justify-content-between"
-                      >
-                        <span>Error</span>
-                        <img
-                          src="@/assets/img/down-arrow.svg"
-                          alt="down-arrow"
-                          class="arrow"
-                        />
-                      </a>
-                      <div
-                        class="px-2 py-3 mt-0 dropdown-menu"
-                        aria-labelledby="dropdownError"
-                      >
-                        <router-link
-                          class="mb-1 dropdown-item ps-3 border-radius-md"
-                          :to="{ name: 'Error' }"
-                        >
-                          <span>404</span>
-                        </router-link>
-                        <router-link
-                          class="mb-1 dropdown-item ps-3 border-radius-md"
-                          :to="{ name: 'Error' }"
-                        >
-                          <span>500</span>
-                        </router-link>
-                      </div>
-                    </li>
+                    </router-link>
+               
+                    </li>                    
                   </ul>
-                </div>
+                
               </div>
+              <!-- responsive of authentication -->
               <div class="d-lg-none">
-                <div class="col-12 d-flex justify-content-center flex-column">
-                  <h6
-                    class="px-0 dropdown-header text-dark font-weight-bolder d-flex align-items-center"
-                  >
-                    Sign In
-                  </h6>
-                  <router-link
-                    :to="{ name: 'Signin' }"
-                    class="dropdown-item border-radius-md"
-                    >Basic</router-link
-                  >
-                  <router-link
-                    :to="{ name: 'Signin' }"
-                    class="dropdown-item border-radius-md"
-                    >Cover</router-link
-                  >
-                  <router-link
-                    :to="{ name: 'Signup' }"
-                    class="dropdown-item border-radius-md"
-                    >Illustration</router-link
-                  >
-                  <h6
-                    class="px-0 mt-3 dropdown-header text-dark font-weight-bolder d-flex align-items-center"
-                  >
-                    Sign Up
-                  </h6>
-                  <router-link
-                    :to="{ name: 'Signup' }"
-                    class="dropdown-item border-radius-md"
-                    >Basic</router-link
-                  >
-                  <router-link
-                    :to="{ name: 'Signup' }"
-                    class="dropdown-item border-radius-md"
-                    >Cover</router-link
-                  >
-                  <router-link
-                    :to="{ name: 'Signup' }"
-                    class="dropdown-item border-radius-md"
-                    >Illustration</router-link
-                  >
-                  <h6
-                    class="px-0 mt-3 dropdown-header text-dark font-weight-bolder d-flex align-items-center"
-                  >
-                    Reset Password
-                  </h6>
-                  <router-link
-                    :to="{ name: 'Pricing' }"
-                    class="dropdown-item border-radius-md"
-                    >Basic</router-link
-                  >
-                  <router-link
-                    :to="{ name: 'Pricing' }"
-                    class="dropdown-item border-radius-md"
-                    >Cover</router-link
-                  >
-                  <router-link
-                    :to="{ name: 'Pricing' }"
-                    class="dropdown-item border-radius-md"
-                    >Illustation</router-link
-                  >
-                  <h6
-                    class="px-0 mt-3 dropdown-header text-dark font-weight-bolder d-flex align-items-center"
-                  >
-                    Lock
-                  </h6>
-                  <router-link
-                    :to="{ name: 'Pricing' }"
-                    class="dropdown-item border-radius-md"
-                    >Basic</router-link
-                  >
-                  <router-link
-                    :to="{ name: 'Pricing' }"
-                    class="dropdown-item border-radius-md"
-                    >Cover</router-link
-                  >
-                  <router-link
-                    :to="{ name: 'Pricing' }"
-                    class="dropdown-item border-radius-md"
-                    >Illustration</router-link
-                  >
-                  <h6
-                    class="px-0 mt-3 dropdown-header text-dark font-weight-bolder d-flex align-items-center"
-                  >
-                    2-Step Verification
-                  </h6>
-                  <router-link
-                    :to="{ name: 'Pricing' }"
-                    class="dropdown-item border-radius-md"
-                    >Basic</router-link
-                  >
-                  <router-link
-                    :to="{ name: 'NewUser' }"
-                    class="dropdown-item border-radius-md"
-                    >Cover</router-link
-                  >
-                  <router-link
-                    :to="{ name: 'NewUser' }"
-                    class="dropdown-item border-radius-md"
-                    >Illustration</router-link
-                  >
-                  <h6
-                    class="px-0 mt-3 dropdown-header text-dark font-weight-bolder d-flex align-items-center"
-                  >
-                    Error
-                  </h6>
-                  <router-link
-                    :to="{ name: 'Error' }"
-                    class="dropdown-item border-radius-md"
-                    >Error</router-link
-                  >
-                  <router-link
-                    :to="{ name: 'Error' }"
-                    class="dropdown-item border-radius-md"
-                    >Error</router-link
-                  >
+                <div class="col-md-12">
+                  <router-link class="py-2 ps-3 border-radius-md" :to="{ name: 'Signin' }">
+                    <div class="d-flex">
+                      <div class="h-10 mt-1 icon me-3 d-flex">
+                        <i class="ni ni-single-copy-04 text-gradient text-success"></i>
+                      </div>
+                      <div
+                        class="w-100 d-flex align-items-center justify-content-between"
+                      >
+                        <div>
+                          <p class="p-0 dropdown-header text-dark">Sign In</p>
+                        </div>
+                      </div>
+                    </div>
+                  </router-link>
+                  <router-link class="py-2 ps-3 border-radius-md" :to="{ name: 'Signup' }">
+                    <div class="d-flex">
+                      <div class="h-10 mt-1 icon me-3 d-flex">
+                        <i class="ni ni-single-copy-04 text-gradient text-success"></i>
+                      </div>
+                      <div
+                        class="w-100 d-flex align-items-center justify-content-between"
+                      >
+                        <div>
+                          <p class="p-0 dropdown-header text-dark">Sign Up</p>
+                        </div>
+                      </div>
+                    </div>
+                  </router-link>
+                  <router-link class="py-2 ps-3 border-radius-md" :to="{ name: 'Signup' }">
+                    <div class="d-flex">
+                      <div class="h-10 mt-1 icon me-3 d-flex">
+                        <i class="ni ni-single-copy-04 text-gradient text-success"></i>
+                      </div>
+                      <div
+                        class="w-100 d-flex align-items-center justify-content-between"
+                      >
+                        <div>
+                          <p class="p-0 dropdown-header text-dark">Log out</p>
+                        </div>
+                      </div>
+                    </div>
+                  </router-link>
                 </div>
               </div>
             </div>
@@ -634,9 +418,9 @@
                   <li
                     class="p-0 border-0 nav-item dropdown dropdown-hover dropdown-subitem list-group-item"
                   >
-                    <!-- <router-link
+                    <router-link
                       class="py-2 dropdown-item ps-3 border-radius-md"
-                      :to="{ name: 'Wizard' }"
+                      :to="{ name: 'CRM' }"
                     >
                       <div class="d-flex">
                         <div class="h-10 mt-1 icon me-3 d-flex">
@@ -644,18 +428,18 @@
                         </div>
                         <div class="w-100 d-flex align-items-center justify-content-between">
                           <div>
-                            <p class="p-0 dropdown-header text-dark">Signup</p>
+                            <p class="p-0 dropdown-header text-dark">CRM</p>
                           </div>
                         </div>
                       </div>
-                    </router-link> -->
+                    </router-link>
                   </li>
                   <li
                     class="p-0 border-0 nav-item dropdown dropdown-hover dropdown-subitem list-group-item"
                   >
-                    <!-- <router-link
+                    <router-link
                       class="py-2 dropdown-item ps-3 border-radius-md"
-                      :to="{ name: 'Signin' }"
+                      :to="{ name: 'CRM' }"
                     >
                       <div class="d-flex">
                         <div class="h-10 mt-1 icon me-3 d-flex">
@@ -663,18 +447,18 @@
                         </div>
                         <div class="w-100 d-flex align-items-center justify-content-between">
                           <div>
-                            <p class="p-0 dropdown-header text-dark">DataTables</p>
+                            <p class="p-0 dropdown-header text-dark">CRM</p>
                           </div>
                         </div>
                       </div>
-                    </router-link> -->
+                    </router-link>
                   </li>
                   <li
                     class="p-0 border-0 nav-item dropdown dropdown-hover dropdown-subitem list-group-item"
                   >
-                    <!-- <router-link
+                    <router-link
                       class="py-2 dropdown-item ps-3 border-radius-md"
-                      :to="{ name: 'Calendar' }"
+                      :to="{ name: 'CRM' }"
                     >
                       <div class="d-flex">
                         <div class="h-10 mt-1 icon me-3 d-flex">
@@ -682,15 +466,15 @@
                         </div>
                         <div class="w-100 d-flex align-items-center justify-content-between">
                           <div>
-                            <p class="p-0 dropdown-header text-dark">Calendar</p>
+                            <p class="p-0 dropdown-header text-dark">CRM</p>
                           </div>
                         </div>
                       </div>
-                    </router-link> -->
+                    </router-link>
                   </li>
                 </ul>
               </div>
-              <!-- responsive -->
+              <!-- responsive of Application-->
               <div class="row d-lg-none">
                 <div class="col-md-12">
                   <router-link class="py-2 ps-3 border-radius-md" :to="{ name: 'CRM' }">
@@ -716,7 +500,7 @@
                         class="w-100 d-flex align-items-center justify-content-between"
                       >
                         <div>
-                          <p class="p-0 dropdown-header text-dark">Wizard</p>
+                          <p class="p-0 dropdown-header text-dark">CRM</p>
                         </div>
                       </div>
                     </div>
