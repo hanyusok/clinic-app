@@ -58,7 +58,7 @@ Admin(master)
 
 #  firestore auth 
 
-https://youtu.be/qWy9ylc3f9U
+https://youtu.be/qWy9ylc3f9U?t=677
 
 # pinia auth firestore
 https://arduinoes.github.io/pinia/auth/#modallogin-vue
