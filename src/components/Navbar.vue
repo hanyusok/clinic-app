@@ -52,32 +52,78 @@
               />
             </a>
             <div
-              class="p-3 mt-0 dropdown-menu dropdown-menu-animation dropdown-md dropdown-md-responsive  border-radius-lg mt-lg-3"
+              class="p-3 mt-0 dropdown-menu dropdown-menu-animation dropdown-md dropdown-md-responsive border-radius-lg mt-lg-3"
               aria-labelledby="dropdownMenuPages"
             >
-              <div class="row d-none d-lg-block">
-                <div class="px-4 py-2 col-12">
-                  <div class="row">
-                    <div class="">
-                      <div
-                        class="px-0 mt-3 dropdown-header text-dark font-weight-bolder d-flex align-items-center"
-                      >
-                        <div class="d-inline-block">
-                          <div
-                            class="text-center icon icon-shape icon-xs border-radius-md bg-gradient-success me-2 d-flex align-items-center justify-content-center ps-0"
-                          >
-                            <icon name="box3d" />
+              <div class="d-none d-lg-flex">
+                <ul class="list-group">
+                  <li
+                    class="p-0 border-0 nav-item dropdown dropdown-hover dropdown-subitem list-group-item"
+                  >
+                    <router-link
+                      class="py-2 dropdown-item ps-3 border-radius-md"
+                      :to="{ name: 'Signin' }"
+                    >
+                      <div class="d-flex">
+                        <div class="h-10 mt-1 icon me-3 d-flex">
+                          <i class="ni ni-laptop text-gradient text-success"></i>
+                        </div>
+                        <div
+                          class="w-100 d-flex align-items-center justify-content-between"
+                        >
+                          <div>
+                            <p class="p-0 dropdown-header text-dark">Sign In</p>
                           </div>
                         </div>
-                        Account
                       </div>
-                    
-                    </div>
-                  </div>
-                </div>
+                    </router-link>
+                  </li>
+                  <li
+                    class="p-0 border-0 nav-item dropdown dropdown-hover dropdown-subitem list-group-item"
+                  >
+                    <router-link
+                      class="py-2 dropdown-item ps-3 border-radius-md"
+                      :to="{ name: 'Signup' }"
+                    >
+                      <div class="d-flex">
+                        <div class="h-10 mt-1 icon me-3 d-flex">
+                          <i class="ni ni-laptop text-gradient text-success"></i>
+                        </div>
+                        <div
+                          class="w-100 d-flex align-items-center justify-content-between"
+                        >
+                          <div>
+                            <p class="p-0 dropdown-header text-dark">Sign Up</p>
+                          </div>
+                        </div>
+                      </div>
+                    </router-link>
+                  </li>
+                  <li
+                    class="p-0 border-0 nav-item dropdown dropdown-hover dropdown-subitem list-group-item"
+                  >
+                    <router-link
+                      class="py-2 dropdown-item ps-3 border-radius-md"
+                      :to="{ name: 'Signin' }"
+                    >
+                      <div class="d-flex">
+                        <div class="h-10 mt-1 icon me-3 d-flex">
+                          <i class="ni ni-laptop text-gradient text-success"></i>
+                        </div>
+                        <div
+                          class="w-100 d-flex align-items-center justify-content-between"
+                        >
+                          <div>
+                            <p class="p-0 dropdown-header text-dark">Log Out</p>
+                          </div>
+                        </div>
+                      </div>
+                    </router-link>
+                  </li>
+                </ul>
               </div>
               <!-- responsive of Services -->
-              
+
               <div class="d-lg-none">
                 <div class="col-md-12">
                   <router-link class="py-2 ps-3 border-radius-md" :to="{ name: 'CRM' }">
@@ -137,10 +183,10 @@
                     </div>
                   </router-link>
                 </div>
-             
               </div>
             </div>
           </li>
+
           <li class="mx-2 nav-item dropdown dropdown-hover">
             <a
               id="dropdownMenuAccount"
