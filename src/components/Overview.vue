@@ -1,15 +1,4 @@
 <template>
-  <!-- <div class="container top-0 position-sticky z-index-sticky">
-    <div class="row">
-      <div class="col-12">
-        <navbar
-          is-blur="blur blur-rounded my-3 py-2 start-0 end-0 mx-4 shadow"
-          btn-background="bg-gradient-success"
-          :dark-mode="true"
-        />
-      </div>
-    </div>
-  </div> -->
   <div class="container-fluid">
     <div
       class="mt-4 page-header min-height-300 border-radius-xl"
@@ -33,7 +22,7 @@
         </div>
         <div class="col-auto my-auto">
           <div class="h-100">
-            <h5 class="mb-1">Alec Thompson {{ this.authStore.displayName}}</h5>
+            <h5 class="mb-1">Alec Thompson {{ authStore.displayName }}</h5>
             <p class="mb-0 text-sm font-weight-bold">CEO / Co-Founder</p>
           </div>
         </div>
@@ -461,7 +450,7 @@ import setNavPills from '@/assets/js/nav-pills.js'
 import setTooltip from '@/assets/js/tooltip.js'
 
 import { useDesignStore } from '@/stores/design'
-import { useAuthStore } from '@/stores/auth' 
+import { useAuthStore } from '@/stores/auth'
 
 export default {
   name: 'Overview',
@@ -495,14 +484,14 @@ export default {
       img2,
       img3
     }
-  },
-  mounted() {
-    this.designStore.isAbsolute = true
-    setNavPills()
-    setTooltip()
-  },
-  beforeUnmount() {
-    this.designStore.isAbsolute = false
   }
+  // mounted() {
+  //   this.designStore.isAbsolute = true
+  //   setNavPills()
+  //   setTooltip()
+  // },
+  // beforeUnmount() {
+  //   this.designStore.isAbsolute = false
+  // }
 }
 </script>

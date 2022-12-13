@@ -62,7 +62,7 @@
                   >
                     <router-link
                       class="py-2 dropdown-item ps-3 border-radius-md"
-                      :to="{ name: 'Signin' }"
+                      :to="{ name: 'Overview' }"
                     >
                       <div class="d-flex">
                         <div class="h-10 mt-1 icon me-3 d-flex">
@@ -72,7 +72,7 @@
                           class="w-100 d-flex align-items-center justify-content-between"
                         >
                           <div>
-                            <p class="p-0 dropdown-header text-dark">Sign In</p>
+                            <p class="p-0 dropdown-header text-dark">Overview</p>
                           </div>
                         </div>
                       </div>
@@ -126,7 +126,10 @@
 
               <div class="d-lg-none">
                 <div class="col-md-12">
-                  <router-link class="py-2 ps-3 border-radius-md" :to="{ name: 'CRM' }">
+                  <router-link
+                    class="py-2 ps-3 border-radius-md"
+                    :to="{ name: 'Overview' }"
+                  >
                     <div class="d-flex">
                       <div class="h-10 mt-1 icon me-3 d-flex">
                         <i class="ni ni-single-copy-04 text-gradient text-success"></i>
@@ -135,7 +138,7 @@
                         class="w-100 d-flex align-items-center justify-content-between"
                       >
                         <div>
-                          <p class="p-0 dropdown-header text-dark">CRM</p>
+                          <p class="p-0 dropdown-header text-dark">Overview</p>
                         </div>
                       </div>
                     </div>

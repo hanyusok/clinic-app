@@ -1,7 +1,8 @@
 import { defineStore } from "pinia";
 import router from "@/router/index";
 import { signOut, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
-import auth from '@/firebase/init'
+import { doc, setDoc } from 'firebase/firestore'
+import { auth, db } from '@/firebase/init'
 
 export const useAuthStore = defineStore({
   id: "main",
@@ -16,14 +17,20 @@ export const useAuthStore = defineStore({
   actions: {
     register() {      
       createUserWithEmailAndPassword(auth, this.email, this.password)
-        .then((userCredential) => {
-          const user = userCredential.user
+        .then((userCredential) => {          
+          const user = userCredential.user          
           updateProfile(auth.currentUser, {
             displayName: this.displayName
           })
+          //user collection uuid + name insert
+          const userCollectionRef = doc(db, 'users', user.uid)
+          setDoc(userCollectionRef, {
+            name: this.displayName
+          })
+
           console.log(user)     
           alert("Registered!")
-          router.push("/overview")
+          router.push("/overview")          
         })
         .catch((error) => {
           const errorCode = error.code
