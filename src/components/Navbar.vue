@@ -253,11 +253,12 @@
               class="p-3 mt-0 dropdown-menu dropdown-menu-animation dropdown-lg border-radius-xl mt-lg-3"
               aria-labelledby="dropdownMenuAccount"
             >
-              <div class="d-none d-lg-flex">                
+              <div class="d-none d-lg-flex">
                 <ul class="list-group">
-                    <li
-                      class="p-0 border-0 nav-item dropdown dropdown-hover dropdown-subitem list-group-item"
-                    > <router-link
+                  <li
+                    class="p-0 border-0 nav-item dropdown dropdown-hover dropdown-subitem list-group-item"
+                  >
+                    <router-link
                       class="py-2 dropdown-item ps-3 border-radius-md"
                       :to="{ name: 'Signin' }"
                     >
@@ -265,18 +266,20 @@
                         <div class="h-10 mt-1 icon me-3 d-flex">
                           <i class="ni ni-laptop text-gradient text-success"></i>
                         </div>
-                        <div class="w-100 d-flex align-items-center justify-content-between">
+                        <div
+                          class="w-100 d-flex align-items-center justify-content-between"
+                        >
                           <div>
                             <p class="p-0 dropdown-header text-dark">Sign In</p>
                           </div>
                         </div>
                       </div>
                     </router-link>
-               
-                    </li>
-                    <li
-                      class="p-0 border-0 nav-item dropdown dropdown-hover dropdown-subitem list-group-item"
-                    > <router-link
+                  </li>
+                  <li
+                    class="p-0 border-0 nav-item dropdown dropdown-hover dropdown-subitem list-group-item"
+                  >
+                    <router-link
                       class="py-2 dropdown-item ps-3 border-radius-md"
                       :to="{ name: 'Signup' }"
                     >
@@ -284,18 +287,20 @@
                         <div class="h-10 mt-1 icon me-3 d-flex">
                           <i class="ni ni-laptop text-gradient text-success"></i>
                         </div>
-                        <div class="w-100 d-flex align-items-center justify-content-between">
+                        <div
+                          class="w-100 d-flex align-items-center justify-content-between"
+                        >
                           <div>
                             <p class="p-0 dropdown-header text-dark">Sign Up</p>
                           </div>
                         </div>
                       </div>
                     </router-link>
-               
-                    </li>
-                    <li
-                      class="p-0 border-0 nav-item dropdown dropdown-hover dropdown-subitem list-group-item"
-                    > <router-link
+                  </li>
+                  <li
+                    class="p-0 border-0 nav-item dropdown dropdown-hover dropdown-subitem list-group-item"
+                  >
+                    <router-link
                       class="py-2 dropdown-item ps-3 border-radius-md"
                       :to="{ name: 'Signin' }"
                     >
@@ -303,22 +308,25 @@
                         <div class="h-10 mt-1 icon me-3 d-flex">
                           <i class="ni ni-laptop text-gradient text-success"></i>
                         </div>
-                        <div class="w-100 d-flex align-items-center justify-content-between">
+                        <div
+                          class="w-100 d-flex align-items-center justify-content-between"
+                        >
                           <div>
                             <p class="p-0 dropdown-header text-dark">Log Out</p>
                           </div>
                         </div>
                       </div>
                     </router-link>
-               
-                    </li>                    
-                  </ul>
-                
+                  </li>
+                </ul>
               </div>
               <!-- responsive of authentication -->
               <div class="d-lg-none">
                 <div class="col-md-12">
-                  <router-link class="py-2 ps-3 border-radius-md" :to="{ name: 'Signin' }">
+                  <router-link
+                    class="py-2 ps-3 border-radius-md"
+                    :to="{ name: 'Signin' }"
+                  >
                     <div class="d-flex">
                       <div class="h-10 mt-1 icon me-3 d-flex">
                         <i class="ni ni-single-copy-04 text-gradient text-success"></i>
@@ -332,7 +340,10 @@
                       </div>
                     </div>
                   </router-link>
-                  <router-link class="py-2 ps-3 border-radius-md" :to="{ name: 'Signup' }">
+                  <router-link
+                    class="py-2 ps-3 border-radius-md"
+                    :to="{ name: 'Signup' }"
+                  >
                     <div class="d-flex">
                       <div class="h-10 mt-1 icon me-3 d-flex">
                         <i class="ni ni-single-copy-04 text-gradient text-success"></i>
@@ -346,7 +357,10 @@
                       </div>
                     </div>
                   </router-link>
-                  <router-link class="py-2 ps-3 border-radius-md" :to="{ name: 'Signup' }">
+                  <router-link
+                    class="py-2 ps-3 border-radius-md"
+                    :to="{ name: 'Signup' }"
+                  >
                     <div class="d-flex">
                       <div class="h-10 mt-1 icon me-3 d-flex">
                         <i class="ni ni-single-copy-04 text-gradient text-success"></i>
@@ -426,7 +440,9 @@
                         <div class="h-10 mt-1 icon me-3 d-flex">
                           <i class="ni ni-laptop text-gradient text-success"></i>
                         </div>
-                        <div class="w-100 d-flex align-items-center justify-content-between">
+                        <div
+                          class="w-100 d-flex align-items-center justify-content-between"
+                        >
                           <div>
                             <p class="p-0 dropdown-header text-dark">CRM</p>
                           </div>
@@ -445,7 +461,9 @@
                         <div class="h-10 mt-1 icon me-3 d-flex">
                           <i class="ni ni-badge text-gradient text-success"></i>
                         </div>
-                        <div class="w-100 d-flex align-items-center justify-content-between">
+                        <div
+                          class="w-100 d-flex align-items-center justify-content-between"
+                        >
                           <div>
                             <p class="p-0 dropdown-header text-dark">CRM</p>
                           </div>
@@ -464,7 +482,9 @@
                         <div class="h-10 mt-1 icon me-3 d-flex">
                           <i class="ni ni-notification-70 text-gradient text-success"></i>
                         </div>
-                        <div class="w-100 d-flex align-items-center justify-content-between">
+                        <div
+                          class="w-100 d-flex align-items-center justify-content-between"
+                        >
                           <div>
                             <p class="p-0 dropdown-header text-dark">CRM</p>
                           </div>
