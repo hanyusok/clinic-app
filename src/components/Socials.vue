@@ -12,6 +12,7 @@
             class="multisteps-form__input form-control"
             type="text"
             placeholder="@soft"
+            v-model="userInfoStore.twitter"
           />
         </div>
         <div class="col-12 mt-3">
@@ -20,6 +21,7 @@
             class="multisteps-form__input form-control"
             type="text"
             placeholder="https://..."
+            v-model="userInfoStore.facebook"
           />
         </div>
         <div class="col-12 mt-3">
@@ -28,6 +30,7 @@
             class="multisteps-form__input form-control"
             type="text"
             placeholder="https://..."
+            v-model="userInfoStore.instagram"
           />
         </div>
       </div>
@@ -55,9 +58,14 @@
 
 <script>
 import VsudButton from "@/components/VsudButton.vue";
+import { useUserInfoStore } from "@/stores/userInfo"
 
 export default {
   name: "Socials",
+  setup(){
+    const userInfoStore = useUserInfoStore()
+    return { userInfoStore }
+  },
   components: {
     VsudButton,
   },

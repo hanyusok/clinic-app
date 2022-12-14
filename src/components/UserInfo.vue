@@ -13,6 +13,7 @@
             class="multisteps-form__input form-control"
             type="text"
             placeholder="eg. Michael"
+            v-model="userInfoStore.firstName"
           />
         </div>
         <div class="col-12 col-sm-6 mt-3 mt-sm-0">
@@ -21,6 +22,7 @@
             class="multisteps-form__input form-control"
             type="text"
             placeholder="eg. Prior"
+            v-model="userInfoStore.lastName"
           />
         </div>
       </div>
@@ -31,6 +33,7 @@
             class="multisteps-form__input form-control"
             type="text"
             placeholder="eg. Creative Tim"
+            v-model="userInfoStore.company"
           />
         </div>
         <div class="col-12 col-sm-6 mt-3 mt-sm-0">
@@ -39,6 +42,7 @@
             class="multisteps-form__input  form-control"
             type="email"
             placeholder="eg. soft@dashboard.com"
+            v-model="userInfoStore.email"
           />
         </div>
       </div>
@@ -49,6 +53,7 @@
             class="multisteps-form__input form-control"
             type="password"
             placeholder="******"
+            v-model="userInfoStore.password"
           />
         </div>
         <div class="col-12 col-sm-6 mt-3 mt-sm-0">
@@ -57,6 +62,7 @@
             class="multisteps-form__input  form-control"
             type="password"
             placeholder="******"
+            v-model="userInfoStore.repassword"
           />
         </div>
       </div>
@@ -76,9 +82,13 @@
 
 <script>
 import VsudButton from "@/components/VsudButton.vue";
-
+import { useUserInfoStore } from '@/stores/userInfo'
 export default {
   name: "UserInfo",
+  setup(){
+    const userInfoStore = useUserInfoStore()
+    return { userInfoStore}
+  },
   components: {    
     VsudButton,
   },

@@ -12,6 +12,7 @@
             class="multisteps-form__input form-control"
             type="text"
             placeholder="eg. Street 111"
+            v-model="userInfoStore.address1"
           />
         </div>
       </div>
@@ -22,6 +23,7 @@
             class="multisteps-form__input form-control"
             type="text"
             placeholder="eg. Street 221"
+            v-model="userInfoStore.address2"
           />
         </div>
       </div>
@@ -32,6 +34,7 @@
             class="multisteps-form__input form-control"
             type="text"
             placeholder="eg. Tokyo"
+            v-model="userInfoStore.city"
           />
         </div>
         <div class="col-6 col-sm-3 mt-3 mt-sm-0">
@@ -40,6 +43,7 @@
             id="choices-state"
             class="multisteps-form__select form-control"
             name="choices-state"
+            v-model="userInfoStore.state"
           >
             <option selected="selected">...</option>
             <option value="1">State 1</option>
@@ -52,6 +56,7 @@
             class="multisteps-form__input form-control"
             type="text"
             placeholder="7 letters"
+            v-model="userInfoStore.zip"
           />
         </div>
       </div>
@@ -80,11 +85,16 @@
 <script>
 import VsudButton from "@/components/VsudButton.vue";
 import Choices from "choices.js";
+import { useUserInfoStore } from '@/stores/userInfo'
 
 export default {
   name: "Address",
   components: {    
     VsudButton,
+  },  
+  setup(){
+    const userInfoStore = useUserInfoStore()
+    return { userInfoStore}
   },
   mounted() {
     if (document.getElementById("choices-state")) {

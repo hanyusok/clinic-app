@@ -192,6 +192,185 @@
 
           <li class="mx-2 nav-item dropdown dropdown-hover">
             <a
+              id="dropdownMenuBlocks"
+              role="button"
+              class="cursor-pointer nav-link ps-2 d-flex justify-content-between align-items-center"
+              :class="[darkModes]"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Applications
+              <img
+                :src="downArrWhite"
+                alt="down-arrow"
+                class="arrow ms-1"
+                :class="darkMode ? 'd-none' : 'd-lg-block d-none'"
+              />
+              <img
+                :src="downArrBlack"
+                alt="down-arrow"
+                class="arrow ms-1 d-block"
+                :class="darkMode ? 'd-lg-block' : 'd-lg-none'"
+              />
+            </a>
+            <div
+              class="p-3 mt-0 dropdown-menu dropdown-menu-animation dropdown-md dropdown-md-responsive border-radius-lg mt-lg-3"
+              aria-labelledby="dropdownMenuBlocks"
+            >
+              <div class="d-none d-lg-block">
+                <ul class="list-group">
+                  <li
+                    class="p-0 border-0 nav-item dropdown dropdown-hover dropdown-subitem list-group-item"
+                  >
+                    <router-link
+                      class="py-2 dropdown-item ps-3 border-radius-md"
+                      :to="{ name: 'NewUser' }"
+                    >
+                      <div class="d-flex">
+                        <div class="h-10 mt-1 icon me-3 d-flex">
+                          <i class="ni ni-single-copy-04 text-gradient text-success"></i>
+                        </div>
+                        <div
+                          class="w-100 d-flex align-items-center justify-content-between"
+                        >
+                          <div>
+                            <p class="p-0 dropdown-header text-dark">New User</p>
+                          </div>
+                        </div>
+                      </div>
+                    </router-link>
+                  </li>
+                  <li
+                    class="p-0 border-0 nav-item dropdown dropdown-hover dropdown-subitem list-group-item"
+                  >
+                    <router-link
+                      class="py-2 dropdown-item ps-3 border-radius-md"
+                      :to="{ name: 'CRM' }"
+                    >
+                      <div class="d-flex">
+                        <div class="h-10 mt-1 icon me-3 d-flex">
+                          <i class="ni ni-laptop text-gradient text-success"></i>
+                        </div>
+                        <div
+                          class="w-100 d-flex align-items-center justify-content-between"
+                        >
+                          <div>
+                            <p class="p-0 dropdown-header text-dark">CRM</p>
+                          </div>
+                        </div>
+                      </div>
+                    </router-link>
+                  </li>
+                  <li
+                    class="p-0 border-0 nav-item dropdown dropdown-hover dropdown-subitem list-group-item"
+                  >
+                    <router-link
+                      class="py-2 dropdown-item ps-3 border-radius-md"
+                      :to="{ name: 'CRM' }"
+                    >
+                      <div class="d-flex">
+                        <div class="h-10 mt-1 icon me-3 d-flex">
+                          <i class="ni ni-badge text-gradient text-success"></i>
+                        </div>
+                        <div
+                          class="w-100 d-flex align-items-center justify-content-between"
+                        >
+                          <div>
+                            <p class="p-0 dropdown-header text-dark">CRM</p>
+                          </div>
+                        </div>
+                      </div>
+                    </router-link>
+                  </li>
+                  <li
+                    class="p-0 border-0 nav-item dropdown dropdown-hover dropdown-subitem list-group-item"
+                  >
+                    <router-link
+                      class="py-2 dropdown-item ps-3 border-radius-md"
+                      :to="{ name: 'CRM' }"
+                    >
+                      <div class="d-flex">
+                        <div class="h-10 mt-1 icon me-3 d-flex">
+                          <i class="ni ni-notification-70 text-gradient text-success"></i>
+                        </div>
+                        <div
+                          class="w-100 d-flex align-items-center justify-content-between"
+                        >
+                          <div>
+                            <p class="p-0 dropdown-header text-dark">CRM</p>
+                          </div>
+                        </div>
+                      </div>
+                    </router-link>
+                  </li>
+                </ul>
+              </div>
+              <!-- responsive of Application-->
+              <div class="row d-lg-none">
+                <div class="col-md-12">
+                  <router-link class="py-2 ps-3 border-radius-md" :to="{ name: 'CRM' }">
+                    <div class="d-flex">
+                      <div class="h-10 mt-1 icon me-3 d-flex">
+                        <i class="ni ni-single-copy-04 text-gradient text-success"></i>
+                      </div>
+                      <div
+                        class="w-100 d-flex align-items-center justify-content-between"
+                      >
+                        <div>
+                          <p class="p-0 dropdown-header text-dark">CRM</p>
+                        </div>
+                      </div>
+                    </div>
+                  </router-link>
+                  <router-link class="py-2 ps-3 border-radius-md" :to="{ name: 'CRM' }">
+                    <div class="d-flex">
+                      <div class="h-10 mt-1 icon me-3 d-flex">
+                        <i class="ni ni-laptop text-gradient text-success"></i>
+                      </div>
+                      <div
+                        class="w-100 d-flex align-items-center justify-content-between"
+                      >
+                        <div>
+                          <p class="p-0 dropdown-header text-dark">CRM</p>
+                        </div>
+                      </div>
+                    </div>
+                  </router-link>
+                  <router-link class="py-2 ps-3 border-radius-md" :to="{ name: 'CRM' }">
+                    <div class="d-flex">
+                      <div class="h-10 mt-1 icon me-3 d-flex">
+                        <i class="ni ni-badge text-gradient text-success"></i>
+                      </div>
+                      <div
+                        class="w-100 d-flex align-items-center justify-content-between"
+                      >
+                        <div>
+                          <p class="p-0 dropdown-header text-dark">CRM</p>
+                        </div>
+                      </div>
+                    </div>
+                  </router-link>
+                  <router-link class="py-2 ps-3 border-radius-md" :to="{ name: 'CRM' }">
+                    <div class="d-flex">
+                      <div class="h-10 mt-1 icon me-3 d-flex">
+                        <i class="ni ni-notification-70 text-gradient text-success"></i>
+                      </div>
+                      <div
+                        class="w-100 d-flex align-items-center justify-content-between"
+                      >
+                        <div>
+                          <p class="p-0 dropdown-header text-dark">CRM</p>
+                        </div>
+                      </div>
+                    </div>
+                  </router-link>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <li class="mx-2 nav-item dropdown dropdown-hover">
+            <a
               id="dropdownMenuAccount"
               role="button"
               class="cursor-pointer nav-link ps-2 d-flex justify-content-between align-items-center"
@@ -343,184 +522,7 @@
             </div>
           </li>
 
-          <li class="mx-2 nav-item dropdown dropdown-hover">
-            <a
-              id="dropdownMenuBlocks"
-              role="button"
-              class="cursor-pointer nav-link ps-2 d-flex justify-content-between align-items-center"
-              :class="[darkModes]"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-              Applications
-              <img
-                :src="downArrWhite"
-                alt="down-arrow"
-                class="arrow ms-1"
-                :class="darkMode ? 'd-none' : 'd-lg-block d-none'"
-              />
-              <img
-                :src="downArrBlack"
-                alt="down-arrow"
-                class="arrow ms-1 d-block"
-                :class="darkMode ? 'd-lg-block' : 'd-lg-none'"
-              />
-            </a>
-            <div
-              class="p-3 mt-0 dropdown-menu dropdown-menu-animation dropdown-md dropdown-md-responsive border-radius-lg mt-lg-3"
-              aria-labelledby="dropdownMenuBlocks"
-            >
-              <div class="d-none d-lg-block">
-                <ul class="list-group">
-                  <li
-                    class="p-0 border-0 nav-item dropdown dropdown-hover dropdown-subitem list-group-item"
-                  >
-                    <router-link
-                      class="py-2 dropdown-item ps-3 border-radius-md"
-                      :to="{ name: 'Signup' }"
-                    >
-                      <div class="d-flex">
-                        <div class="h-10 mt-1 icon me-3 d-flex">
-                          <i class="ni ni-single-copy-04 text-gradient text-success"></i>
-                        </div>
-                        <div
-                          class="w-100 d-flex align-items-center justify-content-between"
-                        >
-                          <div>
-                            <p class="p-0 dropdown-header text-dark">Kanban</p>
-                          </div>
-                        </div>
-                      </div>
-                    </router-link>
-                  </li>
-                  <li
-                    class="p-0 border-0 nav-item dropdown dropdown-hover dropdown-subitem list-group-item"
-                  >
-                    <router-link
-                      class="py-2 dropdown-item ps-3 border-radius-md"
-                      :to="{ name: 'CRM' }"
-                    >
-                      <div class="d-flex">
-                        <div class="h-10 mt-1 icon me-3 d-flex">
-                          <i class="ni ni-laptop text-gradient text-success"></i>
-                        </div>
-                        <div
-                          class="w-100 d-flex align-items-center justify-content-between"
-                        >
-                          <div>
-                            <p class="p-0 dropdown-header text-dark">CRM</p>
-                          </div>
-                        </div>
-                      </div>
-                    </router-link>
-                  </li>
-                  <li
-                    class="p-0 border-0 nav-item dropdown dropdown-hover dropdown-subitem list-group-item"
-                  >
-                    <router-link
-                      class="py-2 dropdown-item ps-3 border-radius-md"
-                      :to="{ name: 'CRM' }"
-                    >
-                      <div class="d-flex">
-                        <div class="h-10 mt-1 icon me-3 d-flex">
-                          <i class="ni ni-badge text-gradient text-success"></i>
-                        </div>
-                        <div
-                          class="w-100 d-flex align-items-center justify-content-between"
-                        >
-                          <div>
-                            <p class="p-0 dropdown-header text-dark">CRM</p>
-                          </div>
-                        </div>
-                      </div>
-                    </router-link>
-                  </li>
-                  <li
-                    class="p-0 border-0 nav-item dropdown dropdown-hover dropdown-subitem list-group-item"
-                  >
-                    <router-link
-                      class="py-2 dropdown-item ps-3 border-radius-md"
-                      :to="{ name: 'CRM' }"
-                    >
-                      <div class="d-flex">
-                        <div class="h-10 mt-1 icon me-3 d-flex">
-                          <i class="ni ni-notification-70 text-gradient text-success"></i>
-                        </div>
-                        <div
-                          class="w-100 d-flex align-items-center justify-content-between"
-                        >
-                          <div>
-                            <p class="p-0 dropdown-header text-dark">CRM</p>
-                          </div>
-                        </div>
-                      </div>
-                    </router-link>
-                  </li>
-                </ul>
-              </div>
-              <!-- responsive of Application-->
-              <div class="row d-lg-none">
-                <div class="col-md-12">
-                  <router-link class="py-2 ps-3 border-radius-md" :to="{ name: 'CRM' }">
-                    <div class="d-flex">
-                      <div class="h-10 mt-1 icon me-3 d-flex">
-                        <i class="ni ni-single-copy-04 text-gradient text-success"></i>
-                      </div>
-                      <div
-                        class="w-100 d-flex align-items-center justify-content-between"
-                      >
-                        <div>
-                          <p class="p-0 dropdown-header text-dark">CRM</p>
-                        </div>
-                      </div>
-                    </div>
-                  </router-link>
-                  <router-link class="py-2 ps-3 border-radius-md" :to="{ name: 'CRM' }">
-                    <div class="d-flex">
-                      <div class="h-10 mt-1 icon me-3 d-flex">
-                        <i class="ni ni-laptop text-gradient text-success"></i>
-                      </div>
-                      <div
-                        class="w-100 d-flex align-items-center justify-content-between"
-                      >
-                        <div>
-                          <p class="p-0 dropdown-header text-dark">CRM</p>
-                        </div>
-                      </div>
-                    </div>
-                  </router-link>
-                  <router-link class="py-2 ps-3 border-radius-md" :to="{ name: 'CRM' }">
-                    <div class="d-flex">
-                      <div class="h-10 mt-1 icon me-3 d-flex">
-                        <i class="ni ni-badge text-gradient text-success"></i>
-                      </div>
-                      <div
-                        class="w-100 d-flex align-items-center justify-content-between"
-                      >
-                        <div>
-                          <p class="p-0 dropdown-header text-dark">CRM</p>
-                        </div>
-                      </div>
-                    </div>
-                  </router-link>
-                  <router-link class="py-2 ps-3 border-radius-md" :to="{ name: 'CRM' }">
-                    <div class="d-flex">
-                      <div class="h-10 mt-1 icon me-3 d-flex">
-                        <i class="ni ni-notification-70 text-gradient text-success"></i>
-                      </div>
-                      <div
-                        class="w-100 d-flex align-items-center justify-content-between"
-                      >
-                        <div>
-                          <p class="p-0 dropdown-header text-dark">CRM</p>
-                        </div>
-                      </div>
-                    </div>
-                  </router-link>
-                </div>
-              </div>
-            </div>
-          </li>
+          
         </ul>
         <ul class="navbar-nav d-lg-block d-none">
           <li class="nav-item">

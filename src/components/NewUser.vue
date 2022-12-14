@@ -1,16 +1,5 @@
 <template>
-  <div class="container top-0 position-sticky z-index-sticky">
-    <div class="row">
-      <div class="col-12">
-        <navbar
-          is-blur="blur blur-rounded my-3 py-2 start-0 end-0 mx-4 shadow"
-          btn-background="bg-gradient-success"
-          :dark-mode="true"
-        />
-      </div>
-    </div>
-  </div>
-  <div class="container-fluid py-4">
+  <div class="container-fluid py-5">
     <div class="row">
       <div class="col-12">
         <div class="multisteps-form mb-5">
@@ -59,9 +48,9 @@
           <!--form panels-->
           <div class="row">
             <div class="col-12 col-lg-8 m-auto">
-              <form class="multisteps-form__form mb-5">
+              <form class="multisteps-form__form mb-5" >
                 <!--single form panel-->
-                <user-info :class="activeStep === 0 ? activeClass : ''" />
+                <user-info :class="activeStep === 0 ? activeClass : ''" />                
                 <!--single form panel-->
                 <Address :class="activeStep === 1 ? activeClass : ''" />
                 <!--single form panel-->
@@ -78,21 +67,21 @@
 </template>
 
 <script>
-import UserInfo from '../components/UserInfo.vue'
-import Address from '../components/Address.vue'
-import Socials from '../components/Socials.vue'
-import Profile from '../components/Profile.vue'
-import Navbar from '../components/Navbar.vue'
+import Choices from "choices.js";
+import UserInfo from '@/components/UserInfo.vue'
+import Address from '@/components/Address.vue'
+import Socials from '@/components/Socials.vue'
+import Profile from '@/components/Profile.vue'
+import { useUserInfoStore } from '@/stores/userInfo'
 
 export default {
   name: 'NewUser',
   components: {
-    Navbar,
     UserInfo,
     Address,
     Socials,
-    Profile
-  },
+    Profile,
+  }, 
   data() {
     return {
       showMenu: false,

@@ -62,3 +62,9 @@ https://youtu.be/qWy9ylc3f9U?t=677
 
 # pinia auth firestore
 https://arduinoes.github.io/pinia/auth/#modallogin-vue
+
+# custom auth for admin user
+npm i firebase-tools
+
+# vueuse addon for firestore handling
+npm i @vueuse/core
