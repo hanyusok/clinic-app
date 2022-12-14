@@ -45,6 +45,7 @@
       </div>
     </div>
   </div>
+  
 </template>
 
 
@@ -53,6 +54,7 @@
 import VsudButton from "@/components/VsudButton.vue";
 // import VsudTextarea from "@/components/VsudTextarea.vue";
 import { useUserInfoStore } from "@/stores/userInfo"
+import { ref } from 'vue'
 
 export default {
   name: "Profile",

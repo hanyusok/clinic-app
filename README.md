@@ -68,3 +68,5 @@ npm i firebase-tools
 
 # vueuse addon for firestore handling
 npm i @vueuse/core
+
+# multistep form handling
