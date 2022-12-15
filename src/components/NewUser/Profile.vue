@@ -39,7 +39,7 @@
           color="dark"
           variant="gradient"
           class="ms-auto"
-          @click="$parent.userInfoStore.update"
+          @click="$parent.handleSubmit"
           >Send</vsud-button
         >
       </div>
@@ -49,7 +49,6 @@
 
 <script>
 import VsudButton from '@/components/VsudButton.vue'
-// import VsudTextarea from "@/components/VsudTextarea.vue";
 import { useUserInfoStore } from '@/stores/userInfo'
 
 export default {
