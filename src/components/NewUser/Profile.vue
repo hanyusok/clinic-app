@@ -12,7 +12,7 @@
             class="multisteps-form__input form-control"
             type="text"
             placeholder="Use an address you don't use frequently."
-            v-modle="userInfoStore.publicEmail"
+            v-modle="$parent.userInfoStore.publicEmail"
           />
         </div>
         <div class="col-12">
@@ -21,7 +21,7 @@
             class="multisteps-form__textarea form-control"
             rows="5"
             placeholder="Say a few words about who you are or what you're working on."
-            v-model="userInfoStore.bio"
+            v-model="$parent.userInfoStore.bio"
           ></textarea>
         </div>
       </div>
@@ -39,37 +39,27 @@
           color="dark"
           variant="gradient"
           class="ms-auto"
-          @click=""
+          @click="$parent.userInfoStore.update"
           >Send</vsud-button
         >
       </div>
     </div>
   </div>
-  
 </template>
 
-
 <script>
-// import VsudInput from "@/components/VsudInput.vue";
-import VsudButton from "@/components/VsudButton.vue";
+import VsudButton from '@/components/VsudButton.vue'
 // import VsudTextarea from "@/components/VsudTextarea.vue";
-import { useUserInfoStore } from "@/stores/userInfo"
-// import { ref } from 'vue'
+import { useUserInfoStore } from '@/stores/userInfo'
 
 export default {
-  name: "Profile",
-  setup(){
+  name: 'Profile',
+  setup() {
     const userInfoStore = useUserInfoStore()
     return { userInfoStore }
   },
   components: {
-    // VsudInput,
-    VsudButton,
-    // VsudTextarea,
-  },
-  methods:{  
-      
-    
+    VsudButton
   }
-};
+}
 </script>

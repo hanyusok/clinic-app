@@ -1,5 +1,5 @@
 <template>
-    <div class="container-fluid">
+  <div class="container-fluid">
     <div
       class="mt-4 page-header min-height-300 border-radius-xl"
       :style="{
@@ -22,7 +22,7 @@
         </div>
         <div class="col-auto my-auto">
           <div class="h-100">
-            <h5 class="mb-1">Alec Thompson </h5>
+            <h5 class="mb-1">Alec Thompson</h5>
             <p class="mb-0 text-sm font-weight-bold">CEO / Co-Founder</p>
           </div>
         </div>
@@ -222,15 +222,15 @@
           <!--form panels-->
           <div class="row">
             <div class="col-12 col-lg-8 m-auto">
-              <form class="multisteps-form__form mb-5" >
+              <form class="multisteps-form__form mb-5">
                 <!--single form panel-->
-                <user-info :class="activeStep === 0 ? activeClass : ''" />                
+                <UserInfo :class="activeStep === 0 ? activeClass : ''" />
                 <!--single form panel-->
                 <Address :class="activeStep === 1 ? activeClass : ''" />
                 <!--single form panel-->
-                <socials :class="activeStep === 2 ? activeClass : ''" />
+                <Socials :class="activeStep === 2 ? activeClass : ''" />
                 <!--single form panel-->
-                <profile :class="activeStep === 3 ? activeClass : ''" />
+                <Profile :class="activeStep === 3 ? activeClass : ''" />
               </form>
             </div>
           </div>
@@ -242,7 +242,7 @@
 
 <script>
 import bgImg from '@/assets/img/curved-images/curved14.jpg'
-import Choices from "choices.js";
+// import Choices from 'choices.js'
 import UserInfo from '@/components/NewUser/UserInfo.vue'
 import Address from '@/components/NewUser/Address.vue'
 import Socials from '@/components/NewUser/Socials.vue'
@@ -255,8 +255,12 @@ export default {
     UserInfo,
     Address,
     Socials,
-    Profile,
-  }, 
+    Profile
+  },
+  setup() {
+    const userInfoStore = useUserInfoStore()
+    return { userInfoStore }
+  },
   data() {
     return {
       showMenu: false,

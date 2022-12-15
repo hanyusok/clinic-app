@@ -12,7 +12,7 @@
             class="multisteps-form__input form-control"
             type="text"
             placeholder="eg. Street 111"
-            v-model="userInfoStore.address1"
+            v-model="$parent.userInfoStore.address1"
           />
         </div>
       </div>
@@ -23,7 +23,7 @@
             class="multisteps-form__input form-control"
             type="text"
             placeholder="eg. Street 221"
-            v-model="userInfoStore.address2"
+            v-model="$parent.userInfoStore.address2"
           />
         </div>
       </div>
@@ -34,7 +34,7 @@
             class="multisteps-form__input form-control"
             type="text"
             placeholder="eg. Tokyo"
-            v-model="userInfoStore.city"
+            v-model="$parent.userInfoStore.city"
           />
         </div>
         <div class="col-6 col-sm-3 mt-3 mt-sm-0">
@@ -43,7 +43,7 @@
             id="choices-state"
             class="multisteps-form__select form-control"
             name="choices-state"
-            v-model="userInfoStore.state"
+            v-model="$parent.userInfoStore.state"
           >
             <option selected="selected">...</option>
             <option value="1">State 1</option>
@@ -56,7 +56,7 @@
             class="multisteps-form__input form-control"
             type="text"
             placeholder="7 letters"
-            v-model="userInfoStore.zip"
+            v-model="$parent.userInfoStore.zip"
           />
         </div>
       </div>
@@ -83,28 +83,29 @@
 </template>
 
 <script>
-import VsudButton from "@/components/VsudButton.vue";
-import Choices from "choices.js";
+import VsudButton from '@/components/VsudButton.vue'
+import Choices from 'choices.js'
 import { useUserInfoStore } from '@/stores/userInfo'
 
 export default {
-  name: "Address",
-  components: {    
+  name: 'Address',
+  components: {
     VsudButton,
-  },  
-  setup(){
+    Choices
+  },
+  setup() {
     const userInfoStore = useUserInfoStore()
-    return { userInfoStore}
+    return { userInfoStore }
   },
   mounted() {
-    if (document.getElementById("choices-state")) {
-      var element = document.getElementById("choices-state");
+    if (document.getElementById('choices-state')) {
+      var element = document.getElementById('choices-state')
       new Choices(element, {
-        searchEnabled: false,
-      });
+        searchEnabled: false
+      })
     }
-  },
-};
+  }
+}
 </script>
 
 <style></style>
