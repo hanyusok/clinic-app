@@ -2,7 +2,7 @@ import { computed, ref } from 'vue'
 import { defineStore } from "pinia";
 import router from "@/router/index";
 import { signOut, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
-import { collection, doc, query, onSnapshot, orderBy, setDoc, updateDoc } from 'firebase/firestore'
+import { collection, doc, query, onSnapshot, orderBy, setDoc, updateDoc, where } from 'firebase/firestore'
 import { auth, db } from '@/firebase/init'
 
 export const useUserInfoStore = defineStore({
@@ -28,33 +28,35 @@ export const useUserInfoStore = defineStore({
 
     // isLoggedIn: true,
   }),
-  getters: {
-    
-  },
+  getters: {    
+  }, 
   actions: {
-    async obtainInitialDb(){
-        const userCollectionRef = collection(db, "users")
-        const q = query(userCollectionRef, orderBy("name"));
-        const unsubscribe = onSnapshot(q, (snapshot) => {
-          snapshot.docChanges().forEach((change) => {
-            let userChange = change.doc.data();
-            userChange.id = change.doc.id;
-            if (change.type === "added") {
-              console.log("user added : ", userChange);
-              this.users.unshift(userChange);
-            }
-            if (change.type === "modified") {
-              console.log("user modified: ", userChange);
-              let index = this.users.findIndex((user) => user.id === userChange.id);
-              Object.assign(this.users[index], userChange);
-            }
-            if (change.type === "removed") {
-              console.log("user removed: ", userChange);
-              let index = this.calls.findIndex((user) => user.id === userChange.id);
-              this.users.splice(index, 1);
-            }
-          });
+    init(){
+      const userCollectionRef = collection(db, "users")
+      // const q = query(userCollectionRef, orderBy("id"));
+      const q = query(userCollectionRef, where("id", "==", auth.id));
+      const unsubscribe = onSnapshot(q, (snapshot) => {
+        // const users = []
+        snapshot.docChanges().forEach((change) => {
+          let userChange = change.doc.data();
+          userChange.id = change.doc.id;     
+          if (change.type === "added") {
+            console.log("user added : ", userChange);
+            this.users.unshift(userChange);
+          }
+          if (change.type === "modified") {
+            console.log("user modified: ", userChange);
+            let index = this.users.findIndex((user) => user.id === userChange.id);
+            Object.assign(this.users[index], userChange);
+          }
+          if (change.type === "removed") {
+            console.log("user removed: ", userChange);
+            let index = this.calls.findIndex((user) => user.id === userChange.id);
+            this.users.splice(index, 1);
+          }
         });
+      });    
+      console.log('user collection initialized!')  
     },
     // async update(){
     //   const id = auth.id

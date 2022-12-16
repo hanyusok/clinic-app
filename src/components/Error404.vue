@@ -5,9 +5,7 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-6 my-auto">
-            <h1 class="display-1 text-bolder text-gradient text-danger">
-              Error 404
-            </h1>
+            <h1 class="display-1 text-bolder text-gradient text-danger">Error 404</h1>
             <h2>Erm. Page not found</h2>
             <p class="lead">
               We suggest you to go to the homepage while we solve this issue.
@@ -31,33 +29,33 @@
 </template>
 
 <script>
-import Navbar from "@/components/Navbar.vue";
-import AppFooter from "@/components/Footer.vue";
-import VsudButton from "@/components/VsudButton.vue";
-import { useDesignStore } from "@/stores/design";
+// import Navbar from '@/components/Navbar.vue'
+import AppFooter from '@/components/Footer.vue'
+import VsudButton from '@/components/VsudButton.vue'
+import { useDesignStore } from '@/stores/design'
 
 export default {
-  name: "Error404",
+  name: 'Error404',
   components: {
-    Navbar,
+    // Navbar,
     AppFooter,
-    VsudButton,
+    VsudButton
   },
-  setup(){
+  setup() {
     const designStore = useDesignStore()
     return { designStore }
   },
   created() {
-    this.designStore.hideConfigButton = true;
-    this.designStore.showNavbar = false;
-    this.designStore.showSidenav = false;
-    this.designStore.showFooter = false;
+    this.designStore.hideConfigButton = true
+    this.designStore.showNavbar = false
+    this.designStore.showSidenav = false
+    this.designStore.showFooter = false
   },
   beforeUnmount() {
-    this.designStore.hideConfigButton = false;
-    this.designStore.showNavbar = true;
-    this.designStore.showSidenav = true;
-    this.designStore.showFooter = true;
-  },
-};
+    this.designStore.hideConfigButton = false
+    this.designStore.showNavbar = true
+    this.designStore.showSidenav = true
+    this.designStore.showFooter = true
+  }
+}
 </script>

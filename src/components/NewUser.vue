@@ -283,9 +283,9 @@ export default {
         this.activeStep -= 1
       }
     },
-    handleSubmit(){
+    handleSubmit() {
       console.log('trying to submit data!-it worked')
-      this.userInfoStore.obtainInitialDb()
+      // this.userInfoStore.obtainInitialDb()
     }
   }
 }

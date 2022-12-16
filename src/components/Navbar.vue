@@ -455,7 +455,11 @@
                           class="w-100 d-flex align-items-center justify-content-between"
                         >
                           <div>
-                            <p class="p-0 dropdown-header text-dark">Log Out</p>
+                            <a
+                              @click="authStore.signout"
+                              class="p-0 dropdown-header text-dark"
+                              >Log Out</a
+                            >
                           </div>
                         </div>
                       </div>
@@ -512,7 +516,11 @@
                         class="w-100 d-flex align-items-center justify-content-between"
                       >
                         <div>
-                          <p class="p-0 dropdown-header text-dark">Log out</p>
+                          <a
+                            @click="authStore.signout"
+                            class="p-0 dropdown-header text-dark"
+                            >Log out</a
+                          >
                         </div>
                       </div>
                     </div>
@@ -521,8 +529,6 @@
               </div>
             </div>
           </li>
-
-          
         </ul>
         <ul class="navbar-nav d-lg-block d-none">
           <li class="nav-item">
@@ -545,9 +551,14 @@ import bgImg from '@/assets/img/curved-images/curved8.jpg'
 import downArrWhite from '@/assets/img/down-arrow-white.svg'
 import downArrBlack from '@/assets/img/down-arrow-dark.svg'
 import Icon from '@/components/Icon.vue'
+import { useAuthStore } from '@/stores/auth'
 
 export default {
   name: 'Navbar',
+  setup() {
+    const authStore = useAuthStore()
+    return { authStore }
+  },
   components: { Icon },
   props: {
     btnBackground: { type: String, default: '' },

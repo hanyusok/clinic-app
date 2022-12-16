@@ -5,7 +5,7 @@ import { doc, setDoc } from 'firebase/firestore'
 import { auth, db } from '@/firebase/init'
 
 export const useAuthStore = defineStore({
-  id: "main",
+  id: "authStore",
   state: () => ({
     isLoggedIn: true,
     email: "",
@@ -53,8 +53,7 @@ export const useAuthStore = defineStore({
         })
     },
 
-    signout() {
-      const auth = getAuth()
+    signout() {      
       signOut(auth).then(() => {
           alert("logout!!!")
         })
