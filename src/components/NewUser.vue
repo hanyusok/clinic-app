@@ -282,6 +282,10 @@ export default {
       if (this.activeStep > 0) {
         this.activeStep -= 1
       }
+    },
+    handleSubmit(){
+      console.log('trying to submit data!-it worked')
+      this.userInfoStore.obtainInitialDb()
     }
   }
 }
