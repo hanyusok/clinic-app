@@ -32,9 +32,9 @@ export const useUserInfoStore = defineStore({
   }, 
   actions: {
     init(){
-      // const userCollectionRef = collection(db, "users")
+      const userCollectionRef = collection(db, "users")
       // const q = query(userCollectionRef, orderBy("name"));
-      // // const q = query(userCollectionRef, where("id", "==", auth.id));
+      const q = query(userCollectionRef, auth.id);
       // const unsubscribe = onSnapshot(q, (snapshot) => {
       //   // const users = []
       //   snapshot.docChanges().forEach((change) => {
