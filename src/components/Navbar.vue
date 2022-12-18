@@ -398,7 +398,7 @@
             >
               <div class="d-none d-lg-flex">
                 <ul class="list-group">
-                  <li
+                  <li v-if="!authStore.isLoggedIn"
                     class="p-0 border-0 nav-item dropdown dropdown-hover dropdown-subitem list-group-item"
                   >
                     <router-link
@@ -419,7 +419,7 @@
                       </div>
                     </router-link>
                   </li>
-                  <li
+                  <li v-if="!authStore.isLoggedIn"
                     class="p-0 border-0 nav-item dropdown dropdown-hover dropdown-subitem list-group-item"
                   >
                     <router-link
@@ -440,14 +440,11 @@
                       </div>
                     </router-link>
                   </li>
-                  <li
+                  <li v-if="authStore.isLoggedIn"
                     class="p-0 border-0 nav-item dropdown dropdown-hover dropdown-subitem list-group-item"
                   >
-                    <router-link
-                      class="py-2 dropdown-item ps-3 border-radius-md"
-                      :to="{ name: 'Signin' }"
-                    >
-                      <div class="d-flex">
+                    
+                      <div class="d-flex py-2 dropdown-item ps-3 border-radius-md ">
                         <div class="h-10 mt-1 icon me-3 d-flex">
                           <i class="ni ni-laptop text-gradient text-success"></i>
                         </div>
@@ -463,14 +460,14 @@
                           </div>
                         </div>
                       </div>
-                    </router-link>
+                    
                   </li>
                 </ul>
               </div>
               <!-- responsive of authentication -->
               <div class="d-lg-none">
                 <div class="col-md-12">
-                  <router-link
+                  <router-link v-if="!authStore.isLoggedIn"
                     class="py-2 ps-3 border-radius-md"
                     :to="{ name: 'Signin' }"
                   >
@@ -487,7 +484,7 @@
                       </div>
                     </div>
                   </router-link>
-                  <router-link
+                  <router-link v-if="!authStore.isLoggedIn"
                     class="py-2 ps-3 border-radius-md"
                     :to="{ name: 'Signup' }"
                   >
@@ -504,11 +501,8 @@
                       </div>
                     </div>
                   </router-link>
-                  <router-link
-                    class="py-2 ps-3 border-radius-md"
-                    :to="{ name: 'Signup' }"
-                  >
-                    <div class="d-flex">
+
+                    <div class="d-flex py-2 ps-3 border-radius-md" v-if="authStore.isLoggedIn">
                       <div class="h-10 mt-1 icon me-3 d-flex">
                         <i class="ni ni-single-copy-04 text-gradient text-success"></i>
                       </div>
@@ -524,8 +518,7 @@
                         </div>
                       </div>
                     </div>
-                  </router-link>
-                </div>
+                 </div>
               </div>
             </div>
           </li>
