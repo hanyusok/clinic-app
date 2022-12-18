@@ -32,30 +32,30 @@ export const useUserInfoStore = defineStore({
   }, 
   actions: {
     init(){
-      const userCollectionRef = collection(db, "users")
-      // const q = query(userCollectionRef, orderBy("id"));
-      const q = query(userCollectionRef, where("id", "==", auth.id));
-      const unsubscribe = onSnapshot(q, (snapshot) => {
-        // const users = []
-        snapshot.docChanges().forEach((change) => {
-          let userChange = change.doc.data();
-          userChange.id = change.doc.id;     
-          if (change.type === "added") {
-            console.log("user added : ", userChange);
-            this.users.unshift(userChange);
-          }
-          if (change.type === "modified") {
-            console.log("user modified: ", userChange);
-            let index = this.users.findIndex((user) => user.id === userChange.id);
-            Object.assign(this.users[index], userChange);
-          }
-          if (change.type === "removed") {
-            console.log("user removed: ", userChange);
-            let index = this.calls.findIndex((user) => user.id === userChange.id);
-            this.users.splice(index, 1);
-          }
-        });
-      });    
+      // const userCollectionRef = collection(db, "users")
+      // const q = query(userCollectionRef, orderBy("name"));
+      // // const q = query(userCollectionRef, where("id", "==", auth.id));
+      // const unsubscribe = onSnapshot(q, (snapshot) => {
+      //   // const users = []
+      //   snapshot.docChanges().forEach((change) => {
+      //     let userChange = change.doc.data();
+      //     userChange.id = change.doc.id;     
+      //     if (change.type === "added") {
+      //       console.log("user added : ", userChange);
+      //       this.users.unshift(userChange);
+      //     }
+      //     if (change.type === "modified") {
+      //       console.log("user modified: ", userChange);
+      //       let index = this.users.findIndex((user) => user.id === userChange.id);
+      //       Object.assign(this.users[index], userChange);
+      //     }
+      //     if (change.type === "removed") {
+      //       console.log("user removed: ", userChange);
+      //       let index = this.calls.findIndex((user) => user.id === userChange.id);
+      //       this.users.splice(index, 1);
+      //    }
+      //  });
+      //});    
       console.log('user collection initialized!')  
     },
     // async update(){
