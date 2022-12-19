@@ -12,7 +12,7 @@
             class="multisteps-form__input form-control"
             type="text"
             placeholder="Use an address you don't use frequently."
-            v-modle="$parent.userInfoStore.publicEmail"
+            v-model="$parent.userInfoStore.publicEmail"
           />
         </div>
         <div class="col-12">
