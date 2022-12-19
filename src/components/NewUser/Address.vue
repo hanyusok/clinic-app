@@ -84,27 +84,27 @@
 
 <script>
 import VsudButton from '@/components/VsudButton.vue'
-import Choices from 'choices.js'
+// import Choices from 'choices.js'
 import { useUserInfoStore } from '@/stores/userInfo'
 
 export default {
   name: 'Address',
   components: {
     VsudButton,
-    Choices
+    // Choices
   },
   setup() {
     const userInfoStore = useUserInfoStore()
     return { userInfoStore }
   },
-  mounted() {
-    if (document.getElementById('choices-state')) {
-      var element = document.getElementById('choices-state')
-      new Choices(element, {
-        searchEnabled: false
-      })
-    }
-  }
+  // mounted() {
+  //   if (document.getElementById('choices-state')) {
+  //     var element = document.getElementById('choices-state')
+  //     new Choices(element, {
+  //       searchEnabled: false
+  //     })
+  //   }
+  // }
 }
 </script>
 
