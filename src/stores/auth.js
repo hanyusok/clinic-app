@@ -47,6 +47,7 @@ export const useAuthStore = defineStore({
           alert("login successfully")
           router.push("/overview")
           const user = userCredential.user
+          this.userId = user.uid
         })
         .catch((error) => {
           const errorCode = error.code
@@ -58,6 +59,8 @@ export const useAuthStore = defineStore({
     signout() {      
       signOut(auth).then(() => {
           alert("logout!!!")
+          const user = userCredential.user
+          this.userId = ''
         })
         .catch((error) => {
           const errorCode = error.code

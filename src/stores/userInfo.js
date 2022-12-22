@@ -29,13 +29,18 @@ export const useUserInfoStore = defineStore({
 
     // isLoggedIn: true,
   }),
-  getters: {    
-  }, 
+  // setup(){
+  //   const authStore = useAuthStore()
+  //   return { authStore}
+  // },
+  // getters: {
+        
+  // }, 
   actions: {
     init(){
-      const userCollectionRef = collection(db, "users")
+      // const userCollectionRef = collection(db, "users")
       // const q = query(userCollectionRef, orderBy("name"));
-      const q = query(userCollectionRef, auth.id);
+      // const q = query(userCollectionRef, auth.id);
       // const unsubscribe = onSnapshot(q, (snapshot) => {
       //   // const users = []
       //   snapshot.docChanges().forEach((change) => {
@@ -61,25 +66,25 @@ export const useUserInfoStore = defineStore({
        
     },
     async updateUserInfo(){
-      const uid = userCredential.user.uid 
-      const userDocRef = doc(db, 'users', uid)
+      // const uid = this.authStore.userId
+      const userDocRef = doc(db, 'users', 'xM4e6GZbJyduPJvxzag7')
       await updateDoc(userDocRef, {
         firstName: this.firstName,
         lastName: this.lastName,
         company: this.company,
-        // email: "",
-        // password:"",
-        // repassword: "",
-        // address1: "",
-        // address2: "",
-        // city: "",
-        // state: "",
-        // zip: "",
-        // twitter: "",
-        // facebook: "",
-        // instagram: "",
-        // publicEmail: "",
-        // bio: ""
+        email: this.email,
+        password: this.password,
+        repassword: this.repassword,
+        address1: this.address1,
+        address2: this.address2,
+        city: this.city,
+        state: this.state,
+        zip: this.zip,
+        twitter: this.twitter,
+        facebook: this.facebook,
+        instagram: this.instagram,
+        publicEmail: this.publicEmail,
+        bio: this.bio
   
       })
       console.log("updated userinfo!")
