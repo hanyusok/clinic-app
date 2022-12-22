@@ -32,10 +32,7 @@
                 <div class="px-1 pt-0 text-center card-footer px-lg-2">
                   <p class="mx-auto mb-4 text-sm">
                     Don't have an account?
-                    <a
-                      href="javascript:;"
-                      class="text-info text-gradient font-weight-bold"
-                    >Sign up</a>
+                    <router-link class="text-info text-gradient font-weight-bold" :to="{ name: 'Signup'}">Sign up</router-link>                    
                   </p>
                 </div>
               </div>

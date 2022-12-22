@@ -76,11 +76,7 @@
                 <div class="card-footer text-center pt-0 px-sm-4 px-1">
                   <p class="mb-4 mx-auto">
                     Already have an account?
-                    <a
-                      href="../../../pages/sign-in/sign-in-cover.html"
-                      class="text-success text-gradient font-weight-bold"
-                      >Sign in</a
-                    >
+                    <router-link class="text-success text-gradient font-weight-bold" :to="{ name: 'Signin'}">Sign in</router-link>                    
                   </p>
                 </div>
               </div>

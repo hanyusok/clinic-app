@@ -1,5 +1,6 @@
 <template>
-  <div class="container-fluid">
+  <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg">
+    <div class="container-fluid">
     <div
       class="mt-4 page-header min-height-300 border-radius-xl"
       :style="{
@@ -173,116 +174,60 @@
       </div>
     </div>
   </div>
-  <div class="container-fluid py-5">
-    <div class="row">
-      <div class="col-12">
-        <div class="multisteps-form mb-5">
-          <div class="row">
-            <div class="col-12 col-lg-8 mx-auto my-5">
-              <div class="multisteps-form__progress">
-                <button
-                  class="multisteps-form__progress-btn js-active"
-                  type="button"
-                  title="User Info"
-                  :class="activeStep >= 0 ? activeClass : ''"
-                  @click="activeStep = 0"
-                >
-                  <span>User Info</span>
-                </button>
-                <button
-                  class="multisteps-form__progress-btn"
-                  type="button"
-                  title="Address"
-                  :class="activeStep >= 1 ? activeClass : ''"
-                  @click="activeStep = 1"
-                >
-                  Address
-                </button>
-                <button
-                  class="multisteps-form__progress-btn"
-                  type="button"
-                  title="Socials"
-                  :class="activeStep >= 2 ? activeClass : ''"
-                  @click="activeStep = 2"
-                >
-                  Socials
-                </button>
-                <button
-                  class="multisteps-form__progress-btn"
-                  type="button"
-                  title="Profile"
-                  :class="activeStep >= 3 ? activeClass : ''"
-                  @click="activeStep = 3"
-                >
-                  Profile
-                </button>
-              </div>
-            </div>
-          </div>
-          <!--form panels-->
-          <div class="row">
-            <div class="col-12 col-lg-8 m-auto">
-              <form class="multisteps-form__form mb-5">
-                <!--single form panel-->
-                <UserInfo :class="activeStep === 0 ? activeClass : ''" />
-                <!--single form panel-->
-                <Address :class="activeStep === 1 ? activeClass : ''" />
-                <!--single form panel-->
-                <Socials :class="activeStep === 2 ? activeClass : ''" />
-                <!--single form panel-->
-                <Profile :class="activeStep === 3 ? activeClass : ''" />
-              </form>
-            </div>
-          </div>
+    <div class="py-4 container-fluid">      
+      <div class="mt-4 row">
+        <div class="col-sm-6">
+          <transactions-card />
+        </div>
+        <div class="mt-4 col-sm-6 mt-sm-0">
+          <revenue-card />
         </div>
       </div>
+      <app-footer />
     </div>
-  </div>
+  </main>
 </template>
 
 <script>
+// import VisitorsCard from "@/components/VisitorsCard.vue";
+// import IncomeCard from "@/components/IncomeCard.vue";
+// import NewTabCard from "@/components/NewTabCard.vue";
+// import WealthCreationCard from "@/components/WealthCreationCard.vue";
+// import CategoriesCard from "@/components/CategoriesCard.vue";
+// import BirthdayMessageCard from "@/components/BirthdayMessageCard.vue";
+import TransactionsCard from "@/components/TransactionsCard.vue";
+import RevenueCard from "@/components/RevenueCard.vue";
+// import Calendar from "@/examples/Calendar.vue";
+import AppFooter from "@/components/Footer.vue";
+import { useDesignStore } from "@/stores/design";
 import bgImg from '@/assets/img/curved-images/curved14.jpg'
-// import Choices from 'choices.js'
-import UserInfo from '@/components/NewUser/UserInfo.vue'
-import Address from '@/components/NewUser/Address.vue'
-import Socials from '@/components/NewUser/Socials.vue'
-import Profile from '@/components/NewUser/Profile.vue'
-import { useUserInfoStore } from '@/stores/userInfo'
 
 export default {
-  name: 'NewUser',
+  name: "Process",
+  setup(){
+    const designStore = useDesignStore()
+    return { designStore }
+  },
+  data(){
+    return{ bgImg}
+  },
   components: {
-    UserInfo,
-    Address,
-    Socials,
-    Profile
+    // VisitorsCard,
+    // IncomeCard,
+    // NewTabCard,
+    // WealthCreationCard,
+    // CategoriesCard,
+    // BirthdayMessageCard,
+    // Calendar,
+    TransactionsCard,
+    RevenueCard,
+    AppFooter,
   },
-  setup() {
-    const userInfoStore = useUserInfoStore()
-    return { userInfoStore }
+  beforeMount() {
+    this.designStore.showFooter = false;
   },
-  data() {
-    return {
-      showMenu: false,
-      activeClass: 'js-active position-relative',
-      activeStep: 0,
-      formSteps: 3,
-      bgImg
-    }
+  beforeUnmount() {
+    this.designStore.showFooter = true;
   },
-  methods: {
-    nextStep() {
-      if (this.activeStep < this.formSteps) {
-        this.activeStep += 1
-      } else {
-        this.activeStep -= 1
-      }
-    },
-    prevStep() {
-      if (this.activeStep > 0) {
-        this.activeStep -= 1
-      }
-    }
-  }
-}
+};
 </script>

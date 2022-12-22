@@ -180,14 +180,14 @@
 </template>
 
 <script>
-import * as Choices from "choices.js";
+// import * as Choices from "choices.js";
 // import NavPill from "./components/NavPill.vue";
 import VsudSwitch from "@/components/VsudSwitch.vue";
 import VsudButton from "@/components/VsudButton.vue";
-import bgImg from '../assets/img/curved-images/curved6.jpg'
+import bgImg from '@/assets/img/curved-images/curved6.jpg'
 
 export default {
-  name: "Security",
+  name: "NewCall",
   components: {
     VsudSwitch,
     VsudButton,
@@ -197,8 +197,8 @@ export default {
       bgImg
     }
   },
-  mounted() {
-    new Choices(this.$refs.choicesQuestions)
-  },
+  // mounted() {
+  //   new Choices(this.$refs.choicesQuestions)
+  // },
 };
 </script>

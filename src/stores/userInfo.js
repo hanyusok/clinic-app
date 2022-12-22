@@ -28,7 +28,6 @@ export const useUserInfoStore = defineStore({
     async updateUserInfo(){
       const user = auth.currentUser
       const uid = user.uid
-      // const userEmail = user.email
       const userDocRef = doc(db, 'users', uid)
       await updateDoc(userDocRef, {
         firstName: this.firstName,
@@ -47,10 +46,15 @@ export const useUserInfoStore = defineStore({
         instagram: this.instagram,
         publicEmail: this.publicEmail,
         bio: this.bio  
-      }),
-      console.log("updated userinfo!")
-      alert('Your personal information are updated!')
-      router.push("/overview") 
-    },
+      }).then((resp) =>{
+        console.log(resp)
+        console.log("updated userinfo!")
+        alert('Your personal information are updated!')
+        router.push("/overview")
+      }).catch((err) => {
+        console.log(err)
+      })
+              
+    }
   }
 })

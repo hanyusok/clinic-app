@@ -39,7 +39,7 @@
           color="dark"
           variant="gradient"
           class="ms-auto"
-          @click="$parent.handleUserInfo"
+          @click="$parent.userInfoStore.updateUserInfo"
           >Send</vsud-button
         >
       </div>

@@ -83,7 +83,7 @@
                   >
                     <router-link
                       class="py-2 dropdown-item ps-3 border-radius-md"
-                      :to="{ name: 'Signup' }"
+                      :to="{ name: 'Faq' }"
                     >
                       <div class="d-flex">
                         <div class="h-10 mt-1 icon me-3 d-flex">
@@ -93,7 +93,7 @@
                           class="w-100 d-flex align-items-center justify-content-between"
                         >
                           <div>
-                            <p class="p-0 dropdown-header text-dark">Sign Up</p>
+                            <p class="p-0 dropdown-header text-dark">FAG</p>
                           </div>
                         </div>
                       </div>
@@ -104,7 +104,7 @@
                   >
                     <router-link
                       class="py-2 dropdown-item ps-3 border-radius-md"
-                      :to="{ name: 'Signin' }"
+                      :to="{ name: 'NewCall' }"
                     >
                       <div class="d-flex">
                         <div class="h-10 mt-1 icon me-3 d-flex">
@@ -114,7 +114,7 @@
                           class="w-100 d-flex align-items-center justify-content-between"
                         >
                           <div>
-                            <p class="p-0 dropdown-header text-dark">Log Out</p>
+                            <p class="p-0 dropdown-header text-dark">New Call</p>
                           </div>
                         </div>
                       </div>
@@ -143,7 +143,7 @@
                       </div>
                     </div>
                   </router-link>
-                  <router-link class="py-2 ps-3 border-radius-md" :to="{ name: 'CRM' }">
+                  <router-link class="py-2 ps-3 border-radius-md" :to="{ name: 'Faq' }">
                     <div class="d-flex">
                       <div class="h-10 mt-1 icon me-3 d-flex">
                         <i class="ni ni-laptop text-gradient text-success"></i>
@@ -152,26 +152,13 @@
                         class="w-100 d-flex align-items-center justify-content-between"
                       >
                         <div>
-                          <p class="p-0 dropdown-header text-dark">CRM</p>
+                          <p class="p-0 dropdown-header text-dark">FAQ</p>
                         </div>
                       </div>
                     </div>
                   </router-link>
-                  <router-link class="py-2 ps-3 border-radius-md" :to="{ name: 'CRM' }">
-                    <div class="d-flex">
-                      <div class="h-10 mt-1 icon me-3 d-flex">
-                        <i class="ni ni-badge text-gradient text-success"></i>
-                      </div>
-                      <div
-                        class="w-100 d-flex align-items-center justify-content-between"
-                      >
-                        <div>
-                          <p class="p-0 dropdown-header text-dark">CRM</p>
-                        </div>
-                      </div>
-                    </div>
-                  </router-link>
-                  <router-link class="py-2 ps-3 border-radius-md" :to="{ name: 'CRM' }">
+                
+                  <router-link class="py-2 ps-3 border-radius-md" :to="{ name: 'NewCall' }">
                     <div class="d-flex">
                       <div class="h-10 mt-1 icon me-3 d-flex">
                         <i class="ni ni-notification-70 text-gradient text-success"></i>
@@ -180,7 +167,7 @@
                         class="w-100 d-flex align-items-center justify-content-between"
                       >
                         <div>
-                          <p class="p-0 dropdown-header text-dark">CRM</p>
+                          <p class="p-0 dropdown-header text-dark">New Call</p>
                         </div>
                       </div>
                     </div>
@@ -245,7 +232,7 @@
                   >
                     <router-link
                       class="py-2 dropdown-item ps-3 border-radius-md"
-                      :to="{ name: 'CRM' }"
+                      :to="{ name: 'Clinic' }"
                     >
                       <div class="d-flex">
                         <div class="h-10 mt-1 icon me-3 d-flex">
@@ -255,7 +242,7 @@
                           class="w-100 d-flex align-items-center justify-content-between"
                         >
                           <div>
-                            <p class="p-0 dropdown-header text-dark">CRM</p>
+                            <p class="p-0 dropdown-header text-dark">Clinic</p>
                           </div>
                         </div>
                       </div>
@@ -266,7 +253,7 @@
                   >
                     <router-link
                       class="py-2 dropdown-item ps-3 border-radius-md"
-                      :to="{ name: 'CRM' }"
+                      :to="{ name: 'CallList' }"
                     >
                       <div class="d-flex">
                         <div class="h-10 mt-1 icon me-3 d-flex">
@@ -276,7 +263,7 @@
                           class="w-100 d-flex align-items-center justify-content-between"
                         >
                           <div>
-                            <p class="p-0 dropdown-header text-dark">CRM</p>
+                            <p class="p-0 dropdown-header text-dark">Call List</p>
                           </div>
                         </div>
                       </div>
@@ -287,7 +274,7 @@
                   >
                     <router-link
                       class="py-2 dropdown-item ps-3 border-radius-md"
-                      :to="{ name: 'CRM' }"
+                      :to="{ name: 'Process' }"
                     >
                       <div class="d-flex">
                         <div class="h-10 mt-1 icon me-3 d-flex">
@@ -297,7 +284,7 @@
                           class="w-100 d-flex align-items-center justify-content-between"
                         >
                           <div>
-                            <p class="p-0 dropdown-header text-dark">CRM</p>
+                            <p class="p-0 dropdown-header text-dark">Process</p>
                           </div>
                         </div>
                       </div>
@@ -308,7 +295,7 @@
               <!-- responsive of Application-->
               <div class="row d-lg-none">
                 <div class="col-md-12">
-                  <router-link class="py-2 ps-3 border-radius-md" :to="{ name: 'CRM' }">
+                  <router-link class="py-2 ps-3 border-radius-md" :to="{ name: 'NewUser' }">
                     <div class="d-flex">
                       <div class="h-10 mt-1 icon me-3 d-flex">
                         <i class="ni ni-single-copy-04 text-gradient text-success"></i>
@@ -317,12 +304,12 @@
                         class="w-100 d-flex align-items-center justify-content-between"
                       >
                         <div>
-                          <p class="p-0 dropdown-header text-dark">CRM</p>
+                          <p class="p-0 dropdown-header text-dark">New User</p>
                         </div>
                       </div>
                     </div>
                   </router-link>
-                  <router-link class="py-2 ps-3 border-radius-md" :to="{ name: 'CRM' }">
+                  <router-link class="py-2 ps-3 border-radius-md" :to="{ name: 'Clinic' }">
                     <div class="d-flex">
                       <div class="h-10 mt-1 icon me-3 d-flex">
                         <i class="ni ni-laptop text-gradient text-success"></i>
@@ -331,12 +318,12 @@
                         class="w-100 d-flex align-items-center justify-content-between"
                       >
                         <div>
-                          <p class="p-0 dropdown-header text-dark">CRM</p>
+                          <p class="p-0 dropdown-header text-dark">Clinic</p>
                         </div>
                       </div>
                     </div>
                   </router-link>
-                  <router-link class="py-2 ps-3 border-radius-md" :to="{ name: 'CRM' }">
+                  <router-link class="py-2 ps-3 border-radius-md" :to="{ name: 'CallList' }">
                     <div class="d-flex">
                       <div class="h-10 mt-1 icon me-3 d-flex">
                         <i class="ni ni-badge text-gradient text-success"></i>
@@ -345,12 +332,12 @@
                         class="w-100 d-flex align-items-center justify-content-between"
                       >
                         <div>
-                          <p class="p-0 dropdown-header text-dark">CRM</p>
+                          <p class="p-0 dropdown-header text-dark">Call List</p>
                         </div>
                       </div>
                     </div>
                   </router-link>
-                  <router-link class="py-2 ps-3 border-radius-md" :to="{ name: 'CRM' }">
+                  <router-link class="py-2 ps-3 border-radius-md" :to="{ name: 'Process' }">
                     <div class="d-flex">
                       <div class="h-10 mt-1 icon me-3 d-flex">
                         <i class="ni ni-notification-70 text-gradient text-success"></i>
@@ -359,7 +346,7 @@
                         class="w-100 d-flex align-items-center justify-content-between"
                       >
                         <div>
-                          <p class="p-0 dropdown-header text-dark">CRM</p>
+                          <p class="p-0 dropdown-header text-dark">Process</p>
                         </div>
                       </div>
                     </div>

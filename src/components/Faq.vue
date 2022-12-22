@@ -9,7 +9,7 @@
     <div class="container pb-10 pb-lg-9 pt-7 postion-relative z-index-2">
       <div class="row">
         <div class="mx-auto text-center col-md-6">
-          <h3 class="text-white">See our pricing</h3>
+          <h3 class="text-white">See our FAQs</h3>
           <p class="text-white">You have Free Unlimited Updates and Premium Support on each package.</p>
         </div>
       </div>
@@ -265,7 +265,7 @@ import setNavPills from "@/assets/js/nav-pills.js";
 import { useDesignStore } from "@/stores/design";
 
 export default {
-  name: "Pricing",
+  name: "Fag",
   components: {
     // Navbar,
     PricingCard,

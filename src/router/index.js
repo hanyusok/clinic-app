@@ -5,13 +5,13 @@ import Signin from '@/components/Signin.vue'
 import Signup from '@/components/Signup.vue'
 import Overview from '@/components/Overview.vue'
 import NewUser from '@/components/NewUser.vue'
-import Security from '@/components/Security.vue'
-import Pricing from '@/components/Pricing.vue'
+import NewCall from '@/components/NewCall.vue'
+import Faq from '@/components/Faq.vue'
 import ProductsList from '@/components/ProductsList.vue'
-import OrderList from '@/components/OrderList.vue'
-import Referral from '@/components/Referral.vue'
+import CallList from '@/components/CallList.vue'
+import Clinic from '@/components/Clinic.vue'
 import Error404 from '@/components/Error404.vue'
-import CRM from '@/components/CRM.vue'
+import Process from '@/components/Process.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -48,14 +48,14 @@ const router = createRouter({
       component: NewUser
     },
     {
-      path: '/security',
-      name: 'Security',
-      component: Security
+      path: '/newcall',
+      name: 'NewCall',
+      component: NewCall
     },
     {
-      path: '/pricing',
-      name: 'Pricing',
-      component: Pricing
+      path: '/faq',
+      name: 'Faq',
+      component: Faq
     },
     {
       path: '/productslist',
@@ -63,14 +63,14 @@ const router = createRouter({
       component: ProductsList
     },
     {
-      path: '/orderlist',
-      name: 'OrderList',
-      component: OrderList
+      path: '/calllist',
+      name: 'CallList',
+      component: CallList
     },
     {
-      path: '/referral',
-      name: 'Referral',
-      component: Referral
+      path: '/clinic',
+      name: 'Clinic',
+      component: Clinic
     },
     {
       path: '/error',
@@ -78,9 +78,9 @@ const router = createRouter({
       component: Error404
     },
     {
-      path: '/crm',
-      name: 'CRM',
-      component: CRM
+      path: '/process',
+      name: 'Process',
+      component: Process
     }
   ]
 })
@@ -104,7 +104,7 @@ router.beforeEach( async (to, from, next) => {
       next();
     } else {
       alert("You are not allowed to access. please log in first!!");
-      next('/');
+      next('/signup');
     }
   } else {
     next();
