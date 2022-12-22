@@ -12,13 +12,15 @@ export const useAuthStore = defineStore({
     password: "",
     displayName: "",
     errorMessage: "",
+    userId: ""
   }),
   getters: {},
   actions: {
     register() {      
       createUserWithEmailAndPassword(auth, this.email, this.password)
         .then((userCredential) => {          
-          const user = userCredential.user          
+          const user = userCredential.user
+          this.userId = user.uid         
           updateProfile(auth.currentUser, {
             displayName: this.displayName
           })

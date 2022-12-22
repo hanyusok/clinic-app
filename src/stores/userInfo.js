@@ -4,9 +4,10 @@ import router from "@/router/index";
 import { signOut, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { collection, doc, query, onSnapshot, orderBy, setDoc, updateDoc, where } from 'firebase/firestore'
 import { auth, db } from '@/firebase/init'
+import { useAuthStore } from '@/stores/auth'
 
 export const useUserInfoStore = defineStore({
-  id: "userInfo",
+  id: "userInfoStore",
   state: () => ({
     users: [],
     firstName: "",
@@ -56,8 +57,34 @@ export const useUserInfoStore = defineStore({
       //    }
       //  });
       //});    
-      console.log('user collection initialized!')  
+      console.log('user collection initialized!') 
+       
     },
+    async updateUserInfo(){
+      const uid = userCredential.user.uid 
+      const userDocRef = doc(db, 'users', uid)
+      await updateDoc(userDocRef, {
+        firstName: this.firstName,
+        lastName: this.lastName,
+        company: this.company,
+        // email: "",
+        // password:"",
+        // repassword: "",
+        // address1: "",
+        // address2: "",
+        // city: "",
+        // state: "",
+        // zip: "",
+        // twitter: "",
+        // facebook: "",
+        // instagram: "",
+        // publicEmail: "",
+        // bio: ""
+  
+      })
+      console.log("updated userinfo!")
+    },
+    
     // async update(){
     //   const id = auth.id
     //   const userCollectionRef = collection(db, "users", id)

@@ -39,7 +39,7 @@
           color="dark"
           variant="gradient"
           class="ms-auto"
-          @click="$parent.handleSubmit"
+          @click="$parent.handleUserInfo"
           >Send</vsud-button
         >
       </div>
