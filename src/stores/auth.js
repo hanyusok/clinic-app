@@ -32,7 +32,7 @@ export const useAuthStore = defineStore({
 
           console.log(user)     
           alert('You are Registered!')
-          router.push("/overview")          
+          router.push("/newuser")          
         })
         .catch((error) => {
           const errorCode = error.code

@@ -1,6 +1,7 @@
 import { defineStore } from "pinia";
 import { doc, updateDoc } from 'firebase/firestore'
 import { auth, db } from '@/firebase/init'
+import router from "@/router/index";
 
 export const useUserInfoStore = defineStore({
   id: "userInfoStore",
@@ -48,6 +49,8 @@ export const useUserInfoStore = defineStore({
         bio: this.bio  
       }),
       console.log("updated userinfo!")
+      alert('Your personal information are updated!')
+      router.push("/overview") 
     },
   }
 })
