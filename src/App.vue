@@ -10,7 +10,7 @@ const authStore = useAuthStore()
 const auth = getAuth()
 const userInfoStore = useUserInfoStore()
 
-onMounted(() => userInfoStore.init())
+// onMounted(() => userInfoStore.init())
 
 onAuthStateChanged(auth, (user) => {
   if (user) {
