@@ -748,6 +748,7 @@ import img3 from "@/assets/img/team-3.jpg";
 import img4 from "@/assets/img/team-4.jpg";
 import img5 from "@/assets/img/team-5.jpg";
 import img6 from "@/assets/img/ivana-squares.jpg";
+import bgImg from '@/assets/img/curved-images/curved14.jpg'
 
 export default {
   name: "CallList",
@@ -764,6 +765,7 @@ export default {
       img4,
       img5,
       img6,
+      bgImg
     };
   },
   mounted() {
