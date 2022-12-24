@@ -12,6 +12,7 @@ import CallList from '@/components/CallList.vue'
 import Clinic from '@/components/Clinic.vue'
 import Error404 from '@/components/Error404.vue'
 import Process from '@/components/Process.vue'
+import NewClinic from '@/components/NewClinic.vue';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -35,6 +36,11 @@ const router = createRouter({
       path: '/signin',
       name: 'Signin',
       component: Signin
+    }, 
+    {
+      path: '/newclinic',
+      name: 'NewClinic',
+      component: NewClinic
     }, 
     {
       path: '/overview',

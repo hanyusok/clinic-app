@@ -157,8 +157,11 @@
                       </div>
                     </div>
                   </router-link>
-                
-                  <router-link class="py-2 ps-3 border-radius-md" :to="{ name: 'NewCall' }">
+
+                  <router-link
+                    class="py-2 ps-3 border-radius-md"
+                    :to="{ name: 'NewCall' }"
+                  >
                     <div class="d-flex">
                       <div class="h-10 mt-1 icon me-3 d-flex">
                         <i class="ni ni-notification-70 text-gradient text-success"></i>
@@ -253,6 +256,27 @@
                   >
                     <router-link
                       class="py-2 dropdown-item ps-3 border-radius-md"
+                      :to="{ name: 'NewClinic' }"
+                    >
+                      <div class="d-flex">
+                        <div class="h-10 mt-1 icon me-3 d-flex">
+                          <i class="ni ni-laptop text-gradient text-success"></i>
+                        </div>
+                        <div
+                          class="w-100 d-flex align-items-center justify-content-between"
+                        >
+                          <div>
+                            <p class="p-0 dropdown-header text-dark">New Clinic</p>
+                          </div>
+                        </div>
+                      </div>
+                    </router-link>
+                  </li>
+                  <li
+                    class="p-0 border-0 nav-item dropdown dropdown-hover dropdown-subitem list-group-item"
+                  >
+                    <router-link
+                      class="py-2 dropdown-item ps-3 border-radius-md"
                       :to="{ name: 'CallList' }"
                     >
                       <div class="d-flex">
@@ -295,7 +319,10 @@
               <!-- responsive of Application-->
               <div class="row d-lg-none">
                 <div class="col-md-12">
-                  <router-link class="py-2 ps-3 border-radius-md" :to="{ name: 'NewUser' }">
+                  <router-link
+                    class="py-2 ps-3 border-radius-md"
+                    :to="{ name: 'NewUser' }"
+                  >
                     <div class="d-flex">
                       <div class="h-10 mt-1 icon me-3 d-flex">
                         <i class="ni ni-single-copy-04 text-gradient text-success"></i>
@@ -309,7 +336,10 @@
                       </div>
                     </div>
                   </router-link>
-                  <router-link class="py-2 ps-3 border-radius-md" :to="{ name: 'Clinic' }">
+                  <router-link
+                    class="py-2 ps-3 border-radius-md"
+                    :to="{ name: 'Clinic' }"
+                  >
                     <div class="d-flex">
                       <div class="h-10 mt-1 icon me-3 d-flex">
                         <i class="ni ni-laptop text-gradient text-success"></i>
@@ -323,7 +353,27 @@
                       </div>
                     </div>
                   </router-link>
-                  <router-link class="py-2 ps-3 border-radius-md" :to="{ name: 'CallList' }">
+                  <router-link
+                    class="py-2 ps-3 border-radius-md"
+                    :to="{ name: 'NewClinic' }"
+                  >
+                    <div class="d-flex">
+                      <div class="h-10 mt-1 icon me-3 d-flex">
+                        <i class="ni ni-laptop text-gradient text-success"></i>
+                      </div>
+                      <div
+                        class="w-100 d-flex align-items-center justify-content-between"
+                      >
+                        <div>
+                          <p class="p-0 dropdown-header text-dark">New Clinic</p>
+                        </div>
+                      </div>
+                    </div>
+                  </router-link>
+                  <router-link
+                    class="py-2 ps-3 border-radius-md"
+                    :to="{ name: 'CallList' }"
+                  >
                     <div class="d-flex">
                       <div class="h-10 mt-1 icon me-3 d-flex">
                         <i class="ni ni-badge text-gradient text-success"></i>
@@ -337,7 +387,10 @@
                       </div>
                     </div>
                   </router-link>
-                  <router-link class="py-2 ps-3 border-radius-md" :to="{ name: 'Process' }">
+                  <router-link
+                    class="py-2 ps-3 border-radius-md"
+                    :to="{ name: 'Process' }"
+                  >
                     <div class="d-flex">
                       <div class="h-10 mt-1 icon me-3 d-flex">
                         <i class="ni ni-notification-70 text-gradient text-success"></i>
@@ -385,7 +438,8 @@
             >
               <div class="d-none d-lg-flex">
                 <ul class="list-group">
-                  <li v-if="!authStore.isLoggedIn"
+                  <li
+                    v-if="!authStore.isLoggedIn"
                     class="p-0 border-0 nav-item dropdown dropdown-hover dropdown-subitem list-group-item"
                   >
                     <router-link
@@ -406,7 +460,8 @@
                       </div>
                     </router-link>
                   </li>
-                  <li v-if="!authStore.isLoggedIn"
+                  <li
+                    v-if="!authStore.isLoggedIn"
                     class="p-0 border-0 nav-item dropdown dropdown-hover dropdown-subitem list-group-item"
                   >
                     <router-link
@@ -427,34 +482,34 @@
                       </div>
                     </router-link>
                   </li>
-                  <li v-if="authStore.isLoggedIn"
+                  <li
+                    v-if="authStore.isLoggedIn"
                     class="p-0 border-0 nav-item dropdown dropdown-hover dropdown-subitem list-group-item"
                   >
-                    
-                      <div class="d-flex py-2 dropdown-item ps-3 border-radius-md ">
-                        <div class="h-10 mt-1 icon me-3 d-flex">
-                          <i class="ni ni-laptop text-gradient text-success"></i>
-                        </div>
-                        <div
-                          class="w-100 d-flex align-items-center justify-content-between"
-                        >
-                          <div>
-                            <a
-                              @click="authStore.signout"
-                              class="p-0 dropdown-header text-dark"
-                              >Log Out</a
-                            >
-                          </div>
+                    <div class="d-flex py-2 dropdown-item ps-3 border-radius-md">
+                      <div class="h-10 mt-1 icon me-3 d-flex">
+                        <i class="ni ni-laptop text-gradient text-success"></i>
+                      </div>
+                      <div
+                        class="w-100 d-flex align-items-center justify-content-between"
+                      >
+                        <div>
+                          <a
+                            @click="authStore.signout"
+                            class="p-0 dropdown-header text-dark"
+                            >Log Out</a
+                          >
                         </div>
                       </div>
-                    
+                    </div>
                   </li>
                 </ul>
               </div>
               <!-- responsive of authentication -->
               <div class="d-lg-none">
                 <div class="col-md-12">
-                  <router-link v-if="!authStore.isLoggedIn"
+                  <router-link
+                    v-if="!authStore.isLoggedIn"
                     class="py-2 ps-3 border-radius-md"
                     :to="{ name: 'Signin' }"
                   >
@@ -471,7 +526,8 @@
                       </div>
                     </div>
                   </router-link>
-                  <router-link v-if="!authStore.isLoggedIn"
+                  <router-link
+                    v-if="!authStore.isLoggedIn"
                     class="py-2 ps-3 border-radius-md"
                     :to="{ name: 'Signup' }"
                   >
@@ -489,23 +545,24 @@
                     </div>
                   </router-link>
 
-                    <div class="d-flex py-2 ps-3 border-radius-md" v-if="authStore.isLoggedIn">
-                      <div class="h-10 mt-1 icon me-3 d-flex">
-                        <i class="ni ni-single-copy-04 text-gradient text-success"></i>
-                      </div>
-                      <div
-                        class="w-100 d-flex align-items-center justify-content-between"
-                      >
-                        <div>
-                          <a
-                            @click="authStore.signout"
-                            class="p-0 dropdown-header text-dark"
-                            >Log out</a
-                          >
-                        </div>
+                  <div
+                    class="d-flex py-2 ps-3 border-radius-md"
+                    v-if="authStore.isLoggedIn"
+                  >
+                    <div class="h-10 mt-1 icon me-3 d-flex">
+                      <i class="ni ni-single-copy-04 text-gradient text-success"></i>
+                    </div>
+                    <div class="w-100 d-flex align-items-center justify-content-between">
+                      <div>
+                        <a
+                          @click="authStore.signout"
+                          class="p-0 dropdown-header text-dark"
+                          >Log out</a
+                        >
                       </div>
                     </div>
-                 </div>
+                  </div>
+                </div>
               </div>
             </div>
           </li>
