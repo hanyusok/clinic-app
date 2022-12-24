@@ -120,6 +120,27 @@
                       </div>
                     </router-link>
                   </li>
+                  <li
+                    class="p-0 border-0 nav-item dropdown dropdown-hover dropdown-subitem list-group-item"
+                  >
+                    <router-link
+                      class="py-2 dropdown-item ps-3 border-radius-md"
+                      :to="{ name: 'CallStatus' }"
+                    >
+                      <div class="d-flex">
+                        <div class="h-10 mt-1 icon me-3 d-flex">
+                          <i class="ni ni-laptop text-gradient text-success"></i>
+                        </div>
+                        <div
+                          class="w-100 d-flex align-items-center justify-content-between"
+                        >
+                          <div>
+                            <p class="p-0 dropdown-header text-dark">Call Status</p>
+                          </div>
+                        </div>
+                      </div>
+                    </router-link>
+                  </li>
                 </ul>
               </div>
               <!-- responsive of Services -->
@@ -171,6 +192,24 @@
                       >
                         <div>
                           <p class="p-0 dropdown-header text-dark">New Call</p>
+                        </div>
+                      </div>
+                    </div>
+                  </router-link>
+
+                  <router-link
+                    class="py-2 ps-3 border-radius-md"
+                    :to="{ name: 'CallStatus' }"
+                  >
+                    <div class="d-flex">
+                      <div class="h-10 mt-1 icon me-3 d-flex">
+                        <i class="ni ni-notification-70 text-gradient text-success"></i>
+                      </div>
+                      <div
+                        class="w-100 d-flex align-items-center justify-content-between"
+                      >
+                        <div>
+                          <p class="p-0 dropdown-header text-dark">Call Status</p>
                         </div>
                       </div>
                     </div>

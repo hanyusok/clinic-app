@@ -12,7 +12,8 @@ import CallList from '@/components/CallList.vue'
 import Clinic from '@/components/Clinic.vue'
 import Error404 from '@/components/Error404.vue'
 import Process from '@/components/Process.vue'
-import NewClinic from '@/components/NewClinic.vue';
+import NewClinic from '@/components/NewClinic.vue'
+import CallStatus from '@/components/CallStatus.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -62,6 +63,11 @@ const router = createRouter({
       path: '/faq',
       name: 'Faq',
       component: Faq
+    },
+    {
+      path: '/callstatus',
+      name: 'CallStatus',
+      component: CallStatus
     },
     {
       path: '/productslist',
