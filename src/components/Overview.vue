@@ -178,7 +178,7 @@
       <div class="col-12 col-md-6 col-xl-4">
         <div class="card h-100">
           <div class="p-3 pb-0 card-header">
-            <h6 class="mb-0">Platform Settings</h6>
+            <h6 class="mb-0">Settings</h6>
           </div>
           <div class="p-3 card-body">
             <h6 class="text-xs text-uppercase text-body font-weight-bolder">Account</h6>
@@ -256,7 +256,7 @@
       <div class="mt-4 col-12 col-xl-4 mt-xl-0">
         <div class="card h-100">
           <div class="p-3 pb-0 card-header">
-            <h6 class="mb-0">Conversations</h6>
+            <h6 class="mb-0">Families</h6>
           </div>
           <div class="p-3 card-body">
             <ul class="list-group">
@@ -349,60 +349,39 @@
       <div class="col-12">
         <div class="mb-4 card">
           <div class="p-3 pb-0 card-header">
-            <h6 class="mb-1">Projects</h6>
-            <p class="text-sm">Architects design houses</p>
+            <h6 class="mb-1">Histories</h6>
+            <p class="text-sm">마트의원 { 한유석 원장} Architects design houses</p>
           </div>
           <div class="p-3 card-body">
             <div class="row">
               <div class="mb-4 col-xl-3 col-md-6 mb-xl-0">
                 <projects-card
-                  :img="img1"
+                  
                   :number="2"
                   title="Modern"
                   description="As Uber works through a huge amount of internal
                 management turmoil."
-                  :img-team1="team1"
-                  title-team1="Elena Morison"
-                  :img-team2="team2"
-                  title-team2="Ryan Milly"
-                  :img-team3="team3"
-                  title-team3="Nick Daniel"
-                  :img-team4="team4"
-                  title-team4="Peterson"
+              
                 />
               </div>
               <div class="mb-4 col-xl-3 col-md-6 mb-xl-0">
                 <projects-card
-                  :img="img2"
+                 
                   :number="1"
                   title="Scandinavian"
                   description="Music is something that every person has his or her own
                       specific opinion about."
-                  :img-team1="team3"
-                  title-team1="Nick Daniel"
-                  :img-team2="team4"
-                  title-team2="Peterson"
-                  :img-team3="team1"
-                  title-team3="Elena Morison"
-                  :img-team4="team2"
-                  title-team4="Ryan Milly"
+                  
                 />
               </div>
               <div class="mb-4 col-xl-3 col-md-6 mb-xl-0">
                 <projects-card
-                  :img="img3"
+                  
                   :number="3"
                   title="Minimalist"
                   description="Different people have different taste, and various types
                       of music."
-                  :img-team1="team4"
-                  title-team1="Peterson"
-                  :img-team2="team3"
-                  title-team2="Nick Daniel"
-                  :img-team3="team2"
-                  title-team3="Ryan Milly"
-                  :img-team4="team1"
-                  title-team4="Elena Morison"
+                 
                 />
               </div>
               <div class="mb-4 col-xl-3 col-md-6 mb-xl-0">
@@ -429,7 +408,7 @@
 // import Navbar from './Navbar.vue'
 import bgImg from '@/assets/img/curved-images/curved14.jpg'
 import VsudSwitch from '@/components/VsudSwitch.vue'
-import ProfileCard from '@/components/ProfileCard.vue'
+import ProfileCard from '@/components/Overview/ProfileCard.vue'
 import VsudAvatar from '@/components/VsudAvatar.vue'
 import sophie from '@/assets/img/kal-visuals-square.jpg'
 import marie from '@/assets/img/marie.jpg'
@@ -444,7 +423,7 @@ import team2 from '../assets/img/team-2.jpg'
 import team3 from '../assets/img/team-3.jpg'
 import team4 from '../assets/img/team-4.jpg'
 
-import ProjectsCard from '@/components/ProjectOverviewCard.vue'
+import ProjectsCard from '@/components/Overview/ProjectOverviewCard.vue'
 
 import setNavPills from '@/assets/js/nav-pills.js'
 import setTooltip from '@/assets/js/tooltip.js'
