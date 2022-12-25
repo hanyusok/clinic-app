@@ -355,46 +355,61 @@
           <div class="p-3 card-body">
             <div class="row">
               <div class="mb-4 col-xl-3 col-md-6 mb-xl-0">
+                <div class="card h-100 card-plain">
+                  <div class="px-1 pb-0 card-body">
+                    <p class="mb-2 text-sm text-gradient text-dark">Date #{{ number }}</p>
+                    <!-- <a href="javascript:;">
+                      <h5>{{ title }}제목</h5>
+                    </a>
+                    <p class="mb-4 text-sm">테스트{{ description }}</p> -->
+                    <textarea class="form-control" rows="4"></textarea>
+                    <div class="d-flex align-items-center justify-content-between">
+                      <button type="button" class="mb-2 btn btn-outline-success btn-sm">
+                        View Project
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="mb-4 col-xl-3 col-md-6 mb-xl-0">
                 <projects-card
-                  
                   :number="2"
                   title="Modern"
                   description="As Uber works through a huge amount of internal
                 management turmoil."
-              
                 />
               </div>
               <div class="mb-4 col-xl-3 col-md-6 mb-xl-0">
                 <projects-card
-                 
                   :number="1"
                   title="Scandinavian"
                   description="Music is something that every person has his or her own
                       specific opinion about."
-                  
                 />
               </div>
               <div class="mb-4 col-xl-3 col-md-6 mb-xl-0">
                 <projects-card
-                  
                   :number="3"
                   title="Minimalist"
                   description="Different people have different taste, and various types
                       of music."
-                 
                 />
               </div>
               <div class="mb-4 col-xl-3 col-md-6 mb-xl-0">
-                <div class="border card h-100 card-plain">
-                  <div
-                    class="text-center card-body d-flex flex-column justify-content-center"
-                  >
-                    <a href="javascript:;">
-                      <i class="mb-3 fa fa-plus text-secondary"></i>
-                      <h5 class="text-secondary">New project</h5>
-                    </a>
-                  </div>
-                </div>
+                <projects-card
+                  :number="3"
+                  title="Minimalist"
+                  description="Different people have different taste, and various types
+                      of music."
+                />
+              </div>
+              <div class="mb-4 col-xl-3 col-md-6 mb-xl-0">
+                <projects-card
+                  :number="3"
+                  title="Minimalist"
+                  description="Different people have different taste, and various types
+                      of music."
+                />
               </div>
             </div>
           </div>
