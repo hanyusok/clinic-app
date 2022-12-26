@@ -6,26 +6,22 @@
       </a>
     </div>
     <div class="px-1 pb-0 card-body">
-      <p class="mb-2 text-sm text-gradient text-dark">Date #{{ number }}</p>
+      <p class="mb-2 text-sm text-gradient text-dark">Date {2022-12-3} #{{ number }}</p>
       <a href="javascript:;">
-        <h5>{{ title }}</h5>
+        <h5>{홍길동}{{ title }}</h5>
       </a>
       <p class="mb-4 text-sm">{{ description }}</p>
-      <div class="d-flex align-items-center justify-content-between">
-        <button type="button" class="mb-0 btn btn-outline-success btn-sm">View Project</button>
-
-      </div>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: "ProjectsCard",
+  name: 'ProjectsCard',
   props: {
     number: { type: Number, required: true },
-    title: { type: String, default: "" },
-    description: { type: String, default: "" },   
-  },
-};
+    title: { type: String, default: '' },
+    description: { type: String, default: '' }
+  }
+}
 </script>
