@@ -22,7 +22,9 @@ export const useUserInfoStore = defineStore({
     facebook: "",
     instagram: "",
     publicEmail: "",
-    bio: ""
+    bio: "",
+    call: "",
+    calls: []
   }),
   actions: {    
     async updateUserInfo(){
@@ -53,8 +55,22 @@ export const useUserInfoStore = defineStore({
         router.push("/overview")
       }).catch((err) => {
         console.log(err)
-      })
-              
+      })              
+    },
+    async updateUserCalls(){
+      const user = auth.currentUser
+      const uid = user.uid
+      const userDocRef = doc(db, 'users', uid)
+      await updateDoc(userDocRef, {        
+        calls: this.call
+      }).then((resp) =>{
+        console.log(resp)
+        console.log("updated userCalls!")
+        alert('Your Calls are updated!')
+        router.push("/overview")
+      }).catch((err) => {
+        console.log(err)
+      })              
     }
   }
 })

@@ -68,6 +68,7 @@
           rows="5"
           placeholder="Enter your answer"
           class="form-control"
+          v-model="callStore.memo"
         />
         <div class="row mt-5">
           <div class="col-lg-8 col-12 actions text-end ms-auto">
@@ -85,6 +86,7 @@
               size="sm"
               class="btn-sm mb-0"
               type="button"
+              @click="callStore.addCall"
               >저장하기</vsud-button
             >
           </div>
@@ -169,7 +171,8 @@
               <div class="card-body border-radius-lg bg-gradient-dark p-3">
                 <h6 class="mb-0 text-white">Questions about security?</h6>
                 <p class="text-white text-sm mb-4">
-                  {홍길동} Have a question, concern, or comment about security? Please contact us.
+                  {홍길동} Have a question, concern, or comment about security? Please
+                  contact us.
                 </p>
                 <vsud-button color="light" variant="gradient" class="mb-0"
                   >이체하기</vsud-button
@@ -220,18 +223,17 @@
             <input type="password" placeholder="New Password" class="form-control" />
             <label class="form-label">기타 연락처</label>
             <input type="password" placeholder="Confirm password" class="form-control" />
-            <vsud-button 
-            color="dark" 
-            variant="gradient" 
-            size="sm" 
-            type="button" 
-            class="btn-sm mb-0 mt-3"
+            <vsud-button
+              color="dark"
+              variant="gradient"
+              size="sm"
+              type="button"
+              class="btn-sm mb-0 mt-3"
               >연락처 저장</vsud-button
             >
           </div>
         </div>
       </div>
-
     </div>
   </div>
 </template>
@@ -242,6 +244,7 @@
 import VsudSwitch from '@/components/VsudSwitch.vue'
 import VsudButton from '@/components/VsudButton.vue'
 import bgImg from '@/assets/img/curved-images/curved6.jpg'
+import { useCallStore } from '@/stores/call'
 
 export default {
   name: 'NewCall',
@@ -253,6 +256,10 @@ export default {
     return {
       bgImg
     }
+  },
+  setup() {
+    const callStore = useCallStore()
+    return { callStore }
   }
   // mounted() {
   //   new Choices(this.$refs.choicesQuestions)

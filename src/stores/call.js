@@ -2,40 +2,18 @@ import { computed, ref } from 'vue'
 import { defineStore } from "pinia";
 import router from "@/router/index";
 import { signOut, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
-import { collection, doc, query, onSnapshot, orderBy, setDoc, updateDoc, where } from 'firebase/firestore'
+import { addDoc, collection, doc, query, onSnapshot, orderBy, setDoc, updateDoc, Timestamp } from 'firebase/firestore'
 import { auth, db } from '@/firebase/init'
 
 
 export const useCallStore = defineStore({
   id: "callStore",
-  state: () => ({
-    users: [],
-    firstName: "",
-    lastName: "",
-    company: "",
-    email: "",
-    password:"",
-    repassword: "",
-    address1: "",
-    address2: "",
-    city: "",
-    state: "",
-    zip: "",
-    twitter: "",
-    facebook: "",
-    instagram: "",
-    publicEmail: "",
-    bio: ""
-
-    // isLoggedIn: true,
+  state: () => ({    
+    callId: "",
+    userId: "",
+    memo: "", 
+    cratedAt: ""
   }),
-  // setup(){
-  //   const authStore = useAuthStore()
-  //   return { authStore}
-  // },
-  // getters: {
-        
-  // }, 
   actions: {
     // init(){
       // const userCollectionRef = collection(db, "users")
@@ -64,29 +42,16 @@ export const useCallStore = defineStore({
       //});    
       // console.log('user collection initialized!')       
     // },
-    async updateUserInfo(){
+    async addCall(){
       const uid = auth.currentUser.uid
-      const userDocRef = doc(db, 'users', uid)
-      await updateDoc(userDocRef, {
-        firstName: this.firstName,
-        lastName: this.lastName,
-        company: this.company,
-        email: this.email,
-        password: this.password,
-        repassword: this.repassword,
-        address1: this.address1,
-        address2: this.address2,
-        city: this.city,
-        state: this.state,
-        zip: this.zip,
-        twitter: this.twitter,
-        facebook: this.facebook,
-        instagram: this.instagram,
-        publicEmail: this.publicEmail,
-        bio: this.bio
-  
+      const callCollectionRef = collection(db, 'calls')      
+      const resp = await addDoc(callCollectionRef, {
+        callId: uid,
+        userId: uid,
+        memo: this.memo,      
+        createdAt: Timestamp.now() 
       })
-      console.log("updated userinfo!")
+      console.log(resp.id + "call added!")
     },
     
     // async update(){

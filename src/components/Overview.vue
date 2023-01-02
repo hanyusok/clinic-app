@@ -366,9 +366,14 @@
                       class="form-control"
                       rows="4"
                       placeholder="증상이나 필요한 점을 입력하세요"
+                      v-model="userInfoStore.call"
                     ></textarea>
                     <div class="d-flex align-items-center justify-content-between pt-2">
-                      <button type="button" class="mb-2 btn btn-outline-success btn-sm">
+                      <button
+                        type="button"
+                        class="mb-2 btn btn-outline-success btn-sm"
+                        @click="userInfoStore.updateUserCalls"
+                      >
                         전송하기
                       </button>
                     </div>
@@ -535,6 +540,7 @@ import setTooltip from '@/assets/js/tooltip.js'
 
 import { useDesignStore } from '@/stores/design'
 import { useAuthStore } from '@/stores/auth'
+import { useUserInfoStore } from '@/stores/userInfo'
 
 export default {
   name: 'Overview',
@@ -548,8 +554,8 @@ export default {
   setup() {
     const designStore = useDesignStore()
     const authStore = useAuthStore()
-
-    return { designStore, authStore }
+    const userInfoStore = useUserInfoStore()
+    return { designStore, authStore, userInfoStore }
   },
   data() {
     return {
