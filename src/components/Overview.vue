@@ -362,7 +362,11 @@
                       <h5>{{ title }}제목</h5>
                     </a>
                     <p class="mb-4 text-sm">테스트{{ description }}</p> -->
-                    <textarea class="form-control" rows="4"></textarea>
+                    <textarea
+                      class="form-control"
+                      rows="4"
+                      placeholder="증상이나 필요한 점을 입력하세요"
+                    ></textarea>
                     <div class="d-flex align-items-center justify-content-between pt-2">
                       <button type="button" class="mb-2 btn btn-outline-success btn-sm">
                         전송하기
