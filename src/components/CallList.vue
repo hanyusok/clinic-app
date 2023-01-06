@@ -1,5 +1,5 @@
 <template>
-    <div class="container-fluid">
+  <div class="container-fluid">
     <div
       class="mt-4 page-header min-height-300 border-radius-xl"
       :style="{
@@ -187,29 +187,35 @@
             class="dropdown-toggle"
             data-bs-toggle="dropdown"
             aria-expanded="false"
-          >Filters</vsud-button>
+            >Filters</vsud-button
+          >
           <ul
             class="dropdown-menu dropdown-menu-lg-start px-2 py-3"
             aria-labelledby="navbarDropdownMenuLink2"
             style
           >
             <li>
-              <a class="dropdown-item border-radius-md" href="javascript:;">Status: Paid</a>
+              <a class="dropdown-item border-radius-md" href="javascript:;"
+                >Status: Paid</a
+              >
             </li>
             <li>
-              <a class="dropdown-item border-radius-md" href="javascript:;">Status: Refunded</a>
+              <a class="dropdown-item border-radius-md" href="javascript:;"
+                >Status: Refunded</a
+              >
             </li>
             <li>
-              <a class="dropdown-item border-radius-md" href="javascript:;">Status: Canceled</a>
+              <a class="dropdown-item border-radius-md" href="javascript:;"
+                >Status: Canceled</a
+              >
             </li>
             <li>
               <hr class="horizontal dark my-2" />
             </li>
             <li>
-              <a
-                class="dropdown-item border-radius-md text-danger"
-                href="javascript:;"
-              >Remove Filter</a>
+              <a class="dropdown-item border-radius-md text-danger" href="javascript:;"
+                >Remove Filter</a
+              >
             </li>
           </ul>
         </div>
@@ -235,7 +241,7 @@
               <thead class="thead-light">
                 <tr>
                   <th>Id</th>
-                  <th>Date</th>
+                  <th>Memo</th>
                   <th>Status</th>
                   <th>Customer</th>
                   <th>Product</th>
@@ -243,15 +249,17 @@
                 </tr>
               </thead>
               <tbody>
-                <tr>
+                <tr v-for="call in calls" :key="call.id">
                   <td>
                     <div class="d-flex align-items-center">
                       <vsud-checkbox />
-                      <p class="text-xs font-weight-bold ms-2 mb-0">#10421</p>
+                      <p class="text-xs font-weight-bold ms-2 mb-0">
+                        {{ call.userId }}
+                      </p>
                     </div>
                   </td>
                   <td class="font-weight-bold">
-                    <span class="my-2 text-xs">1 Nov, 10:20 AM</span>
+                    <span class="my-2 text-xs">{{ call.memo }}</span>
                   </td>
                   <td class="text-xs font-weight-bold">
                     <div class="d-flex align-items-center">
@@ -274,17 +282,18 @@
                         circular="rounded-circle"
                         alt="user image"
                       />
-                      <span>Orlando Imieto</span>
+                      <span>{{ call.callId }}</span>
                     </div>
                   </td>
                   <td class="text-xs font-weight-bold">
-                    <span class="my-2 text-xs">Nike Sport V2</span>
+                    <span class="my-2 text-xs">{{ call.createdAt.toDate() }}</span>
                   </td>
                   <td class="text-xs font-weight-bold">
                     <span class="my-2 text-xs">$140,20</span>
                   </td>
                 </tr>
-                <tr>
+
+                <!-- <tr>
                   <td>
                     <div class="d-flex align-items-center">
                       <vsud-checkbox />
@@ -727,7 +736,8 @@
                   <td class="text-xs font-weight-bold">
                     <span class="my-2 text-xs">$23,90</span>
                   </td>
-                </tr>
+                </tr> 
+                </tr> -->
               </tbody>
             </table>
           </div>
@@ -738,24 +748,35 @@
 </template>
 
 <script>
-import { DataTable } from "simple-datatables";
-import VsudButton from "@/components/VsudButton.vue";
-import VsudAvatar from "@/components/VsudAvatar.vue";
-import VsudCheckbox from "@/components/VsudCheckbox.vue";
-import img1 from "@/assets/img/team-2.jpg";
-import img2 from "@/assets/img/team-1.jpg";
-import img3 from "@/assets/img/team-3.jpg";
-import img4 from "@/assets/img/team-4.jpg";
-import img5 from "@/assets/img/team-5.jpg";
-import img6 from "@/assets/img/ivana-squares.jpg";
+// import { DataTable } from 'simple-datatables'
+import VsudButton from '@/components/VsudButton.vue'
+import VsudAvatar from '@/components/VsudAvatar.vue'
+import VsudCheckbox from '@/components/VsudCheckbox.vue'
+import img1 from '@/assets/img/team-2.jpg'
+import img2 from '@/assets/img/team-1.jpg'
+import img3 from '@/assets/img/team-3.jpg'
+import img4 from '@/assets/img/team-4.jpg'
+import img5 from '@/assets/img/team-5.jpg'
+import img6 from '@/assets/img/ivana-squares.jpg'
 import bgImg from '@/assets/img/curved-images/curved14.jpg'
+import { db } from '@/firebase/init'
+import {
+  collection,
+  addDoc,
+  updateDoc,
+  query,
+  orderBy,
+  onSnapshot,
+  deleteDoc,
+  doc
+} from 'firebase/firestore'
 
 export default {
-  name: "CallList",
+  name: 'CallList',
   components: {
     VsudButton,
     VsudAvatar,
-    VsudCheckbox,
+    VsudCheckbox
   },
   data() {
     return {
@@ -765,34 +786,60 @@ export default {
       img4,
       img5,
       img6,
-      bgImg
-    };
-  },
-  mounted() {
-    if (document.getElementById("order-list")) {
-      const dataTableSearch = new DataTable("#order-list", {
-        searchable: true,
-        fixedHeight: false,
-        perPageSelect: false,
-      });
-
-      document.querySelectorAll(".export").forEach(function (el) {
-        el.addEventListener("click", function (el) {
-          var type = el.dataset.type;
-
-          var data = {
-            type: type,
-            filename: "soft-ui-" + type,
-          };
-
-          if (type === "csv") {
-            data.columnDelimiter = "|";
-          }
-
-          dataTableSearch.export(data);
-        });
-      });
+      bgImg,
+      calls: []
     }
   },
-};
+  mounted() {
+    const callsRef = collection(db, 'calls')
+    const q = query(callsRef, orderBy('createdAt'))
+    const unsubscribe = onSnapshot(q, (snapshot) => {
+      snapshot.docChanges().forEach((change) => {
+        let callChange = change.doc.data()
+        callChange.id = change.doc.id
+        if (change.type === 'added') {
+          console.log('New call: ', callChange)
+          this.calls.unshift(callChange)
+        }
+        if (change.type === 'modified') {
+          console.log('Modified call: ', callChange)
+          let index = this.calls.findIndex((call) => call.id === callChange.id)
+          Object.assign(this.calls[index], callChange)
+        }
+        if (change.type === 'removed') {
+          console.log('Removed call: ', callChange)
+          let index = this.calls.findIndex((call) => call.id === callChange.id)
+          this.calls.splice(index, 1)
+        }
+      })
+    })
+  }
+
+  // mounted() {
+  //   if (document.getElementById('order-list')) {
+  //     const dataTableSearch = new DataTable('#order-list', {
+  //       searchable: true,
+  //       fixedHeight: false,
+  //       perPageSelect: false
+  //     })
+
+  //     document.querySelectorAll('.export').forEach(function (el) {
+  //       el.addEventListener('click', function (el) {
+  //         var type = el.dataset.type
+
+  //         var data = {
+  //           type: type,
+  //           filename: 'soft-ui-' + type
+  //         }
+
+  //         if (type === 'csv') {
+  //           data.columnDelimiter = '|'
+  //         }
+
+  //         dataTableSearch.export(data)
+  //       })
+  //     })
+  //   }
+  // }
+}
 </script>
