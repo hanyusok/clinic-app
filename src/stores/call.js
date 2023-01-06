@@ -25,7 +25,7 @@ export const useCallStore = defineStore({
         createdAt: Timestamp.now() 
       })
       alert("call added: ")
-      console.log(resp.id + "call added!")
+      console.log(resp.id + " call added!")
     }
 
   }
