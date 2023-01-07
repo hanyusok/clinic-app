@@ -495,7 +495,8 @@ export default {
     const callsRef = collection(db, 'calls')
     const user = auth.currentUser
     const uid = user.uid
-    const q = query(callsRef, orderBy('createdAt'))
+    // const q = query(callsRef, orderBy('createdAt'))
+    const q = query(callsRef, where('userId', '==', uid))
     const unsubscribe = onSnapshot(q, (snapshot) => {
       snapshot.docChanges().forEach((change) => {
         let callChange = change.doc.data()
