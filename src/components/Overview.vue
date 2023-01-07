@@ -351,6 +351,7 @@
           <div class="p-3 pb-0 card-header">
             <h6 class="mb-1">Histories</h6>
             <p class="text-sm">마트의원 { 한유석 원장} Architects design houses</p>
+            <!-- <p class="text-sm">uid {{ uid }} Architects design houses</p> -->
           </div>
           <div class="p-3 card-body">
             <div class="row">
@@ -366,13 +367,13 @@
                       class="form-control"
                       rows="4"
                       placeholder="증상이나 필요한 점을 입력하세요"
-                      v-model="userInfoStore.call"
+                      v-model="callStore.memo"
                     ></textarea>
                     <div class="d-flex align-items-center justify-content-between pt-2">
                       <button
                         type="button"
                         class="mb-2 btn btn-outline-success btn-sm"
-                        @click="userInfoStore.updateUserCalls"
+                        @click="callStore.addCall"
                       >
                         전송하기
                       </button>
@@ -380,7 +381,11 @@
                   </div>
                 </div>
               </div>
-              <div class="mb-4 col-xl-3 col-md-6 mb-xl-0">
+              <div
+                class="mb-4 col-xl-3 col-md-6 mb-xl-0"
+                v-for="call in calls"
+                :key="call.id"
+              >
                 <div class="card card-blog card-plain">
                   <div class="position-relative">
                     <a class="shadow-xl d-block border-radius-xl">
@@ -389,14 +394,13 @@
                   </div>
                   <div class="px-1 pb-0 card-body">
                     <p class="mb-2 text-sm text-gradient text-dark">
-                      Date {2022-12-3} #{ number }
+                      {{ call.createdAt.toDate() }}
                     </p>
                     <a href="javascript:;">
-                      <h5>{홍길동}Scandinavian{ title }</h5>
+                      <h5>{ title }{{ call.callId }}</h5>
                     </a>
                     <p class="mb-4 text-sm">
-                      As Uber works through a huge amount of internal management turmoil.{
-                      description }
+                      {{ call.memo }}
                     </p>
                   </div>
                 </div>
@@ -432,10 +436,22 @@ import ProjectsCard from '@/components/Overview/ProjectOverviewCard.vue'
 
 import setNavPills from '@/assets/js/nav-pills.js'
 import setTooltip from '@/assets/js/tooltip.js'
-
+import { useCallStore } from '@/stores/call'
 import { useDesignStore } from '@/stores/design'
 import { useAuthStore } from '@/stores/auth'
 import { useUserInfoStore } from '@/stores/userInfo'
+import { db, auth } from '@/firebase/init'
+import {
+  collection,
+  addDoc,
+  updateDoc,
+  query,
+  where,
+  orderBy,
+  onSnapshot,
+  deleteDoc,
+  doc
+} from 'firebase/firestore'
 
 export default {
   name: 'Overview',
@@ -450,7 +466,10 @@ export default {
     const designStore = useDesignStore()
     const authStore = useAuthStore()
     const userInfoStore = useUserInfoStore()
-    return { designStore, authStore, userInfoStore }
+    const callStore = useCallStore()
+    const user = auth.currentUser
+    const uid = user.uid
+    return { designStore, authStore, userInfoStore, callStore, user }
   },
   data() {
     return {
@@ -469,15 +488,34 @@ export default {
       img2,
       img3,
       calls: []
+      // uid
     }
+  },
+  mounted() {
+    const callsRef = collection(db, 'calls')
+    const user = auth.currentUser
+    const uid = user.uid
+    const q = query(callsRef, orderBy('createdAt'))
+    const unsubscribe = onSnapshot(q, (snapshot) => {
+      snapshot.docChanges().forEach((change) => {
+        let callChange = change.doc.data()
+
+        if (change.type === 'added') {
+          console.log('New call: ', callChange)
+          this.calls.unshift(callChange)
+        }
+        if (change.type === 'modified') {
+          console.log('Modified call: ', callChange)
+          let index = this.calls.findIndex((call) => call.id === callChange.id)
+          Object.assign(this.calls[index], callChange)
+        }
+        if (change.type === 'removed') {
+          console.log('Removed call: ', callChange)
+          let index = this.calls.findIndex((call) => call.id === callChange.id)
+          this.calls.splice(index, 1)
+        }
+      })
+    })
   }
-  // mounted() {
-  //   this.designStore.isAbsolute = true
-  //   setNavPills()
-  //   setTooltip()
-  // },
-  // beforeUnmount() {
-  //   this.designStore.isAbsolute = false
-  // }
 }
 </script>
