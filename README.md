@@ -70,3 +70,6 @@ npm i firebase-tools
 npm i @vueuse/core
 
 # multistep form handling
+
+# 전화번호 로그인
+https://firebase.google.com/docs/auth/web/phone-auth?authuser=0&hl=ko
