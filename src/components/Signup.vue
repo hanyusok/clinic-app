@@ -54,7 +54,10 @@
                     </a>
                   </div>
                   <div class="px-1 col-3 me-auto">
-                    <a class="btn btn-outline-light w-100" href="googleSignIn">
+                    <button
+                      class="btn btn-outline-light w-100"
+                      @click="authStore.googleSignIn"
+                    >
                       <svg width="24px" height="32px" viewBox="0 0 64 64" version="1.1">
                         <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                           <g
@@ -80,7 +83,7 @@
                           </g>
                         </g>
                       </svg>
-                    </a>
+                    </button>
                   </div>
                 </div>
                 <div class="card-body pb-3">
@@ -199,9 +202,6 @@ export default {
     return {
       bgImg
     }
-  },
-  methods: {
-    googleSignIn: () => {}
   }
 }
 </script>

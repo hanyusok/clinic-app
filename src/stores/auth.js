@@ -1,6 +1,6 @@
 import { defineStore } from "pinia";
 import router from "@/router/index";
-import { signOut, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
+import { GoogleAuthProvider, signOut, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile, signInWithPopup } from "firebase/auth";
 import { doc, setDoc } from 'firebase/firestore'
 import { auth, db } from '@/firebase/init'
 
@@ -61,11 +61,32 @@ export const useAuthStore = defineStore({
           alert("logout!!!")
           const user = userCredential.user
           this.userId = ''
+          router.push("/signin")
         })
         .catch((error) => {
           const errorCode = error.code
           this.errorMessage = error.message
           alert(this.errorMessage)
+        })
+    },
+    googleSignIn(){
+      const provider = new GoogleAuthProvider()
+      provider.addScope('https://www.googleapis.com/auth/contacts.readonly')
+      provider.setCustomParameters({
+        'login_hint': 'user@example.com'
+      })
+      signInWithPopup(auth, provider).then((result) => {    
+        const credential = GoogleAuthProvider.credentialFromResult(result)
+        const token = credential.accessToken    
+        const user = result.user    
+        alert('Signed in as Google Account')
+        router.push("/overview")
+        })
+        .catch((error) => {      
+          const errorCode = error.code
+          const errorMessage = error.message   
+          const email = error.customData.email
+          const credential = GoogleAuthProvider.credentialFromError(error)    
         })
     }
   }
