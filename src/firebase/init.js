@@ -19,7 +19,8 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const firebaseApp = initializeApp(firebaseConfig)
-const auth = getAuth(firebaseApp)      
+const auth = getAuth(firebaseApp)    
+auth.languageCode = 'KO'  
 const db = getFirestore(firebaseApp)
 const functions = getFunctions(firebaseApp)
 
