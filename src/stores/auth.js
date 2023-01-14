@@ -59,9 +59,9 @@ export const useAuthStore = defineStore({
     signout() {      
       signOut(auth).then(() => {
           alert("logout!!!")
-          const user = userCredential.user
-          this.userId = ''
           router.push("/signin")
+          const user = userCredential.user
+          this.userId = ''          
         })
         .catch((error) => {
           const errorCode = error.code

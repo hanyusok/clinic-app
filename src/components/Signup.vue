@@ -10,9 +10,7 @@
                   <h3 class="font-weight-bolder text-success text-gradient">
                     Join us today
                   </h3>
-                  <p class="mb-0">Enter your email and password to register</p>
-                </div>
-                <div class="px-3 row px-xl-5 px-sm-4">
+                  <div class="px-3 row px-xl-5 px-sm-4">
                   <div class="px-1 col-3 ms-auto">
                     <a class="btn btn-outline-light w-100" href="javascript:;">
                       <svg width="24px" height="32px" viewBox="0 0 64 64" version="1.1">
@@ -86,6 +84,9 @@
                     </button>
                   </div>
                 </div>
+                  <p class="mb-0">Enter your email and password to register</p>
+                </div>
+                
                 <div class="card-body pb-3">
                   <form role="form" @submit.prevent="authStore.register">
                     <label>Name</label>

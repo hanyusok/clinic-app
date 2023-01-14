@@ -8,9 +8,7 @@
               <div class="mt-8 card card-plain">
                 <div class="pb-0 card-header text-start">
                   <h3 class="font-weight-bolder text-info text-gradient">Welcome back</h3>
-                  <p class="mb-0">Enter your email and password to sign in</p>
-                </div>
-                <div class="px-3 row px-xl-5 px-sm-4">
+                  <div class="px-3 row px-xl-5 px-sm-4">
                   <div class="px-1 col-3 ms-auto">
                     <a class="btn btn-outline-light w-100" href="javascript:;">
                       <svg width="24px" height="32px" viewBox="0 0 64 64" version="1.1">
@@ -84,6 +82,9 @@
                     </button>
                   </div>
                 </div>
+                  <p class="mb-0">Enter your email and password to sign in</p>
+                </div>
+
                 <div class="card-body">
                   <form role="form" class="text-start" @submit.prevent="authStore.signIn">
                     <label>Email</label>
