@@ -1,16 +1,17 @@
 <template>
   <div
-    class="pt-5 m-3 page-header align-items-start min-vh-50 pb-11 border-radius-lg"
+    class="pt-5 m-3 page-header align-items-start min-vh-20 pb-5 border-radius-lg"
     :style="{
-      backgroundImage: `url(${bgImg})`
+      backgroundImage: `url(${bgImg})`,
+      backgroundPositionY: '50%'
     }"
   >
     <span class="mask bg-gradient-dark opacity-6"></span>
     <div class="container">
       <div class="row justify-content-center">
         <div class="mx-auto text-center col-lg-5">
-          <h1 class="mt-5 mb-2 text-white">비대면 신청</h1>
-          <p class="text-white text-lead">신청하기 위해서는 회원가입이 필요합니다.</p>
+          <h1 class="mt-5 mb-2 text-white">비대면 진료</h1>
+          <p class="text-white text-lead">마트의원 | 안성롯데마트 2F</p>
         </div>
       </div>
     </div>
@@ -39,34 +40,102 @@
       <div class="col-md-6">
         <div class="card">
           <div class="card-header p-3 pb-0">
-            <h6 class="mb-1">사전 안내</h6>
-            <p class="text-sm mb-0">Please follow this guide for a strong password:</p>
+            <h6 class="mb-1">진료 안내</h6>
+            <p class="text-sm mb-0">
+              건강보험이 적용되므로, (본인부담) 진료비가 발생합니다.
+            </p>
           </div>
           <div class="card-body p-3">
             <ul class="text-muted ps-4 mb-0">
               <li>
-                <span class="text-sm">One special characters</span>
+                <span class="text-sm">진료비 (사전) 수납후에 진료시작됩니다</span>
               </li>
               <li>
-                <span class="text-sm">Min 6 characters</span>
+                <span class="text-sm"
+                  >계좌이체후, 초대하는 (영상통화) 수락하시면 됩니다</span
+                >
               </li>
               <li>
-                <span class="text-sm">One number (2 are recommended)</span>
+                <span class="text-sm">주변이 시끄럽지 않고, 조용한 환경이 좋습니다</span>
               </li>
               <li>
-                <span class="text-sm">Change it often</span>
+                <span class="text-sm">탈모약(x), 다이어트약(x), 응급피임약(x)</span>
               </li>
             </ul>
           </div>
         </div>
       </div>
-      <div class="col-sm-6">
-        <label class="form-label">증상(Symptom)</label>
-        <!-- <input type="text" placeholder="Enter your answer" class="form-control" /> -->
+      <div class="col-md-6 pb-3">
+        <div class="card">
+          <div class="card-header pb-0 p-3">
+            <h6 class="mb-0">Basic Settings(사전 수납)</h6>
+          </div>
+          <div class="card-body p-3">
+            <div class="form-group d-flex align-items-center justify-content-between">
+              <span class="text-sm">안성/평택 사람입니다</span>
+              <vsud-switch checked class="ms-3" />
+            </div>
+            <div class="form-group d-flex align-items-center justify-content-between">
+              <span class="text-sm">Send SMS confirmation for all online payments</span>
+              <vsud-switch class="ms-3" />
+            </div>
+            <div class="form-group d-flex align-items-center justify-content-between">
+              <span class="text-sm">Check which devices accessed your account</span>
+              <vsud-switch checked class="ms-3" />
+            </div>
+            <div class="form-group d-flex align-items-center justify-content-between">
+              <span class="text-sm">
+                Find My Device, make sure your device can be found if it gets lost
+              </span>
+              <vsud-switch class="ms-3" />
+            </div>
+            <div class="form-group d-flex align-items-center justify-content-between">
+              <span class="text-sm"
+                >Lock your device with a PIN, pattern, or password</span
+              >
+              <vsud-switch class="ms-3" />
+            </div>
+            <div class="form-group d-flex align-items-center justify-content-between">
+              <span class="text-sm">
+                Manage what apps have access to app-usage data on your device
+              </span>
+              <vsud-switch checked class="ms-3" />
+            </div>
+            <div class="row mt-5">
+              <div class="col-lg-8 col-12 actions text-end ms-auto">
+                <vsud-button
+                  color="success"
+                  variant="outline"
+                  size="sm"
+                  class="btn-sm mb-0 me-1"
+                  type="reset"
+                  >건너뛰기</vsud-button
+                >
+                <vsud-button
+                  color="success"
+                  variant="gradient"
+                  size="sm"
+                  class="btn-sm mb-0"
+                  type="button"
+                  >저장하기</vsud-button
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <label class="form-label">이름(진료받는 분)</label>
+        <input type="text" placeholder="홍길동" class="form-control" />
+        <label class="form-label">핸드폰(진료받는 분)</label>
+        <input type="text" placeholder="010-1234-5678" class="form-control" />
+        <label class="form-label">주민번호(진료받는 분)</label>
+        <input type="text" placeholder="000000-0000000" class="form-control" />
+        <label class="form-label">메모</label>
         <textarea
           type="text"
-          rows="5"
-          placeholder="Enter your answer"
+          rows="4"
+          placeholder="간단한 증상 또는 요청사항"
           class="form-control"
           v-model="callStore.memo"
         />
@@ -87,7 +156,7 @@
               class="btn-sm mb-0"
               type="button"
               @click="callStore.addCall"
-              >저장하기</vsud-button
+              >전송하기</vsud-button
             >
           </div>
         </div>
@@ -100,7 +169,7 @@
           </div>
           <div class="card-body p-3">
             <div class="form-group d-flex align-items-center justify-content-between">
-              <span class="text-sm">안성 거주자 이신가요?</span>
+              <span class="text-sm">안성/평택 사람입니다</span>
               <vsud-switch checked class="ms-3" />
             </div>
             <div class="form-group d-flex align-items-center justify-content-between">
@@ -232,6 +301,50 @@
               >연락처 저장</vsud-button
             >
           </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-12">
+        <h6 class="mb-0">Referral Code</h6>
+        <p class="text-sm">Copy the code bellow to your registered provider.</p>
+        <div class="border-dashed border-1 border-secondary border-radius-md p-3">
+          <p class="text-xs mb-2">
+            Generated 23 days ago by
+            <span class="font-weight-bolder">softuidash23</span>
+          </p>
+          <p class="text-xs mb-3">
+            <span class="font-weight-bolder">(Used one time)</span>
+          </p>
+          <div class="d-flex align-items-center">
+            <div class="form-group w-70">
+              <div class="input-group bg-gray-200">
+                <input
+                  class="form-control form-control-sm"
+                  value="soft-ui-dashboard-vmsk392"
+                  type="text"
+                  disabled
+                  onfocus="focused(this)"
+                  onfocusout="defocused(this)"
+                />
+                <span
+                  class="input-group-text bg-transparent"
+                  data-bs-toggle="tooltip"
+                  data-bs-placement="top"
+                  title
+                  data-bs-original-title="Referral code expires in 24 hours"
+                  aria-label="Referral code expires in 24 hours"
+                >
+                  <i class="ni ni-key-25"></i>
+                </span>
+              </div>
+            </div>
+            <a href="javascript:;" class="btn btn-sm btn-outline-secondary ms-2 px-3"
+              >Copy</a
+            >
+          </div>
+          <p class="text-xs mb-1">You cannot generate codes.</p>
+          <p class="text-xs mb-0">
+            <a href="javascript:;">Contact us</a> to generate more referrals link.
+          </p>
         </div>
       </div>
     </div>
