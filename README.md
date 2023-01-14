@@ -73,4 +73,7 @@ npm i @vueuse/core
 
 # 전화번호 로그인
 https://firebase.google.com/docs/auth/web/phone-auth?authuser=0&hl=ko
-https://www.youtube.com/watch?v=mP6pGg3m6lQ
+# kakao /naver login 
+https://firebase.google.com/docs/auth/web/account-linking
+https://github.com/FirebaseExtended/custom-auth-samples/blob/master/kakao/KakaoLoginServer/app.js
+https://github.com/zaiyou12/firebase-custom-login
