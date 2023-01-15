@@ -124,7 +124,7 @@
                   </div>
                   <div class="timeline-block mb-3">
                     <span class="timeline-step">
-                      <i class="ni ni-html5 text-secondary"></i>
+                      <i class="ni ni-money-coins text-secondary text-success"></i>
                     </span>
                     <div class="timeline-content">
                       <h6 class="text-dark text-sm font-weight-bold mb-0">
@@ -137,7 +137,7 @@
                   </div>
                   <div class="timeline-block mb-3">
                     <span class="timeline-step">
-                      <i class="ni ni-cart text-secondary"></i>
+                      <i class="ni ni-circle-08 text-secondary text-success"></i>
                     </span>
                     <div class="timeline-content">
                       <h6 class="text-dark text-sm font-weight-bold mb-0">
@@ -150,7 +150,7 @@
                   </div>
                   <div class="timeline-block mb-3">
                     <span class="timeline-step">
-                      <i class="ni ni-check-bold text-success text-gradient"></i>
+                      <i class="ni ni-building text-success text-gradient"></i>
                     </span>
                     <div class="timeline-content">
                       <h6 class="text-dark text-sm font-weight-bold mb-0">
