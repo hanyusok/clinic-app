@@ -17,11 +17,11 @@
     </div>
   </div>
   <div class="container-fluid mt-4">
-    <div class="row align-items-center">
+    <!-- <div class="row align-items-center">
       <div class="col-lg-4 col-sm-8">
-        <!-- <nav-pill /> -->
+        <nav-pill />
       </div>
-    </div>
+    </div> -->
     <div class="row mt-4">
       <!-- <div class="col-sm-6">
         <label class="form-label">Security Question</label>
@@ -40,7 +40,7 @@
       <div class="col-md-6">
         <div class="card">
           <div class="card-header p-3 pb-0">
-            <h6 class="mb-1">진료 안내</h6>
+            <h6 class="mb-1">안내 말씀</h6>
             <p class="text-sm mb-0">
               건강보험이 적용되므로, (본인부담) 진료비가 발생합니다.
             </p>
@@ -61,11 +61,14 @@
               <li>
                 <span class="text-sm">탈모약(x), 다이어트약(x), 응급피임약(x)</span>
               </li>
+              <li>
+                <span class="text-sm">대기시간(평균 30~60분)</span>
+              </li>
             </ul>
           </div>
         </div>
       </div>
-      <div class="col-md-6 pb-3">
+      <!-- <div class="col-md-6 pb-3">
         <div class="card">
           <div class="card-header pb-0 p-3">
             <h6 class="mb-0">Basic Settings(사전 수납)</h6>
@@ -123,14 +126,29 @@
             </div>
           </div>
         </div>
-      </div>
-      <div class="col-md-6">
+      </div> -->
+      <div class="col-md-6 p-3">
         <label class="form-label">이름(진료받는 분)</label>
-        <input type="text" placeholder="홍길동" class="form-control" />
+        <input
+          type="text"
+          placeholder="홍길동"
+          class="form-control"
+          v-model="callStore.patientName"
+        />
         <label class="form-label">핸드폰(진료받는 분)</label>
-        <input type="text" placeholder="010-1234-5678" class="form-control" />
+        <input
+          type="text"
+          placeholder="010-1234-5678"
+          class="form-control"
+          v-model="callStore.patientMobile"
+        />
         <label class="form-label">주민번호(진료받는 분)</label>
-        <input type="text" placeholder="000000-0000000" class="form-control" />
+        <input
+          type="text"
+          placeholder="000000-0000000"
+          class="form-control"
+          v-model="callStore.jumin"
+        />
         <label class="form-label">메모</label>
         <textarea
           type="text"
@@ -156,13 +174,13 @@
               class="btn-sm mb-0"
               type="button"
               @click="callStore.addCall"
-              >전송하기</vsud-button
+              >신청하기</vsud-button
             >
           </div>
         </div>
       </div>
       <hr class="horizontal dark mt-1 mb-3" />
-      <div class="col-md-6 pb-3">
+      <!-- <div class="col-md-6 pb-3">
         <div class="card">
           <div class="card-header pb-0 p-3">
             <h6 class="mb-0">Basic Settings(사전 수납)</h6>
@@ -220,21 +238,26 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
       <div class="col-md-6">
         <div class="card">
           <div class="card-header p-3 pb-0">
             <div class="d-flex align-items-center">
-              <h6 class="mb-0">진료비 수납</h6>
-              <vsud-button color="dark" variant="gradient" size="sm" class="ms-auto mb-0"
-                >본인부담 진료비 안내</vsud-button
+              <h6 class="mb-0">마트의원</h6>
+              <vsud-button
+                disabled
+                color="dark"
+                variant="gradient"
+                size="sm"
+                class="ms-auto mb-0"
+                href="https://naver.me/FOvhcUlc"
+                >10am-7pm</vsud-button
               >
             </div>
           </div>
           <div class="card-body p-3">
             <p class="text-muted text-sm mb-4 mt-sm-5 mt-3">
-              Two-factor authentication adds an additional layer of security to your
-              account by requiring more than just a password to log in.
+              진료시간: 10am-7pm 점심: 12:30-1:30 진료마감: 6:40pm
             </p>
             <div class="card">
               <div class="card-body border-radius-lg bg-gradient-dark p-3">
@@ -244,67 +267,15 @@
                   contact us.
                 </p>
                 <vsud-button color="light" variant="gradient" class="mb-0"
-                  >이체하기</vsud-button
+                  >전화하기</vsud-button
                 >
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="row gx-4 mt-3">
-      <div class="col-md-6">
-        <div class="card">
-          <div class="card-header p-3 pb-0">
-            <h6 class="mb-1">처방전 전송 안내</h6>
-            <p class="text-sm mb-0">Please follow this guide for a strong password:</p>
-          </div>
-          <div class="card-body p-3">
-            <ul class="text-muted ps-4 mb-0">
-              <li>
-                <span class="text-sm">One special characters</span>
-              </li>
-              <li>
-                <span class="text-sm">Min 6 characters</span>
-              </li>
-              <li>
-                <span class="text-sm">One number (2 are recommended)</span>
-              </li>
-              <li>
-                <span class="text-sm">Change it often</span>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6 pb-3">
-        <div class="card">
-          <div class="card-header p-3 pb-0">
-            <h6 class="mb-1">처방전 수령하실 곳 입력해주셍</h6>
-            <p class="text-sm mb-0">
-              We will send you an email with the verification code.
-            </p>
-          </div>
-          <div class="card-body p-3">
-            <label class="form-label">약국 fax 번호</label>
-            <input type="password" placeholder="Current Password" class="form-control" />
-            <label class="form-label">비대면 신청자 email</label>
-            <input type="password" placeholder="New Password" class="form-control" />
-            <label class="form-label">기타 연락처</label>
-            <input type="password" placeholder="Confirm password" class="form-control" />
-            <vsud-button
-              color="dark"
-              variant="gradient"
-              size="sm"
-              type="button"
-              class="btn-sm mb-0 mt-3"
-              >연락처 저장</vsud-button
-            >
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6 col-12">
-        <h6 class="mb-0">Referral Code</h6>
+      <div class="col-md-6 col-12 p-3 pb-0">
+        <h6 class="mb-0">약국 안내</h6>
         <p class="text-sm">Copy the code bellow to your registered provider.</p>
         <div class="border-dashed border-1 border-secondary border-radius-md p-3">
           <p class="text-xs mb-2">
@@ -347,6 +318,58 @@
           </p>
         </div>
       </div>
+      <!-- <div class="col-md-6">
+        <div class="card">
+          <div class="card-header p-3 pb-0">
+            <h6 class="mb-1">처방전 전송 안내</h6>
+            <p class="text-sm mb-0">Please follow this guide for a strong password:</p>
+          </div>
+          <div class="card-body p-3">
+            <ul class="text-muted ps-4 mb-0">
+              <li>
+                <span class="text-sm">One special characters</span>
+              </li>
+              <li>
+                <span class="text-sm">Min 6 characters</span>
+              </li>
+              <li>
+                <span class="text-sm">One number (2 are recommended)</span>
+              </li>
+              <li>
+                <span class="text-sm">Change it often</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div> -->
+    </div>
+    <div class="row gx-4 mt-3">
+      <!-- <div class="col-md-6 pb-3">
+        <div class="card">
+          <div class="card-header p-3 pb-0">
+            <h6 class="mb-1">처방전 수령하실 곳 입력해주셍</h6>
+            <p class="text-sm mb-0">
+              We will send you an email with the verification code.
+            </p>
+          </div>
+          <div class="card-body p-3">
+            <label class="form-label">약국 fax 번호</label>
+            <input type="password" placeholder="Current Password" class="form-control" />
+            <label class="form-label">비대면 신청자 email</label>
+            <input type="password" placeholder="New Password" class="form-control" />
+            <label class="form-label">기타 연락처</label>
+            <input type="password" placeholder="Confirm password" class="form-control" />
+            <vsud-button
+              color="dark"
+              variant="gradient"
+              size="sm"
+              type="button"
+              class="btn-sm mb-0 mt-3"
+              >연락처 저장</vsud-button
+            >
+          </div>
+        </div>
+      </div> -->
     </div>
   </div>
 </template>

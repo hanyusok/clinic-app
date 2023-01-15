@@ -12,7 +12,10 @@ export const useCallStore = defineStore({
     callId: "",
     userId: "",
     memo: "", 
-    cratedAt: ""
+    cratedAt: "",
+    patientName: "",
+    patientMobile: "",
+    jumin: ""
   }),
   actions: {   
     async addCall(){
@@ -22,9 +25,12 @@ export const useCallStore = defineStore({
         callId: uid,
         userId: uid,
         memo: this.memo,      
-        createdAt: Timestamp.now() 
+        createdAt: Timestamp.now(),
+        patientName: this.patientName, 
+        patientMobile: this.patientMobile,
+        jumin: this.jumin
       })
-      alert("call added: ")
+      alert("비대면 진료신청 되었습니다.")
       console.log(resp.id + " call added!")
     }
 
