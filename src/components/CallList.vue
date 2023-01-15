@@ -31,65 +31,6 @@
     </div>
   </div>
   <div class="container-fluid py-4">
-    <div class="d-sm-flex justify-content-between">
-      <div>
-        <vsud-button color="success" variant="gradient">New order</vsud-button>
-      </div>
-      <div class="d-flex">
-        <div class="dropdown d-inline">
-          <vsud-button
-            id="navbarDropdownMenuLink2"
-            color="dark"
-            variant="outline"
-            class="dropdown-toggle"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-            >Filters</vsud-button
-          >
-          <ul
-            class="dropdown-menu dropdown-menu-lg-start px-2 py-3"
-            aria-labelledby="navbarDropdownMenuLink2"
-            style
-          >
-            <li>
-              <a class="dropdown-item border-radius-md" href="javascript:;"
-                >Status: Paid</a
-              >
-            </li>
-            <li>
-              <a class="dropdown-item border-radius-md" href="javascript:;"
-                >Status: Refunded</a
-              >
-            </li>
-            <li>
-              <a class="dropdown-item border-radius-md" href="javascript:;"
-                >Status: Canceled</a
-              >
-            </li>
-            <li>
-              <hr class="horizontal dark my-2" />
-            </li>
-            <li>
-              <a class="dropdown-item border-radius-md text-danger" href="javascript:;"
-                >Remove Filter</a
-              >
-            </li>
-          </ul>
-        </div>
-        <vsud-button
-          class="btn-icon ms-2 export"
-          size
-          color="dark"
-          variant="outline"
-          data-type="csv"
-        >
-          <span class="btn-inner--icon">
-            <i class="ni ni-archive-2"></i>
-          </span>
-          <span class="btn-inner--text">Export CSV</span>
-        </vsud-button>
-      </div>
-    </div>
     <div class="row">
       <div class="col-12">
         <div class="card mt-4">
@@ -97,7 +38,7 @@
             <table id="order-list" class="table table-flush">
               <thead class="thead-light">
                 <tr>
-                  <th>Id</th>
+                  <th>수진자</th>
                   <th>Memo</th>
                   <th>Status</th>
                   <th>Customer</th>
@@ -111,7 +52,7 @@
                     <div class="d-flex align-items-center">
                       <vsud-checkbox />
                       <p class="text-xs font-weight-bold ms-2 mb-0">
-                        {{ call.userId }}
+                        {{ call.patientName }}
                       </p>
                     </div>
                   </td>

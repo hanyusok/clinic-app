@@ -25,21 +25,21 @@
           <div class="card-header p-3 pb-0">
             <h6 class="mb-1">안내 말씀</h6>
             <p class="text-sm mb-0">
-              건강보험 적용되므로, (본인부담) 진료비가 발생합니다.
+              건강보험 적용되므로, (본인부담) 진료비가 발생함.
             </p>
           </div>
           <div class="card-body p-3">
             <ul class="text-muted ps-4 mb-0">
               <li>
-                <span class="text-sm">진료비 (사전) 수납후에 진료시작됩니다</span>
+                <span class="text-sm">진료비 (사전) 수납후에 진료시작됨.</span>
               </li>
               <li>
                 <span class="text-sm"
-                  >계좌이체후, 초대하는 (영상통화) 수락하시면 됩니다</span
+                  >계좌이체후, 초대하는 (영상통화) 수락하면 됨</span
                 >
               </li>
               <li>
-                <span class="text-sm">주변이 시끄럽지 않고, 조용한 환경이 좋습니다</span>
+                <span class="text-sm">시끄럽지 않고, 조용한 곳이 좋음</span>
               </li>
               <li>
                 <span class="text-sm">탈모약(x), 다이어트약(x), 응급피임약(x)</span>
