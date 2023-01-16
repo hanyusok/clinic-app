@@ -39,12 +39,13 @@
                 <tr>
                   <th>수진자</th>
                   <th>메모</th>
-                  <th>신청</th>
+                  <th>신청</th>                  
                   <th>수납</th>
-                  <th>대기</th>
+                  <th>진료대기</th>
                   <th>처방전</th>
-                  <th>Product</th>
-                  <th>Revenue</th>
+                  <th>주민번호</th>
+                  <th>핸드폰</th>
+                  <th>비용</th>
                 </tr>
               </thead>
               <tbody>
@@ -86,21 +87,41 @@
                   </td>
                   <td class="text-xs font-weight-bold">
                     <div class="d-flex align-items-center">
-                      <vsud-avatar
-                        :img="img1"
-                        class="me-2"
-                        size="xs"
-                        circular="rounded-circle"
-                        alt="user image"
-                      />
-                      <span>{{ call.callId }}</span>
+                      <vsud-button
+                        color="success"
+                        variant="outline"
+                        class="btn-icon-only btn-rounded mb-0 me-2 btn-sm d-flex align-items-center justify-content-center"
+                      >
+                        <i class="fas fa-check" aria-hidden="true"></i>
+                      </vsud-button>
+                      <span>{{ call.isWaiting }}</span>
                     </div>
                   </td>
                   <td class="text-xs font-weight-bold">
-                    <span class="my-2 text-xs">{{ call.createdAt.toDate() }}</span>
+                    <div class="d-flex align-items-center">
+                      <vsud-button
+                        color="success"
+                        variant="outline"
+                        class="btn-icon-only btn-rounded mb-0 me-2 btn-sm d-flex align-items-center justify-content-center"
+                      >
+                        <i class="fas fa-check" aria-hidden="true"></i>
+                      </vsud-button>
+                      <span>{{ call.toPharm }}</span>
+                    </div>
                   </td>
-                  <td class="text-xs font-weight-bold">
-                    <span class="my-2 text-xs">$140,20</span>
+                  <td class="font-weight-bold">
+                    <div class="d-flex align-items-center">                      
+                      <span class="my-2 text-xs">{{ call.jumin }}</span>
+                    </div>
+                  </td>
+                  <!-- <td class="text-xs font-weight-bold">
+                    <span class="my-2 text-xs">{{ call.createdAt.toDate() }}</span>
+                  </td> -->
+                  <td class="font-weight-bold">
+                    <span class="my-2 text-xs">{{call.patientMobile}}</span>
+                  </td>
+                  <td class="font-weight-bold">
+                    <span class="my-2 text-xs">{{call.cost}} 원</span>
                   </td>
                 </tr>
               </tbody>
