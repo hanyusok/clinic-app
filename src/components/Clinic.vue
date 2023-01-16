@@ -1,5 +1,5 @@
 <template>
-    <div class="container-fluid">
+  <div class="container-fluid">
     <div
       class="mt-4 page-header min-height-300 border-radius-xl"
       :style="{
@@ -179,14 +179,17 @@
         <div class="card">
           <div class="card-header p-3">
             <h5 class="mb-2">Referral Program</h5>
-            <p
-              class="mb-0"
-            >Track and find all the details about our referral program, your stats and revenues.</p>
+            <p class="mb-0">
+              Track and find all the details about our referral program, your stats and
+              revenues.
+            </p>
           </div>
           <div class="card-body p-3">
             <div class="row">
               <div class="col-lg-3 col-6 text-center">
-                <div class="border-dashed border-1 border-secondary border-radius-md py-3">
+                <div
+                  class="border-dashed border-1 border-secondary border-radius-md py-3"
+                >
                   <h6 class="text-success text-gradient mb-0">Earnings</h6>
                   <h4 class="font-weight-bolder">
                     <span class="small">$</span>
@@ -195,7 +198,9 @@
                 </div>
               </div>
               <div class="col-lg-3 col-6 text-center">
-                <div class="border-dashed border-1 border-secondary border-radius-md py-3">
+                <div
+                  class="border-dashed border-1 border-secondary border-radius-md py-3"
+                >
                   <h6 class="text-success text-gradient mb-0">Customers</h6>
                   <h4 class="font-weight-bolder">
                     <span class="small">$</span>
@@ -204,7 +209,9 @@
                 </div>
               </div>
               <div class="col-lg-3 col-6 text-center mt-4 mt-lg-0">
-                <div class="border-dashed border-1 border-secondary border-radius-md py-3">
+                <div
+                  class="border-dashed border-1 border-secondary border-radius-md py-3"
+                >
                   <h6 class="text-success text-gradient mb-0">Avg. Value</h6>
                   <h4 class="font-weight-bolder">
                     <span class="small">$</span>
@@ -213,7 +220,9 @@
                 </div>
               </div>
               <div class="col-lg-3 col-6 text-center mt-4 mt-lg-0">
-                <div class="border-dashed border-1 border-secondary border-radius-md py-3">
+                <div
+                  class="border-dashed border-1 border-secondary border-radius-md py-3"
+                >
                   <h6 class="text-success text-gradient mb-0">Refund Rate</h6>
                   <h4 class="font-weight-bolder">
                     <span id="state4" countto="4">4</span>
@@ -257,7 +266,11 @@
                         </span>
                       </div>
                     </div>
-                    <a href="javascript:;" class="btn btn-sm btn-outline-secondary ms-2 px-3">Copy</a>
+                    <a
+                      href="javascript:;"
+                      class="btn btn-sm btn-outline-secondary ms-2 px-3"
+                      >Copy</a
+                    >
                   </div>
                   <p class="text-xs mb-1">You cannot generate codes.</p>
                   <p class="text-xs mb-0">
@@ -275,11 +288,14 @@
                         <div
                           class="icon icon-shape bg-gradient-dark shadow text-center border-radius-md mb-2"
                         >
-                          <i class="ni ni-money-coins text-lg opacity-10" aria-hidden="true"></i>
+                          <i
+                            class="ni ni-money-coins text-lg opacity-10"
+                            aria-hidden="true"
+                          ></i>
                         </div>
-                        <p
-                          class="text-sm font-weight-bold mb-2"
-                        >1. Create &amp; validate your referral link and get</p>
+                        <p class="text-sm font-weight-bold mb-2">
+                          1. Create &amp; validate your referral link and get
+                        </p>
                         <h5 class="font-weight-bolder">
                           <span class="small">$</span>100
                         </h5>
@@ -294,7 +310,9 @@
                         >
                           <i class="ni ni-send text-lg opacity-10" aria-hidden="true"></i>
                         </div>
-                        <p class="text-sm font-weight-bold mb-2">2. For every order you make you get</p>
+                        <p class="text-sm font-weight-bold mb-2">
+                          2. For every order you make you get
+                        </p>
                         <h5 class="font-weight-bolder">
                           10
                           <span class="small">%</span>
@@ -308,11 +326,14 @@
                         <div
                           class="icon icon-shape bg-gradient-dark shadow text-center border-radius-md mb-2"
                         >
-                          <i class="ni ni-spaceship text-lg opacity-10" aria-hidden="true"></i>
+                          <i
+                            class="ni ni-spaceship text-lg opacity-10"
+                            aria-hidden="true"
+                          ></i>
                         </div>
-                        <p
-                          class="text-sm font-weight-bold mb-2"
-                        >3. Get other friends to generate link and get</p>
+                        <p class="text-sm font-weight-bold mb-2">
+                          3. Get other friends to generate link and get
+                        </p>
                         <h5 class="font-weight-bolder">
                           <span class="small">$</span>500
                         </h5>
@@ -329,13 +350,18 @@
                 <div class="card text-center">
                   <div
                     class="overflow-hidden position-relative border-radius-lg bg-cover p-3"
-                    style="background-image: url('https://raw.githubusercontent.com/creativetimofficial/public-assets/master/soft-ui-design-system/assets/img/window-desk.jpg')"
+                    style="
+                      background-image: url('https://raw.githubusercontent.com/creativetimofficial/public-assets/master/soft-ui-design-system/assets/img/window-desk.jpg');
+                    "
                   >
                     <span class="mask bg-gradient-dark opacity-6"></span>
-                    <div class="card-body position-relative z-index-1 d-flex flex-column mt-5">
-                      <p
-                        class="text-white font-weight-bolder"
-                      >User #hashtag in a photo on social media and get $10 for each purchase you make.</p>
+                    <div
+                      class="card-body position-relative z-index-1 d-flex flex-column mt-5"
+                    >
+                      <p class="text-white font-weight-bolder">
+                        User #hashtag in a photo on social media and get $10 for each
+                        purchase you make.
+                      </p>
                       <a
                         class="text-white text-sm font-weight-bold mb-0 icon-move-right mt-4"
                         href="javascript:;"
@@ -351,13 +377,18 @@
                 <div class="card text-center">
                   <div
                     class="overflow-hidden position-relative border-radius-lg bg-cover p-3"
-                    style="background-image: url('https://demos.creative-tim.com/soft-ui-dashboard-pro/assets/img/office-dark.jpg')"
+                    style="
+                      background-image: url('https://demos.creative-tim.com/soft-ui-dashboard-pro/assets/img/office-dark.jpg');
+                    "
                   >
                     <span class="mask bg-gradient-dark opacity-6"></span>
-                    <div class="card-body position-relative z-index-1 d-flex flex-column mt-5">
-                      <p
-                        class="text-white font-weight-bolder"
-                      >Send the invitation link to 10 friends and get a 50% coupon to use on any purchase.</p>
+                    <div
+                      class="card-body position-relative z-index-1 d-flex flex-column mt-5"
+                    >
+                      <p class="text-white font-weight-bolder">
+                        Send the invitation link to 10 friends and get a 50% coupon to use
+                        on any purchase.
+                      </p>
                       <a
                         class="text-white text-sm font-weight-bold mb-0 icon-move-right mt-4"
                         href="javascript:;"
@@ -386,10 +417,7 @@
                       href="javascript:;"
                     >
                       Join rocketship program
-                      <i
-                        class="fas fa-arrow-right text-sm ms-1"
-                        aria-hidden="true"
-                      ></i>
+                      <i class="fas fa-arrow-right text-sm ms-1" aria-hidden="true"></i>
                     </a>
                   </div>
                 </div>
@@ -406,18 +434,18 @@
 </template>
 
 <script>
-import UserCard from "@/components/UserCard.vue";
+import UserCard from '@/components/UserCard.vue'
 import bgImg from '@/assets/img/curved-images/curved14.jpg'
 
 export default {
-  name: "Clinic",
+  name: 'Clinic',
   components: {
-    UserCard,
+    UserCard
   },
-  data(){
-    return{
+  data() {
+    return {
       bgImg
     }
   }
-};
+}
 </script>

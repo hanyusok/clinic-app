@@ -17,16 +17,12 @@
     </div>
   </div>
   <div class="container-fluid mt-4">
-    
     <div class="row mt-4">
-     
       <div class="col-md-6">
         <div class="card">
           <div class="card-header p-3 pb-0">
             <h6 class="mb-1">안내 말씀</h6>
-            <p class="text-sm mb-0">
-              건강보험 적용되므로, (본인부담) 진료비가 발생함.
-            </p>
+            <p class="text-sm mb-0">건강보험 적용되므로, (본인부담) 진료비(0~5있음.</p>
           </div>
           <div class="card-body p-3">
             <ul class="text-muted ps-4 mb-0">
@@ -34,9 +30,7 @@
                 <span class="text-sm">진료비 (사전) 수납후에 진료시작됨.</span>
               </li>
               <li>
-                <span class="text-sm"
-                  >계좌이체후, 초대하는 (영상통화) 수락하면 됨</span
-                >
+                <span class="text-sm">계좌이체후, 초대하는 (영상통화) 수락하면 됨</span>
               </li>
               <li>
                 <span class="text-sm">시끄럽지 않고, 조용한 곳이 좋음</span>
@@ -51,7 +45,7 @@
           </div>
         </div>
       </div>
-    
+
       <div class="col-md-6 p-3">
         <label class="form-label">이름(진료받는 분)</label>
         <input
@@ -104,85 +98,86 @@
           </div>
         </div>
       </div>
-      <hr class="horizontal dark mt-1 mb-3" />    
-      
-      <div class="col-md-6">     
-        <h6 class="btn btn-md btn-outline-secondary mb-3 mt-3 disabled ">접수 진행 Status</h6>
-        <div class="timeline timeline-one-side">
-                  <div class="timeline-block mb-3">
-                    <span class="timeline-step">
-                      <i class="ni ni-bell-55 text-secondary"></i>
-                    </span>
-                    <div class="timeline-content">
-                      <h6 class="text-dark text-sm font-weight-bold mb-0">
-                        비대면 접수되었음.
-                      </h6>
-                      <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">
-                        22 DEC 7:20 AM
-                      </p>
-                    </div>
-                  </div>
-                  <div class="timeline-block mb-3">
-                    <span class="timeline-step">
-                      <i class="ni ni-money-coins text-secondary text-success"></i>
-                    </span>
-                    <div class="timeline-content">
-                      <h6 class="text-dark text-sm font-weight-bold mb-0">
-                        진료비 입급 확인됨 #(5,500원)
-                      </h6>
-                      <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">
-                        22 DEC 7:21 AM
-                      </p>
-                    </div>
-                  </div>
-                  <div class="timeline-block mb-3">
-                    <span class="timeline-step">
-                      <i class="ni ni-circle-08 text-secondary text-success"></i>
-                    </span>
-                    <div class="timeline-content">
-                      <h6 class="text-dark text-sm font-weight-bold mb-0">
-                        진료 준비중
-                      </h6>
-                      <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">
-                        22 DEC 8:10 AM
-                      </p>
-                    </div>
-                  </div>
-                  <div class="timeline-block mb-3">
-                    <span class="timeline-step">
-                      <i class="ni ni-building text-success text-gradient"></i>
-                    </span>
-                    <div class="timeline-content">
-                      <h6 class="text-dark text-sm font-weight-bold mb-0">
-                        약국에 처방전이 전달됨.
-                      </h6>
-                      <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">
-                        22 DEC 4:54 PM
-                      </p>
-                    </div>
-                  </div>
-        </div>        
+      <hr class="horizontal dark mt-1 mb-3" />
+
+      <div class="col-md-6">
+        <h6 class="mb-3 mt-3">진행 상황 Status</h6>
+        <p class="text-sm">현재 {#월#일} 비대면 {# 명} 진료 대기중</p>
+        <div
+          class="timeline timeline-one-side border-dashed border-1 border-secondary border-radius-md"
+        >
+          <div class="timeline-block mb-3">
+            <span class="timeline-step">
+              <i class="ni ni-bell-55 text-secondary"></i>
+            </span>
+            <div class="timeline-content">
+              <h6 class="text-dark text-sm font-weight-bold mb-0">
+                비대면 {#홍길동} 접수되었음.
+              </h6>
+              <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">
+                22 DEC 7:20 AM
+              </p>
+            </div>
+          </div>
+          <div class="timeline-block mb-3">
+            <span class="timeline-step">
+              <i class="ni ni-money-coins text-secondary text-success"></i>
+            </span>
+            <div class="timeline-content">
+              <h6 class="text-dark text-sm font-weight-bold mb-0">
+                진료비 입급 확인됨 #(5,500원)
+              </h6>
+              <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">
+                22 DEC 7:21 AM
+              </p>
+            </div>
+          </div>
+          <div class="timeline-block mb-3">
+            <span class="timeline-step">
+              <i class="ni ni-circle-08 text-secondary text-success"></i>
+            </span>
+            <div class="timeline-content">
+              <h6 class="text-dark text-sm font-weight-bold mb-0">진료 준비중</h6>
+              <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">
+                22 DEC 8:10 AM
+              </p>
+            </div>
+          </div>
+          <div class="timeline-block mb-3">
+            <span class="timeline-step">
+              <i class="ni ni-building text-success text-gradient"></i>
+            </span>
+            <div class="timeline-content">
+              <h6 class="text-dark text-sm font-weight-bold mb-0">
+                약국에 처방전{# 홍길동}이 전달됨.
+              </h6>
+              <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">
+                22 DEC 4:54 PM
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
       <div class="col-md-6">
         <div class="card">
           <div class="card-header p-3 pb-0">
             <div class="d-flex align-items-center">
-              <h6 class="mb-0">마트의원</h6>             
-              <a       
+              <h6 class="mb-0">마트의원</h6>
+              <a
                 class="btn btn-sm btn-success ms-auto mb-0"
                 href="https://naver.me/FOvhcUlc"
                 >네이버 맵(위치)</a
-              >              
+              >
             </div>
           </div>
-          <div class="card-body p-3">            
+          <div class="card-body p-3">
             <div class="card">
               <div class="card-body border-radius-lg bg-gradient-dark p-3">
-                <h6 class="mb-0 text-white">진료시간:  10am-7pm </h6>
-                <p class="text-white text-sm mb-4">
-                  점심 12:30 - 1:30 pm / 수요일(휴진)
-                </p>   
-                <a class="btn btn-md ms-auto mb-0 bg-gradient-light" href="tel:031-657-8279"
+                <h6 class="mb-0 text-white">진료시간: 10am-7pm</h6>
+                <p class="text-white text-sm mb-4">점심 12:30 - 1:30 pm / 수요일(휴진)</p>
+                <a
+                  class="btn btn-md ms-auto mb-0 bg-gradient-light"
+                  href="tel:031-657-8279"
                   >전화연결</a
                 >
               </div>
@@ -190,11 +185,8 @@
           </div>
         </div>
       </div>
-      
     </div>
-    <div class="row gx-4 mt-3">
-      
-    </div>
+    <div class="row gx-4 mt-3"></div>
   </div>
 </template>
 
@@ -218,6 +210,6 @@ export default {
   setup() {
     const callStore = useCallStore()
     return { callStore }
-  }  
+  }
 }
 </script>

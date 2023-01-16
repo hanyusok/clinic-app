@@ -26,7 +26,6 @@
             <p class="mb-0 text-sm font-weight-bold">원장 / 마트의원</p>
           </div>
         </div>
-     
       </div>
     </div>
   </div>
@@ -39,9 +38,11 @@
               <thead class="thead-light">
                 <tr>
                   <th>수진자</th>
-                  <th>Memo</th>
-                  <th>Status</th>
-                  <th>Customer</th>
+                  <th>메모</th>
+                  <th>신청</th>
+                  <th>수납</th>
+                  <th>대기</th>
+                  <th>처방전</th>
                   <th>Product</th>
                   <th>Revenue</th>
                 </tr>
@@ -68,7 +69,19 @@
                       >
                         <i class="fas fa-check" aria-hidden="true"></i>
                       </vsud-button>
-                      <span>Paid</span>
+                      <span>{{ call.isRegistered }}</span>
+                    </div>
+                  </td>
+                  <td class="text-xs font-weight-bold">
+                    <div class="d-flex align-items-center">
+                      <vsud-button
+                        color="success"
+                        variant="outline"
+                        class="btn-icon-only btn-rounded mb-0 me-2 btn-sm d-flex align-items-center justify-content-center"
+                      >
+                        <i class="fas fa-check" aria-hidden="true"></i>
+                      </vsud-button>
+                      <span>{{ call.isPayed }}</span>
                     </div>
                   </td>
                   <td class="text-xs font-weight-bold">
@@ -90,7 +103,6 @@
                     <span class="my-2 text-xs">$140,20</span>
                   </td>
                 </tr>
-
               </tbody>
             </table>
           </div>
