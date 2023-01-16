@@ -37,15 +37,15 @@
             <table id="order-list" class="table table-flush">
               <thead class="thead-light">
                 <tr>
-                  <th>수진자</th>
-                  <th>메모</th>
-                  <th>신청</th>
-                  <th>수납</th>
-                  <th>대기</th>
-                  <th>처방전</th>
-                  <th>주민번호</th>
-                  <th>핸드폰</th>
-                  <th>비용</th>
+                  <th class="text-xs font-weight-bold">수진자</th>
+                  <th class="text-xs font-weight-bold">메모</th>
+                  <th class="text-xs font-weight-bold">신청</th>
+                  <th class="text-xs font-weight-bold">수납</th>
+                  <th class="text-xs font-weight-bold">대기</th>
+                  <th class="text-xs font-weight-bold">처방전</th>
+                  <th class="text-xs font-weight-bold">주민번호</th>
+                  <th class="text-xs font-weight-bold">핸드폰</th>
+                  <th class="text-xs font-weight-bold">비용</th>
                 </tr>
               </thead>
               <tbody>
