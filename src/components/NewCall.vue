@@ -191,15 +191,15 @@
 </template>
 
 <script>
-import VsudSwitch from '@/components/VsudSwitch.vue'
 import VsudButton from '@/components/VsudButton.vue'
 import bgImg from '@/assets/img/curved-images/curved6.jpg'
 import { useCallStore } from '@/stores/call'
+import { doc, onSnapshot, getDoc } from 'firebase/firestore'
+import { db } from '@/firebase/init'
 
 export default {
   name: 'NewCall',
   components: {
-    VsudSwitch,
     VsudButton
   },
   data() {
@@ -210,6 +210,21 @@ export default {
   setup() {
     const callStore = useCallStore()
     return { callStore }
+  },
+  mounted() {
+    // const patName = this.callStore.patientName
+    // const callsDocRef = doc(db, 'calls', patName)
+    const callsDocRef = doc(db, 'calls', 'vBFGSH3naiT4db06wxnln4qKZij2')
+    const docSnap = getDoc(callsDocRef)
+    if (docSnap.exists) {
+      console.log('document data: ', docSnap.data())
+    } else {
+      console.log('no such document')
+    }
+
+    // const unsub = onSnapshot(callsDocRef, (doc) => {
+    //   console.log('current data: ', doc.data())
+    // })
   }
 }
 </script>

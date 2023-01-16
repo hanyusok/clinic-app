@@ -14,7 +14,7 @@
         <div class="col-auto">
           <div class="avatar avatar-xl position-relative">
             <img
-              src="../assets/img/bruce-mars.jpg"
+              src="../assets/img/doctor_image.png"
               alt="profile_image"
               class="shadow-sm w-100 border-radius-lg"
             />
@@ -22,11 +22,11 @@
         </div>
         <div class="col-auto my-auto">
           <div class="h-100">
-            <h5 class="mb-1">Alec Thompson {{ authStore.displayName }}</h5>
-            <p class="mb-0 text-sm font-weight-bold">CEO / Co-Founder</p>
+            <h5 class="mb-1">한유석원장 {{ authStore.displayName }}</h5>
+            <p class="mb-0 text-sm font-weight-bold">전문의 / 마트의원</p>
           </div>
         </div>
-        <div class="mx-auto mt-3 col-lg-4 col-md-6 my-sm-auto ms-sm-auto me-sm-0">
+        <!-- <div class="mx-auto mt-3 col-lg-4 col-md-6 my-sm-auto ms-sm-auto me-sm-0">
           <div class="nav-wrapper position-relative end-0">
             <ul class="p-1 bg-transparent nav nav-pills nav-fill" role="tablist">
               <li class="nav-item">
@@ -169,7 +169,7 @@
               </li>
             </ul>
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>
@@ -386,22 +386,33 @@
                 v-for="call in calls"
                 :key="call.id"
               >
-                <div class="card card-blog card-plain">
-                  <div class="position-relative">
-                    <a class="shadow-xl d-block border-radius-xl">
-                      <!-- <img :src="img" alt="img-blur-shadow" class="shadow img-fluid border-radius-xl" /> -->
-                    </a>
-                  </div>
-                  <div class="px-1 pb-0 card-body">
-                    <p class="mb-2 text-sm text-gradient text-dark">
-                      {{ call.createdAt.toDate() }}
-                    </p>
-                    <a href="javascript:;">
-                      <h5>{ title }{{ call.callId }}</h5>
-                    </a>
-                    <p class="mb-4 text-sm">
-                      {{ call.memo }}
-                    </p>
+                <div class="mb-4 col-xl-3 col-md-6 mb-xl-0">
+                  <div class="card card-blog card-plain">
+                    <div class="position-relative">
+                      <a class="shadow-xl d-block border-radius-xl">
+                        <!-- <img :src="img" alt="img-blur-shadow" class="shadow img-fluid border-radius-xl" /> -->
+                      </a>
+                    </div>
+                    <div class="px-1 pb-0 card-body">
+                      <p class="mb-2 text-sm text-gradient text-dark">
+                        <!-- {{ call.createdAt.toDate() }} -->
+                        {{ call.createdAt.toDate() }}
+                      </p>
+                      <a href="javascript:;" class="d-flex align-items-center">
+                        <vsud-avatar
+                          :img="img2"
+                          size="xs"
+                          circular="rounded-circle"
+                          class="me-2"
+                          alt="user image"
+                        />
+                        <h5>{{ call.patientName }}</h5>
+                      </a>
+                      <p class="mb-4 text-sm">
+                        {{ call.memo }}
+                      </p>
+                      <p class="mb-4 text-sm">수납: {{ call.isPayed }}</p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -425,7 +436,8 @@ import ivana from '@/assets/img/ivana-square.jpg'
 import peterson from '@/assets/img/team-4.jpg'
 import nick from '@/assets/img/team-3.jpg'
 import img1 from '../assets/img/home-decor-1.jpg'
-import img2 from '../assets/img/home-decor-2.jpg'
+// import img2 from '../assets/img/home-decor-2.jpg'
+import img2 from '@/assets/img/team-1.jpg'
 import img3 from '../assets/img/home-decor-3.jpg'
 import team1 from '../assets/img/team-1.jpg'
 import team2 from '../assets/img/team-2.jpg'
