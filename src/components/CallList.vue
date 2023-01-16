@@ -39,9 +39,9 @@
                 <tr>
                   <th>수진자</th>
                   <th>메모</th>
-                  <th>신청</th>                  
+                  <th>신청</th>
                   <th>수납</th>
-                  <th>진료대기</th>
+                  <th>대기</th>
                   <th>처방전</th>
                   <th>주민번호</th>
                   <th>핸드폰</th>
@@ -64,53 +64,57 @@
                   <td class="text-xs font-weight-bold">
                     <div class="d-flex align-items-center">
                       <vsud-button
-                        color="success"
-                        variant="outline"
+                        :color="call.isRegistered ? 'success' : 'secondary'"
+                        variant="gradient"
+                        @click="toggleRegistered(call)"
                         class="btn-icon-only btn-rounded mb-0 me-2 btn-sm d-flex align-items-center justify-content-center"
                       >
-                        <i class="fas fa-check" aria-hidden="true"></i>
+                        <!-- <i class="fas fa-check" aria-hidden="true"></i> -->
                       </vsud-button>
-                      <span>{{ call.isRegistered }}</span>
+                      <!-- <span>{{ call.isRegistered }}</span> -->
                     </div>
                   </td>
                   <td class="text-xs font-weight-bold">
                     <div class="d-flex align-items-center">
                       <vsud-button
-                        color="success"
-                        variant="outline"
+                        :color="call.isPayed ? 'success' : 'secondary'"
+                        variant="gradient"
+                        @click="togglePayed(call)"
                         class="btn-icon-only btn-rounded mb-0 me-2 btn-sm d-flex align-items-center justify-content-center"
                       >
-                        <i class="fas fa-check" aria-hidden="true"></i>
+                        <!-- <i class="fas fa-check" aria-hidden="true"></i> -->
                       </vsud-button>
-                      <span>{{ call.isPayed }}</span>
+                      <!-- <span>{{ call.isPayed }}</span> -->
                     </div>
                   </td>
                   <td class="text-xs font-weight-bold">
                     <div class="d-flex align-items-center">
                       <vsud-button
-                        color="success"
-                        variant="outline"
+                        :color="call.isReady ? 'success' : 'secondary'"
+                        variant="gradient"
+                        @click="toggleReady(call)"
                         class="btn-icon-only btn-rounded mb-0 me-2 btn-sm d-flex align-items-center justify-content-center"
                       >
-                        <i class="fas fa-check" aria-hidden="true"></i>
+                        <!-- <i class="fas fa-check" aria-hidden="true"></i> -->
                       </vsud-button>
-                      <span>{{ call.isWaiting }}</span>
+                      <!-- <span>{{ call.isReady }}</span> -->
                     </div>
                   </td>
                   <td class="text-xs font-weight-bold">
                     <div class="d-flex align-items-center">
                       <vsud-button
-                        color="success"
-                        variant="outline"
+                        :color="call.toPharm ? 'success' : 'secondary'"
+                        variant="gradient"
+                        @click="togglePharm(call)"
                         class="btn-icon-only btn-rounded mb-0 me-2 btn-sm d-flex align-items-center justify-content-center"
                       >
-                        <i class="fas fa-check" aria-hidden="true"></i>
+                        <!-- <i class="fas fa-check" aria-hidden="true"></i> -->
                       </vsud-button>
-                      <span>{{ call.toPharm }}</span>
+                      <!-- <span>{{ call.toPharm }}</span> -->
                     </div>
                   </td>
                   <td class="font-weight-bold">
-                    <div class="d-flex align-items-center">                      
+                    <div class="d-flex align-items-center">
                       <span class="my-2 text-xs">{{ call.jumin }}</span>
                     </div>
                   </td>
@@ -118,10 +122,10 @@
                     <span class="my-2 text-xs">{{ call.createdAt.toDate() }}</span>
                   </td> -->
                   <td class="font-weight-bold">
-                    <span class="my-2 text-xs">{{call.patientMobile}}</span>
+                    <span class="my-2 text-xs">{{ call.patientMobile }}</span>
                   </td>
                   <td class="font-weight-bold">
-                    <span class="my-2 text-xs">{{call.cost}} 원</span>
+                    <span class="my-2 text-xs">{{ call.cost }} 원</span>
                   </td>
                 </tr>
               </tbody>
@@ -199,33 +203,28 @@ export default {
         }
       })
     })
+  },
+  methods: {
+    async togglePayed(call) {
+      const callsRef = doc(db, 'calls', call.id)
+      await updateDoc(callsRef, { isPayed: !call.isPayed })
+      console.log('Document(togglePayed) updated:')
+    },
+    async toggleRegistered(call) {
+      const callsRef = doc(db, 'calls', call.id)
+      await updateDoc(callsRef, { isRegistered: !call.isRegistered })
+      console.log('Document(toggleRegistered) updated:')
+    },
+    async toggleReady(call) {
+      const callsRef = doc(db, 'calls', call.id)
+      await updateDoc(callsRef, { isReady: !call.isReady })
+      console.log('Document(toggleReady) updated:')
+    },
+    async togglePharm(call) {
+      const callsRef = doc(db, 'calls', call.id)
+      await updateDoc(callsRef, { toPharm: !call.toPharm })
+      console.log('Document(togglePharm) updated:')
+    }
   }
-
-  // mounted() {
-  //   if (document.getElementById('order-list')) {
-  //     const dataTableSearch = new DataTable('#order-list', {
-  //       searchable: true,
-  //       fixedHeight: false,
-  //       perPageSelect: false
-  //     })
-
-  //     document.querySelectorAll('.export').forEach(function (el) {
-  //       el.addEventListener('click', function (el) {
-  //         var type = el.dataset.type
-
-  //         var data = {
-  //           type: type,
-  //           filename: 'soft-ui-' + type
-  //         }
-
-  //         if (type === 'csv') {
-  //           data.columnDelimiter = '|'
-  //         }
-
-  //         dataTableSearch.export(data)
-  //       })
-  //     })
-  //   }
-  // }
 }
 </script>

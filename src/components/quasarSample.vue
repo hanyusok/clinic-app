@@ -103,7 +103,7 @@
 </template>
 
 <script>
-import db from "src/boot/firebase";
+import db from 'src/boot/firebase'
 import {
   collection,
   addDoc,
@@ -112,46 +112,46 @@ import {
   orderBy,
   onSnapshot,
   deleteDoc,
-  doc,
-} from "firebase/firestore";
-import { formatDistance } from "date-fns";
-import { defineComponent } from "vue";
+  doc
+} from 'firebase/firestore'
+import { formatDistance } from 'date-fns'
+import { defineComponent } from 'vue'
 
 export default defineComponent({
-  name: "PageHome",
+  name: 'PageHome',
   data() {
     return {
-      newCallContent: "",
-      calls: [],
-    };
+      newCallContent: '',
+      calls: []
+    }
   },
   mounted() {
-    const callsRef = collection(db, "calls");
-    const q = query(callsRef, orderBy("date"));
+    const callsRef = collection(db, 'calls')
+    const q = query(callsRef, orderBy('date'))
     const unsubscribe = onSnapshot(q, (snapshot) => {
       snapshot.docChanges().forEach((change) => {
-        let callChange = change.doc.data();
-        callChange.id = change.doc.id;
-        if (change.type === "added") {
-          console.log("New call: ", callChange);
-          this.calls.unshift(callChange);
+        let callChange = change.doc.data()
+        callChange.id = change.doc.id
+        if (change.type === 'added') {
+          console.log('New call: ', callChange)
+          this.calls.unshift(callChange)
         }
-        if (change.type === "modified") {
-          console.log("Modified call: ", callChange);
-          let index = this.calls.findIndex((call) => call.id === callChange.id);
-          Object.assign(this.calls[index], callChange);
+        if (change.type === 'modified') {
+          console.log('Modified call: ', callChange)
+          let index = this.calls.findIndex((call) => call.id === callChange.id)
+          Object.assign(this.calls[index], callChange)
         }
-        if (change.type === "removed") {
-          console.log("Removed call: ", callChange);
-          let index = this.calls.findIndex((call) => call.id === callChange.id);
-          this.calls.splice(index, 1);
+        if (change.type === 'removed') {
+          console.log('Removed call: ', callChange)
+          let index = this.calls.findIndex((call) => call.id === callChange.id)
+          this.calls.splice(index, 1)
         }
-      });
-    });
+      })
+    })
   },
   methods: {
     relativeDate(value) {
-      return formatDistance(value, new Date());
+      return formatDistance(value, new Date())
     },
     async addNewCall() {
       let newCall = {
@@ -159,33 +159,33 @@ export default defineComponent({
         date: Date.now(),
         isPayed: false,
         isReady: false,
-        toPharmacy: false,
-      };
-      const callsRef = collection(db, "calls");
-      const docRef = await addDoc(callsRef, newCall);
-      this.newCallContent = "";
-      console.log("Document written with ID: ", docRef.id);
+        toPharmacy: false
+      }
+      const callsRef = collection(db, 'calls')
+      const docRef = await addDoc(callsRef, newCall)
+      this.newCallContent = ''
+      console.log('Document written with ID: ', docRef.id)
     },
     async deleteCall(call) {
-      await deleteDoc(doc(db, "calls", call.id));
+      await deleteDoc(doc(db, 'calls', call.id))
     },
     async togglePayed(call) {
-      const callsRef = doc(db, "calls", call.id);
-      await updateDoc(callsRef, { isPayed: !call.isPayed });
-      console.log("Document(togglePayed) updated:");
+      const callsRef = doc(db, 'calls', call.id)
+      await updateDoc(callsRef, { isPayed: !call.isPayed })
+      console.log('Document(togglePayed) updated:')
     },
     async toggleReady(call) {
-      const callsRef = doc(db, "calls", call.id);
-      await updateDoc(callsRef, { isReady: !call.isReady });
-      console.log("Document(toggleReady) updated:");
+      const callsRef = doc(db, 'calls', call.id)
+      await updateDoc(callsRef, { isReady: !call.isReady })
+      console.log('Document(toggleReady) updated:')
     },
     async togglePharmacy(call) {
-      const callsRef = doc(db, "calls", call.id);
-      await updateDoc(callsRef, { toPharmacy: !call.toPharmacy });
-      console.log("Document(togglePharmacy) updated:");
-    },
-  },
-});
+      const callsRef = doc(db, 'calls', call.id)
+      await updateDoc(callsRef, { toPharmacy: !call.toPharmacy })
+      console.log('Document(togglePharmacy) updated:')
+    }
+  }
+})
 </script>
 
 <style lang="sass">
