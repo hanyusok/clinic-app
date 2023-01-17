@@ -27,10 +27,20 @@
           <div class="card-body p-3">
             <ul class="text-muted ps-4 mb-0">
               <li>
-                <span class="text-sm">진료비 (사전) 수납후에 진료시작됨.</span>
+                <span class="text-sm">
+                  <vsud-badge color="success" variant="gradient" size="sm"
+                    >진료비 수납후
+                  </vsud-badge>
+                  비대면 접수 진행됨.</span
+                >
               </li>
               <li>
-                <span class="text-sm">계좌이체후, 초대하는 (영상통화) 수락하면 됨</span>
+                <span class="text-sm"
+                  >계좌이체후, 초대하는
+                  <vsud-badge color="primary" variant="gradient" size="sm"
+                    >영상통화 수락 </vsud-badge
+                  >하면 됨</span
+                >
               </li>
               <li>
                 <span class="text-sm">시끄럽지 않고, 조용한 곳이 좋음</span>
@@ -191,6 +201,7 @@
 </template>
 
 <script>
+import VsudBadge from '@/components/VsudBadge.vue'
 import VsudButton from '@/components/VsudButton.vue'
 import bgImg from '@/assets/img/curved-images/curved6.jpg'
 import { useCallStore } from '@/stores/call'
@@ -200,7 +211,8 @@ import { db } from '@/firebase/init'
 export default {
   name: 'NewCall',
   components: {
-    VsudButton
+    VsudButton,
+    VsudBadge
   },
   data() {
     return {
