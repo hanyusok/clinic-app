@@ -226,45 +226,13 @@ export default {
   },
   mounted() {
     const patId = this.callStore.respStatusId
-    const callsDocRef = doc(db, 'calls', patId)
-
-    const unsub = onSnapshot(callsDocRef, (doc) => {
-      console.log('current data: ', doc.data())
+    
+    const unsub = onSnapshot(doc(db, "calls", patId), (doc) => {
+      console.log("Current data: ", doc.data());
     })
-    // mounted() {
-    //   const patId = this.callStore.respStatusId
-    //   const callsDocRef = doc(db, 'calls', patId)
 
-    //   const unsub = onSnapshot(callsDocRef, (doc) => {
-    //     console.log('current data: ', doc.data())
-    //   })
+
   }
-  // mounted() {
-  //   const callsRef = collection(db, 'calls')
-  //   const user = auth.currentUser
-  //   const uid = user.uid
-  //   // const q = query(callsRef, orderBy('createdAt'))
-  //   const q = query(callsRef, where('userId', '==', uid))
-  //   const unsubscribe = onSnapshot(q, (snapshot) => {
-  //     snapshot.docChanges().forEach((change) => {
-  //       let callChange = change.doc.data()
-
-  //       if (change.type === 'added') {
-  //         console.log('New call: ', callChange)
-  //         this.calls.unshift(callChange)
-  //       }
-  //       if (change.type === 'modified') {
-  //         console.log('Modified call: ', callChange)
-  //         let index = this.calls.findIndex((call) => call.id === callChange.id)
-  //         Object.assign(this.calls[index], callChange)
-  //       }
-  //       if (change.type === 'removed') {
-  //         console.log('Removed call: ', callChange)
-  //         let index = this.calls.findIndex((call) => call.id === callChange.id)
-  //         this.calls.splice(index, 1)
-  //       }
-  //     })
-  //   })
-  // },
+  
 }
 </script>
