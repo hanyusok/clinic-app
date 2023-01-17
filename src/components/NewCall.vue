@@ -224,7 +224,7 @@ export default {
     const callStore = useCallStore()
     return { callStore }
   },
-  onMounted() {
+  mounted() {
     const patId = this.callStore.respStatusId
     const callsDocRef = doc(db, 'calls', patId)
 

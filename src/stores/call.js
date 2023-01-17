@@ -35,7 +35,6 @@ export const useCallStore = defineStore({
       this.respStatusId = resp.id
       alert("비대면 진료신청 되었습니다.")
       console.log(resp.id + " call added!")
-      console.log(resp)
     },
     resetCall(){      
       this.memo = "",       
