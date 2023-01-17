@@ -16,6 +16,7 @@ export const useCallStore = defineStore({
     patientName: "",
     patientMobile: "",
     jumin: "",
+    respStatusId: "",
     calls: []
   }),  
   actions: {   
@@ -31,8 +32,10 @@ export const useCallStore = defineStore({
         patientMobile: this.patientMobile,
         jumin: this.jumin
       })
+      this.respStatusId = resp.id
       alert("비대면 진료신청 되었습니다.")
       console.log(resp.id + " call added!")
+      console.log(resp)
     },
     resetCall(){      
       this.memo = "",       

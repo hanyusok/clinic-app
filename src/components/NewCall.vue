@@ -123,7 +123,7 @@
             </span>
             <div class="timeline-content">
               <h6 class="text-dark text-sm font-weight-bold mb-0">
-                비대면 {#홍길동} 접수되었음.
+                비대면 {#홍길동} 접수되었음. {{ callStore.respStatusId }}
               </h6>
               <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">
                 22 DEC 7:20 AM
@@ -224,20 +224,20 @@ export default {
     const callStore = useCallStore()
     return { callStore }
   },
-  mounted() {
-    // const patName = this.callStore.patientName
-    // const callsDocRef = doc(db, 'calls', patName)
-    const callsDocRef = doc(db, 'calls', 'vBFGSH3naiT4db06wxnln4qKZij2')
-    const docSnap = getDoc(callsDocRef)
-    if (docSnap.exists) {
-      console.log('document data: ', docSnap.data())
-    } else {
-      console.log('no such document')
-    }
+  onMounted() {
+    const patId = this.callStore.respStatusId
+    const callsDocRef = doc(db, 'calls', patId)
 
-    // const unsub = onSnapshot(callsDocRef, (doc) => {
-    //   console.log('current data: ', doc.data())
-    // })
+    const unsub = onSnapshot(callsDocRef, (doc) => {
+      console.log('current data: ', doc.data())
+    })
+    // mounted() {
+    //   const patId = this.callStore.respStatusId
+    //   const callsDocRef = doc(db, 'calls', patId)
+
+    //   const unsub = onSnapshot(callsDocRef, (doc) => {
+    //     console.log('current data: ', doc.data())
+    //   })
   }
   // mounted() {
   //   const callsRef = collection(db, 'calls')
