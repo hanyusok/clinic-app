@@ -33,8 +33,9 @@ export const useCallStore = defineStore({
         jumin: this.jumin
       })
       this.respStatusId = resp.id
-      alert("비대면 진료신청 되었습니다.")
-      console.log(resp.id + " call added!")
+      // alert("비대면 진료신청 되었습니다.")
+      alert(`${this.patientName}님, 비대면 접수되었습니다.`)
+      console.log(`${this.patientName}님, ${resp.id} call added!`)
     },
     resetCall(){      
       this.memo = "",       
