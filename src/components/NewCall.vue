@@ -3,7 +3,7 @@
     class="pt-5 m-3 page-header align-items-start min-vh-20 pb-5 border-radius-lg"
     :style="{
       backgroundImage: `url(${bgImg})`,
-      backgroundPositionY: '50%'
+      backgroundPositionY: '50%',
     }"
   >
     <span class="mask bg-gradient-dark opacity-6"></span>
@@ -22,7 +22,9 @@
         <div class="card">
           <div class="card-header p-3 pb-0">
             <h6 class="mb-1">안내 말씀</h6>
-            <p class="text-sm mb-0">건강보험 적용되므로, (본인부담) 진료비(0~5있음.</p>
+            <p class="text-sm mb-0">
+              건강보험 적용되므로, (본인부담) 진료비(0~5있음.
+            </p>
           </div>
           <div class="card-body p-3">
             <ul class="text-muted ps-4 mb-0">
@@ -46,7 +48,9 @@
                 <span class="text-sm">시끄럽지 않고, 조용한 곳이 좋음</span>
               </li>
               <li>
-                <span class="text-sm">탈모약(x), 다이어트약(x), 응급피임약(x)</span>
+                <span class="text-sm"
+                  >탈모약(x), 다이어트약(x), 응급피임약(x)</span
+                >
               </li>
               <li>
                 <span class="text-sm">대기시간(평균 30~60분)</span>
@@ -112,8 +116,21 @@
       <hr class="horizontal dark mt-1 mb-3" />
 
       <div class="col-md-6">
-        <h6 class="mb-3 mt-3">진행 상황 Status</h6>
-        <p class="text-sm">현재 {#월#일} 비대면 {# 명} 진료 대기중</p>
+        <div class="row mt-5">
+          <h6 class="mb-3 mt-3">진행 상황 Status</h6>
+          <p class="text-sm">현재 {#월#일} 비대면 {# 명} 진료 대기중</p>
+          <div class="col-lg-8 col-12 actions text-end ms-auto">
+            <vsud-button
+              color="info"
+              variant="gradient"
+              size="sm"
+              class="btn-sm mb-0"
+              type="button"
+              @click="callStore.getStatus"
+              >Refresh Status</vsud-button
+            >
+          </div>
+        </div>
         <div
           class="timeline timeline-one-side border-dashed border-1 border-secondary border-radius-md"
         >
@@ -148,7 +165,9 @@
               <i class="ni ni-circle-08 text-secondary text-success"></i>
             </span>
             <div class="timeline-content">
-              <h6 class="text-dark text-sm font-weight-bold mb-0">진료 준비중</h6>
+              <h6 class="text-dark text-sm font-weight-bold mb-0">
+                진료 준비중
+              </h6>
               <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">
                 22 DEC 8:10 AM{{ callStore.readyAt }}
               </p>
@@ -185,7 +204,9 @@
             <div class="card">
               <div class="card-body border-radius-lg bg-gradient-dark p-3">
                 <h6 class="mb-0 text-white">진료시간: 10am-7pm</h6>
-                <p class="text-white text-sm mb-4">점심 12:30 - 1:30 pm / 수요일(휴진)</p>
+                <p class="text-white text-sm mb-4">
+                  점심 12:30 - 1:30 pm / 수요일(휴진)
+                </p>
                 <a
                   class="btn btn-md ms-auto mb-0 bg-gradient-light"
                   href="tel:031-657-8279"
@@ -202,34 +223,34 @@
 </template>
 
 <script>
-import VsudBadge from '@/components/VsudBadge.vue'
-import VsudButton from '@/components/VsudButton.vue'
-import bgImg from '@/assets/img/curved-images/curved6.jpg'
-import { useCallStore } from '@/stores/call'
-import { doc, onSnapshot, getDoc } from 'firebase/firestore'
-import { db } from '@/firebase/init'
+import VsudBadge from "@/components/VsudBadge.vue";
+import VsudButton from "@/components/VsudButton.vue";
+import bgImg from "@/assets/img/curved-images/curved6.jpg";
+import { useCallStore } from "@/stores/call";
+import { doc, onSnapshot, getDoc } from "firebase/firestore";
+import { db } from "@/firebase/init";
 
 export default {
-  name: 'NewCall',
+  name: "NewCall",
   components: {
     VsudButton,
-    VsudBadge
+    VsudBadge,
   },
   data() {
     return {
-      bgImg
-    }
+      bgImg,
+    };
   },
   setup() {
-    const callStore = useCallStore()
-    return { callStore }
+    const callStore = useCallStore();
+    return { callStore };
   },
   mounted() {
-    const patId = this.callStore.respStatusId
+    const patId = this.callStore.respStatusId;
 
-    const unsub = onSnapshot(doc(db, 'calls', patId), (doc) => {
-      console.log('Current data: ', doc.data())
-    })
-  }
-}
+    const unsub = onSnapshot(doc(db, "calls", patId), (doc) => {
+      console.log("Current data: ", doc.data());
+    });
+  },
+};
 </script>

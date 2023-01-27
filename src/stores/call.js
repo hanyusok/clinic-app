@@ -1,52 +1,66 @@
-import { computed, ref } from 'vue'
+import { computed, ref } from "vue";
 import { defineStore } from "pinia";
 import router from "@/router/index";
-import { signOut, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
-import { addDoc, collection, doc, query, onSnapshot, orderBy, setDoc, updateDoc, Timestamp } from 'firebase/firestore'
-import { auth, db } from '@/firebase/init'
-
+import {
+  signOut,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  updateProfile,
+} from "firebase/auth";
+import {
+  addDoc,
+  collection,
+  doc,
+  query,
+  onSnapshot,
+  orderBy,
+  setDoc,
+  updateDoc,
+  Timestamp,
+} from "firebase/firestore";
+import { auth, db } from "@/firebase/init";
 
 export const useCallStore = defineStore({
   id: "callStore",
-  state: () => ({    
+  state: () => ({
     callId: "",
     userId: "",
-    memo: "", 
+    memo: "",
     cratedAt: "",
     patientName: "",
     patientMobile: "",
     jumin: "",
     respStatusId: "",
-    calls: [], 
+    calls: [],
     registeredAt: "",
     paidAt: "",
     readyAt: "",
-    deliveredAt: ""
-  }),  
-  actions: {   
-    async addCall(){
-      const uid = auth.currentUser.uid
-      const callCollectionRef = collection(db, 'calls')      
+    deliveredAt: "",
+  }),
+  actions: {
+    async addCall() {
+      const uid = auth.currentUser.uid;
+      const callCollectionRef = collection(db, "calls");
       const resp = await addDoc(callCollectionRef, {
         callId: uid,
         userId: uid,
-        memo: this.memo,      
+        memo: this.memo,
         createdAt: Timestamp.now(),
-        patientName: this.patientName, 
+        patientName: this.patientName,
         patientMobile: this.patientMobile,
-        jumin: this.jumin
-      })
-      this.respStatusId = resp.id
+        jumin: this.jumin,
+      });
+      this.respStatusId = resp.id;
       // alert("비대면 진료신청 되었습니다.")
-      alert(`${this.patientName}님, 비대면 접수되었습니다.`)
-      console.log(`${this.patientName}님, ${resp.id} call added!`)
+      alert(`${this.patientName}님, 비대면 접수되었습니다.`);
+      console.log(`${this.patientName}님, ${resp.id} call added!`);
     },
-    resetCall(){      
-      this.memo = "",       
-      this.patientName = "",
-      this.patientMobile = "",
-      this.jumin = ""
-    }
-
-  }
-})
+    resetCall() {
+      (this.memo = ""),
+        (this.patientName = ""),
+        (this.patientMobile = ""),
+        (this.jumin = "");
+    },
+    getStatus() {},
+  },
+});
