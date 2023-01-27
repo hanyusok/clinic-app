@@ -158,7 +158,8 @@ import {
   orderBy,
   onSnapshot,
   deleteDoc,
-  doc
+  doc,
+  Timestamp
 } from 'firebase/firestore'
 
 export default {
@@ -207,22 +208,34 @@ export default {
   methods: {
     async togglePayed(call) {
       const callsRef = doc(db, 'calls', call.id)
-      await updateDoc(callsRef, { isPayed: !call.isPayed })
+      await updateDoc(callsRef, {
+        isPayed: !call.isPayed,
+        paidAt: Timestamp.now()
+      })
       console.log('Document(togglePayed) updated:')
     },
     async toggleRegistered(call) {
       const callsRef = doc(db, 'calls', call.id)
-      await updateDoc(callsRef, { isRegistered: !call.isRegistered })
+      await updateDoc(callsRef, {
+        isRegistered: !call.isRegistered,
+        registeredAt: Timestamp.now()
+      })
       console.log('Document(toggleRegistered) updated:')
     },
     async toggleReady(call) {
       const callsRef = doc(db, 'calls', call.id)
-      await updateDoc(callsRef, { isReady: !call.isReady })
+      await updateDoc(callsRef, {
+        isReady: !call.isReady,
+        readyAt: Timestamp.now()
+      })
       console.log('Document(toggleReady) updated:')
     },
     async togglePharm(call) {
       const callsRef = doc(db, 'calls', call.id)
-      await updateDoc(callsRef, { toPharm: !call.toPharm })
+      await updateDoc(callsRef, {
+        toPharm: !call.toPharm,
+        deliveredAt: Timestamp.now()
+      })
       console.log('Document(togglePharm) updated:')
     }
   }

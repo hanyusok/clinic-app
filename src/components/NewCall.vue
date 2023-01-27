@@ -123,10 +123,10 @@
             </span>
             <div class="timeline-content">
               <h6 class="text-dark text-sm font-weight-bold mb-0">
-                비대면 {#홍길동} 접수되었음. {{ callStore.respStatusId }}
+                비대면 {#홍길동} 접수되었음. {{ callStore.patientName }}
               </h6>
               <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">
-                22 DEC 7:20 AM
+                22 DEC 7:20 AM{{ callStore.registredAt }}
               </p>
             </div>
           </div>
@@ -136,7 +136,7 @@
             </span>
             <div class="timeline-content">
               <h6 class="text-dark text-sm font-weight-bold mb-0">
-                진료비 입급 확인됨 #(5,500원)
+                진료비 입급 확인됨 #(5,500원) {{ callStore.paidAt }}
               </h6>
               <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">
                 22 DEC 7:21 AM
@@ -150,7 +150,7 @@
             <div class="timeline-content">
               <h6 class="text-dark text-sm font-weight-bold mb-0">진료 준비중</h6>
               <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">
-                22 DEC 8:10 AM
+                22 DEC 8:10 AM{{ callStore.readyAt }}
               </p>
             </div>
           </div>
@@ -160,7 +160,7 @@
             </span>
             <div class="timeline-content">
               <h6 class="text-dark text-sm font-weight-bold mb-0">
-                약국에 처방전{# 홍길동}이 전달됨.
+                약국에 처방전{# 홍길동}이 전달됨. {{ callStore.deliveredAt }}
               </h6>
               <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">
                 22 DEC 4:54 PM
@@ -226,13 +226,10 @@ export default {
   },
   mounted() {
     const patId = this.callStore.respStatusId
-    
-    const unsub = onSnapshot(doc(db, "calls", patId), (doc) => {
-      console.log("Current data: ", doc.data());
+
+    const unsub = onSnapshot(doc(db, 'calls', patId), (doc) => {
+      console.log('Current data: ', doc.data())
     })
-
-
   }
-  
 }
 </script>

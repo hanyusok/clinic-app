@@ -17,7 +17,11 @@ export const useCallStore = defineStore({
     patientMobile: "",
     jumin: "",
     respStatusId: "",
-    calls: []
+    calls: [], 
+    registeredAt: "",
+    paidAt: "",
+    readyAt: "",
+    deliveredAt: ""
   }),  
   actions: {   
     async addCall(){
