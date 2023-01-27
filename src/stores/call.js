@@ -50,17 +50,23 @@ export const useCallStore = defineStore({
         patientMobile: this.patientMobile,
         jumin: this.jumin,
       });
-      this.respStatusId = resp.id;
-      // alert("비대면 진료신청 되었습니다.")
+      this.respStatusId = resp.id;      
       alert(`${this.patientName}님, 비대면 접수되었습니다.`);
       console.log(`${this.patientName}님, ${resp.id} call added!`);
     },
     resetCall() {
-      (this.memo = ""),
-        (this.patientName = ""),
-        (this.patientMobile = ""),
-        (this.jumin = "");
+      this.memo = "",
+      this.patientName = "",
+      this.patientMobile = "",
+      this.jumin = ""
     },
-    getStatus() {},
+    getStatus() {
+      const unsub = onSnapshot(doc(db, "calls", this.respStatusId), (doc) => {
+        console.log("Current data: ", doc.data());
+        let callStatusInfo = doc.data()
+        callStatusInfo.id = doc.id
+        console.log("callStatusInfo ID: ",callStatusInfo.id)
+    });
+    },
   },
 });
