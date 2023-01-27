@@ -137,7 +137,7 @@
             <div class="timeline-content">
               <h6 class="text-dark text-sm font-weight-bold mb-0">비대면 진료 접수됨.</h6>
               <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">
-                22 DEC 7:20 AM{{ callStore.registredAt }}
+                22 DEC 7:20 AM{{ callStore.createdAt }}
               </p>
             </div>
           </div>

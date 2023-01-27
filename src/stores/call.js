@@ -32,6 +32,7 @@ export const useCallStore = defineStore({
     jumin: "",
     respStatusId: "",
     calls: [],
+    callStatusInfo: {},
     registeredAt: "",
     paidAt: "",
     readyAt: "",
@@ -61,11 +62,16 @@ export const useCallStore = defineStore({
       this.jumin = ""
     },
     getStatus() {
-      const unsub = onSnapshot(doc(db, "calls", this.respStatusId), (doc) => {
-        console.log("Current data: ", doc.data());
+      const unsub = onSnapshot(doc(db, "calls", this.respStatusId), (doc) => {        
         let callStatusInfo = doc.data()
         callStatusInfo.id = doc.id
-        console.log("callStatusInfo ID: ",callStatusInfo.id)
+        console.log("Current data: ", doc.data());
+        console.log("document ID: ",callStatusInfo.id)
+        console.log("patientName: ",callStatusInfo.patientName)
+        console.log("createdAt: ",callStatusInfo.createdAt)
+        this.createdAt = callStatusInfo.createdAt,
+        console.log("this createdAt: ",this.createdAt)
+        
     });
     },
   },
