@@ -51,28 +51,34 @@ export const useCallStore = defineStore({
         patientMobile: this.patientMobile,
         jumin: this.jumin,
       });
-      this.respStatusId = resp.id;      
+      this.respStatusId = resp.id;
       alert(`${this.patientName}님, 비대면 접수되었습니다.`);
       console.log(`${this.patientName}님, ${resp.id} call added!`);
     },
     resetCall() {
-      this.memo = "",
-      this.patientName = "",
-      this.patientMobile = "",
-      this.jumin = ""
+      (this.memo = ""),
+        (this.patientName = ""),
+        (this.patientMobile = ""),
+        (this.jumin = "");
     },
     getStatus() {
-      const unsub = onSnapshot(doc(db, "calls", this.respStatusId), (doc) => {        
-        let callStatusInfo = doc.data()
-        callStatusInfo.id = doc.id
-        console.log("Current data: ", doc.data());
-        console.log("document ID: ",callStatusInfo.id)
-        console.log("patientName: ",callStatusInfo.patientName)
-        console.log("createdAt: ",callStatusInfo.createdAt)
-        this.createdAt = callStatusInfo.createdAt,
-        console.log("this createdAt: ",this.createdAt)
-        
-    });
+      const statusRef = doc(db, "calls", this.respStatusId);
+      const unsub = onSnapshot(
+        statusRef,
+        (doc) => {
+          let callStatusInfo = doc.data();
+          callStatusInfo.id = doc.id;
+          console.log("Current data: ", doc.data());
+          console.log("document ID: ", callStatusInfo.id);
+          console.log("patientName: ", callStatusInfo.patientName);
+          console.log("createdAt: ", callStatusInfo.createdAt);
+          (this.createdAt = callStatusInfo.createdAt),
+            console.log("this createdAt: ", this.createdAt);
+        },
+        (error) => {
+          console.log(error);
+        }
+      );
     },
   },
 });
