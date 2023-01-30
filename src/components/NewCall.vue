@@ -228,12 +228,33 @@ export default {
   },
   data() {
     return {
-      bgImg
+      bgImg,
+      responseStatusId: ''
     }
   },
   setup() {
     const callStore = useCallStore()
     return { callStore }
   }
+
+  // mounted() {
+  //   const statusRef = doc(db, 'calls', this.respStatusId)
+  //   const unsub = onSnapshot(
+  //     statusRef,
+  //     (doc) => {
+  //       let callStatusInfo = doc.data()
+  //       callStatusInfo.id = doc.id
+  //       console.log('Current data: ', doc.data())
+  //       console.log('document ID: ', callStatusInfo.id)
+  //       console.log('patientName: ', callStatusInfo.patientName)
+  //       console.log('createdAt: ', callStatusInfo.createdAt)
+  //       ;(this.createdAt = callStatusInfo.createdAt),
+  //         console.log('this createdAt: ', this.createdAt)
+  //     },
+  //     (error) => {
+  //       console.log(error)
+  //     }
+  //   )
+  // }
 }
 </script>
