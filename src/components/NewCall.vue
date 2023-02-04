@@ -123,9 +123,18 @@
             size="sm"
             class="btn-sm mb-0"
             type="button"
-            @click="callStore.getStatus"
+            @click="getProgressInfo"
             >조회</vsud-button
           >
+          <!-- <vsud-button
+            color="success"
+            variant="gradient"
+            size="sm"
+            class="btn-sm mb-0"
+            type="button"
+            @click="callStore.getStatus"
+            >조회</vsud-button
+          > -->
         </div>
         <div
           class="timeline timeline-one-side border-dashed border-1 border-secondary border-radius-md"
@@ -137,7 +146,7 @@
             <div class="timeline-content">
               <h6 class="text-dark text-sm font-weight-bold mb-0">비대면 진료 접수됨.</h6>
               <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">
-                22 DEC 7:20 AM{{ callStore.createdAt }}
+                22 DEC 7:20 AM
               </p>
             </div>
           </div>
@@ -218,7 +227,7 @@ import VsudButton from '@/components/VsudButton.vue'
 import bgImg from '@/assets/img/curved-images/curved6.jpg'
 import { useCallStore } from '@/stores/call'
 import { doc, onSnapshot, getDoc } from 'firebase/firestore'
-import { db } from '@/firebase/init'
+import { db, auth } from '@/firebase/init'
 
 export default {
   name: 'NewCall',
@@ -230,12 +239,62 @@ export default {
     return {
       bgImg,
       responseStatusId: '',
-      callitems: []
+      callitems: [],
+      progressInfo: []
     }
   },
   setup() {
     const callStore = useCallStore()
     return { callStore }
+  },
+  // mounted() {
+  //   const callsRef = collection(db, 'calls')
+  //   const user = auth.currentUser
+  //   const uid = user.uid
+  //   // const q = query(callsRef, orderBy('createdAt'))
+  //   const q = query(callsRef, where('userId', '==', uid))
+  //   const unsubscribe = onSnapshot(q, (snapshot) => {
+  //     snapshot.docChanges().forEach((change) => {
+  //       let callChange = change.doc.data()
+
+  //       if (change.type === 'added') {
+  //         console.log('New call: ', callChange)
+  //         this.calls.unshift(callChange)
+  //       }
+  //       if (change.type === 'modified') {
+  //         console.log('Modified call: ', callChange)
+  //         let index = this.calls.findIndex((call) => call.id === callChange.id)
+  //         Object.assign(this.calls[index], callChange)
+  //       }
+  //       if (change.type === 'removed') {
+  //         console.log('Removed call: ', callChange)
+  //         let index = this.calls.findIndex((call) => call.id === callChange.id)
+  //         this.calls.splice(index, 1)
+  //       }
+  //     })
+  //   })
+  // },
+  methods: {
+    getProgressInfo() {
+      const statusRef = doc(db, 'calls', this.callStore.respStatusId)
+      const unsub = onSnapshot(
+        statusRef,
+        (doc) => {
+          let progressInfo = doc.data()
+          progressInfo.id = doc.id
+          alert(`${this.patientName}님, 잠시 기다려 주세요`)
+          console.log('Current data: ', doc.data())
+          console.log('document ID: ', progressInfo.id)
+          console.log('patientName: ', progressInfo.patientName)
+          console.log('createdAt: ', progressInfo.createdAt)
+          ;(this.createdAt = progressInfo.createdAt),
+            console.log('this createdAt: ', this.createdAt)
+        },
+        (error) => {
+          console.log(error)
+        }
+      )
+    }
   }
 }
 </script>
