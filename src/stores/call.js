@@ -32,7 +32,7 @@ export const useCallStore = defineStore({
     jumin: "",
     respStatusId: "",
     calls: [],
-    callStatusInfo: {},
+    callStatusInfo: [],
     registeredAt: "",
     paidAt: "",
     readyAt: "",
