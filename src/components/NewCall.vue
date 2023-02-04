@@ -104,7 +104,7 @@
               class="btn-sm mb-0"
               type="button"
               @click="callStore.addCall"
-              >신청하기</vsud-button
+              >신청</vsud-button
             >
           </div>
         </div>
@@ -113,18 +113,18 @@
 
       <div class="col-md-6">
         <div class="">
-          <h6 class="mb-1 mt-3">{홍길동 님} 접수 진행 상황 Status</h6>
+          <h6 class="mb-1 mt-3">접수 진행 상황 Status</h6>
           <p class="text-sm">현재 {#월#일} 비대면 {# 명} 진료 대기중</p>
         </div>
         <div class="col-lg-8 col-12 actions text-end ms-auto mb-2">
           <vsud-button
-            color="info"
+            color="success"
             variant="gradient"
             size="sm"
             class="btn-sm mb-0"
             type="button"
             @click="callStore.getStatus"
-            >Refresh Status</vsud-button
+            >조회</vsud-button
           >
         </div>
         <div
@@ -140,7 +140,6 @@
                 22 DEC 7:20 AM{{ callStore.createdAt }}
               </p>
             </div>
-                        
           </div>
           <div class="timeline-block mb-3">
             <span class="timeline-step">
@@ -148,7 +147,7 @@
             </span>
             <div class="timeline-content">
               <h6 class="text-dark text-sm font-weight-bold mb-0">
-                진료비 입급 확인됨 #(5,500원) 
+                진료비 입급 확인됨 #(5,500원)
               </h6>
               <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">
                 {22 DEC 7:21 AM}
@@ -172,7 +171,7 @@
             </span>
             <div class="timeline-content">
               <h6 class="text-dark text-sm font-weight-bold mb-0">
-                {제일약국}에 처방전 전달됨. 
+                {제일약국}에 처방전 전달됨.
               </h6>
               <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">
                 {22 DEC 4:54 PM}
@@ -187,9 +186,9 @@
             <div class="d-flex align-items-center">
               <h6 class="mb-0">마트의원</h6>
               <a
-                class="btn btn-sm btn-success ms-auto mb-0"
+                class="btn btn-sm btn-secondary ms-auto mb-0"
                 href="https://naver.me/FOvhcUlc"
-                >네이버 맵(위치)</a
+                >위치</a
               >
             </div>
           </div>
@@ -237,6 +236,6 @@ export default {
   setup() {
     const callStore = useCallStore()
     return { callStore }
-  }, 
+  }
 }
 </script>

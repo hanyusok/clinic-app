@@ -61,24 +61,25 @@ export const useCallStore = defineStore({
         (this.patientMobile = ""),
         (this.jumin = "");
     },
-    // getStatus() {
-    //   const statusRef = doc(db, "calls", this.respStatusId);
-    //   const unsub = onSnapshot(
-    //     statusRef,
-    //     (doc) => {
-    //       let callStatusInfo = doc.data();
-    //       callStatusInfo.id = doc.id;
-    //       console.log("Current data: ", doc.data());
-    //       console.log("document ID: ", callStatusInfo.id);
-    //       console.log("patientName: ", callStatusInfo.patientName);
-    //       console.log("createdAt: ", callStatusInfo.createdAt);
-    //       (this.createdAt = callStatusInfo.createdAt),
-    //         console.log("this createdAt: ", this.createdAt);
-    //     },
-    //     (error) => {
-    //       console.log(error);
-    //     }
-    //   );
-    // },
+    getStatus() {
+      const statusRef = doc(db, "calls", this.respStatusId);
+      const unsub = onSnapshot(
+        statusRef,
+        (doc) => {
+          let callStatusInfo = doc.data();
+          callStatusInfo.id = doc.id;
+          alert(`${this.patientName}님, 잠시 기다려 주세요`)
+          console.log("Current data: ", doc.data());
+          console.log("document ID: ", callStatusInfo.id);
+          console.log("patientName: ", callStatusInfo.patientName);
+          console.log("createdAt: ", callStatusInfo.createdAt);
+          (this.createdAt = callStatusInfo.createdAt),
+            console.log("this createdAt: ", this.createdAt);
+        },
+        (error) => {
+          console.log(error);
+        }
+      );
+    },
   },
 });
